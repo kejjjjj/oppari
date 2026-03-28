@@ -44,6 +44,9 @@ Dokumentaatiomenetelmät ovat kehittyneet pitkälti teknologian ja työskentelyt
 
 Tätä varten kehitettiin menetelmä nimeltä "Docs-as-Ecosystem", joka viittaa ekosysteemiin, jossa kaikki jäsenet voivat käyttää dokumentaatiota monimutkaisena ja dynaamisena järjestelmänä. Tämä menetelmä mahdollistaa yhteistyön ja versionhallinnan tehokkaammin, sillä dokumentaatio ei ole enää yksittäinen staattinen tiedosto, vaan osa laajempaa kehitysympäristöä. Tällaisessa mallissa dokumentaatio elää yhdessä järjestelmän ja sen kehityksen kanssa, ja siihen tehtävät muutokset voidaan hallita samalla tavalla kuin ohjelmakoodia versionhallinnan avulla. Tämä vähentää ristiriitoja eri versioiden välillä ja parantaa dokumentaation ajantasaisuutta. @zotero-item-18
 
+![Kuva 1. Kolme syytä ottaa käyttöön docs-as-ecosystem malli](https://raw.githubusercontent.com/kejjjjj/oppari/refs/heads/main/docs_as_ecosystem.png)
+*Kuva 1.* Kolme syytä ottaa käyttöön docs-as-ecosystem malli
+
 ### 2.2.1 Perinteiset dokumentointimenetelmät (tekstinkäsittelyohjelmat)
 ### 2.2.2 HTML-pohjainen dokumentointi
 ### 2.2.3 Dokumentaatiomenetelmien vertailu
