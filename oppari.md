@@ -42,11 +42,11 @@ Ajantasaisuus on tärkeää, sillä vanhentunut dokumentaatio voi olla jopa hait
 
 Dokumentaatiomenetelmät ovat kehittyneet pitkälti teknologian ja työskentelytapojen muutosten mukana. Aikaisemmin dokumentaatio tuotettiin pääasiassa erillisillä tekstinkäsittelyohjelmilla, ja sitä ylläpidettiin tiedostomuotoisina dokumentteina. Tämä malli oli yksinkertainen, mutta sen haasteena oli versioiden hallinnan vaikeus sekä se, että usean henkilön samanaikainen työskentely saman dokumentin parissa oli usein hankalaa.
 
-Tätä varten kehitettiin menetelmä nimeltä "Docs-as-Ecosystem", joka viittaa ekosysteemiin, jossa kaikki jäsenet voivat käyttää dokumentaatiota monimutkaisena ja dynaamisena järjestelmänä. Tämä menetelmä mahdollistaa yhteistyön ja versionhallinnan, sillä dokumentaatio ei ole enää yksittäinen staattinen tiedosto, vaan osa laajempaa kehitysympäristöä. Tällaisessa mallissa dokumentaatio elää yhdessä järjestelmän ja sen kehityksen kanssa, ja siihen tehtävät muutokset voidaan hallita samalla tavalla kuin ohjelmakoodia versionhallinnan avulla. Tämä vähentää ristiriitoja eri versioiden välillä ja parantaa dokumentaation ajantasaisuutta. @zotero-item-18
+Tätä varten kehitettiin menetelmä nimeltä "Docs-as-Code", joka viittaa menetelmään, jossa dokumentaatiota käsitellään samoilla työkaluilla kun koodia tehdessä. Tämä menetelmä mahdollistaa yhteistyön ja versionhallinnan, sillä dokumentaatio ei ole enää yksittäinen staattinen tiedosto, vaan osa laajempaa kehitysympäristöä. Tällaisessa mallissa dokumentaatio elää yhdessä järjestelmän ja sen kehityksen kanssa, ja siihen tehtävät muutokset voidaan hallita samalla tavalla kuin ohjelmakoodia versionhallinnan avulla. Tämä vähentää ristiriitoja eri versioiden välillä ja parantaa dokumentaation ajantasaisuutta. @zotero-item-18
 
 ![Kuva 1. Kolme syytä ottaa käyttöön docs-as-ecosystem malli](https://raw.githubusercontent.com/kejjjjj/oppari/refs/heads/main/docs_as_ecosystem.png)
 
-*Kuva 1.* Kolme syytä ottaa käyttöön docs-as-ecosystem malli
+*Kuva 1.* Kolme syytä ottaa käyttöön docs-as-code malli
 
 ### 2.2.1 Perinteiset dokumentointimenetelmät (tekstinkäsittelyohjelmat)
 
