@@ -1,4 +1,8 @@
 
+[1]: https://github.com/kejjjjj/oppari/blob/main/dokumentaation_merkitys.png?raw=true
+[2]: https://raw.githubusercontent.com/kejjjjj/oppari/refs/heads/main/docs_as_ecosystem.png
+[3]: https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true
+
 # Abstrakti
 tekstiä tänne
 # Abstract
@@ -36,7 +40,7 @@ Hyvä dokumentaatio perustuu selkeisiin periaatteisiin, joiden tavoitteena on te
 
 Hyvään dokumentaatioon kuuluu esimerkkien hyödyntäminen, sillä konkreettiset esimerkit auttavat ymmärtämään abstrakteja käsitteitä ja nopeuttavat oppimista. Dokumentaation tulisi myös olla johdonmukaista sekä kielen että rakenteen osalta, jotta sen käyttö olisi luontevaa eri osioiden välillä. @zotero-item-16
 
-![Konkreettinen esimerkki](https://github.com/kejjjjj/oppari/blob/main/dokumentaation_merkitys.png?raw=true)
+![Konkreettinen esimerkki][1]
 
 *Kuva 1.* Konkreettinen esimerkki abstraktista käsitteestä
 
@@ -48,7 +52,7 @@ Dokumentaatiomenetelmät ovat kehittyneet pitkälti teknologian ja työskentelyt
 
 Tätä varten kehitettiin menetelmä nimeltä "Docs-as-Code", joka viittaa menetelmään, jossa dokumentaatiota käsitellään samoilla työkaluilla kun koodia tehdessä. Tämä menetelmä mahdollistaa yhteistyön ja versionhallinnan, sillä dokumentaatio ei ole enää yksittäinen staattinen tiedosto, vaan osa laajempaa kehitysympäristöä. Tällaisessa mallissa dokumentaatio elää yhdessä järjestelmän ja sen kehityksen kanssa, ja siihen tehtävät muutokset voidaan hallita samalla tavalla kuin ohjelmakoodia versionhallinnan avulla. Tämä vähentää ristiriitoja eri versioiden välillä ja parantaa dokumentaation ajantasaisuutta. @zotero-item-18
 
-![docs-as-code](https://raw.githubusercontent.com/kejjjjj/oppari/refs/heads/main/docs_as_ecosystem.png)
+![docs-as-code][2]
 
 *Kuva 2.* Kolme syytä ottaa käyttöön docs-as-code malli
 
@@ -84,7 +88,7 @@ Markdownin perussyntaksi perustuu yksinkertaisiin ja helposti muistettaviin merk
 
 Markdown mahdollistaa myös linkkien ja kuvien lisäämisen selkeällä syntaksilla, jossa linkkiteksti ja osoite eroitetaan toisistaan hakasulkeiden [] ja sulkujen avulla (). Koodin esittämiseen voidaan käyttää yksittäisi tai kolmoistakaperäisiä heittomerkkejä (\`), mikä tekeee siitä erityisen hyödyllisen ohjelmistokehityksessä. Näiden rakenteiden ansiosta Markdown soveltuu hyvin tekniseen dokuemntointiin. @zotero-item-25
 
-![Markdown esimerkki](https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true)
+![Markdown esimerkki][3]
 
 *Kuva 3.* Havainnollistaa Markdownin syntaksia.
 
