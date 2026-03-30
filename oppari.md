@@ -80,11 +80,17 @@ Markdownin perussyntaksi perustuu yksinkertaisiin ja helposti muistettaviin merk
 
 Markdown mahdollistaa myös linkkien ja kuvien lisäämisen selkeällä syntaksilla, jossa linkkiteksti ja osoite eroitetaan toisistaan hakasulkeiden [] ja sulkujen avulla (). Koodin esittämiseen voidaan käyttää yksittäisi tai kolmoistakaperäisiä heittomerkkejä (\`), mikä tekeee siitä erityisen hyödyllisen ohjelmistokehityksessä. Näiden rakenteiden ansiosta Markdown soveltuu hyvin tekniseen dokuemntointiin. @zotero-item-25
 
-![Markdown esimerkki]()
+![Markdown esimerkki](https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true)
 
 *Kuva 2.* havainnollistaa Markdownin syntaksia
 
-### 2.3.3 Markdownin laajennukset (esim. GitHub Flavored Markdown)
+### 2.3.3 Markdownin laajennukset
+
+Markdownin perussyntaksia on laajennettu usiella tavoilla, jotta se vastaisi nykyaikaista dokumentaatiotasoa. Näitä laajennuksia kutsutaan usein nimellä "flavors", ja ne tuovat lisäominaisuuksia, joita alkuperäinen Markdown ei sisällä. Tunnetuin esimerkki on Github Flavored Markdown (GFM), jota käytetään ohjelmistokehityksessä ja versionhallintaympäristöissä (Github). @zotero-item-26
+
+Github Flavored Markdown laajentaa perussyntaksia muun muassa talukoiden tehtävälistojen (checkbox-listat) sekä korostettujen koodilohkojen tuella. Näiden avulla dokumentaation havainnollistamista helpotetaan vaikeuttamatta syntaksia ja saadaan siitä samalla rakenteellisesti monipuolisempaa. @zotero-item-26
+
+Lisäksi monet Markdown-laajennukset tukevat automaattista linkkien tunnistamista, sisällysluetteloiden muodostamista sekä erilaisten lisäelemenntien, kuten huomautuslaatikoen käyttöä. Näiden ansiosta Markdownin käyttöä saa sovellettua entistä laajemmin dokumentaatiokokonaisuuksien tuottamiseen ja ylläpitoon. Laajennusten käyttö kuitenkin riippuu käytetystä työkalusta tai alustasta, mikä voi vaikuttaa dokumentaation yhteensopviuuteen eri ympäristöissä. @zotero-item-27
 
 ## 2.4 Markdown dokumentaation työkaluna
 ### 2.4.1 Markdownin hyödyt
