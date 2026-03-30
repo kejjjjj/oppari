@@ -36,6 +36,10 @@ Hyvä dokumentaatio perustuu selkeisiin periaatteisiin, joiden tavoitteena on te
 
 Hyvään dokumentaatioon kuuluu esimerkkien hyödyntäminen, sillä konkreettiset esimerkit auttavat ymmärtämään abstrakteja käsitteitä ja nopeuttavat oppimista. Dokumentaation tulisi myös olla johdonmukaista sekä kielen että rakenteen osalta, jotta sen käyttö olisi luontevaa eri osioiden välillä. @zotero-item-16
 
+![Konkreettinen esimerkki]()
+
+*Kuva 1.* Konkreettinen esimerkki abstraktista käsitteestä
+
 Ajantasaisuus on tärkeää, sillä vanhentunut dokumentaatio voi olla jopa haitallisempaa kuin sen puuttuminen. Tämän vuoksi dokumentaation ylläpito ja päivittäminen tulisi olla jatkuva prosessi osana kehitystyötä. Dokumentaation tulisi myös olla heposti ylläpidettävissä ja sijoitettu lähelle itse järjestelmää tai koodia, jotta sen päivittäminen olisi luonteva osa muuta työskentelyä. @zotero-item-17
 
 ## 2.2 Dokumentaatiomenetelmät ja niiden kehitys
@@ -44,9 +48,9 @@ Dokumentaatiomenetelmät ovat kehittyneet pitkälti teknologian ja työskentelyt
 
 Tätä varten kehitettiin menetelmä nimeltä "Docs-as-Code", joka viittaa menetelmään, jossa dokumentaatiota käsitellään samoilla työkaluilla kun koodia tehdessä. Tämä menetelmä mahdollistaa yhteistyön ja versionhallinnan, sillä dokumentaatio ei ole enää yksittäinen staattinen tiedosto, vaan osa laajempaa kehitysympäristöä. Tällaisessa mallissa dokumentaatio elää yhdessä järjestelmän ja sen kehityksen kanssa, ja siihen tehtävät muutokset voidaan hallita samalla tavalla kuin ohjelmakoodia versionhallinnan avulla. Tämä vähentää ristiriitoja eri versioiden välillä ja parantaa dokumentaation ajantasaisuutta. @zotero-item-18
 
-![Kuva 1. Kolme syytä ottaa käyttöön docs-as-ecosystem malli](https://raw.githubusercontent.com/kejjjjj/oppari/refs/heads/main/docs_as_ecosystem.png)
+![docs-as-code](https://raw.githubusercontent.com/kejjjjj/oppari/refs/heads/main/docs_as_ecosystem.png)
 
-*Kuva 1.* Kolme syytä ottaa käyttöön docs-as-code malli
+*Kuva 2.* Kolme syytä ottaa käyttöön docs-as-code malli
 
 ### 2.2.1 Perinteiset dokumentointimenetelmät (tekstinkäsittelyohjelmat)
 
@@ -82,13 +86,13 @@ Markdown mahdollistaa myös linkkien ja kuvien lisäämisen selkeällä syntaksi
 
 ![Markdown esimerkki](https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true)
 
-*Kuva 2.* havainnollistaa Markdownin syntaksia
+*Kuva 3.* Havainnollistaa Markdownin syntaksia.
 
 ### 2.3.3 Markdownin laajennukset
 
 Markdownin perussyntaksia on laajennettu usiella tavoilla, jotta se vastaisi nykyaikaista dokumentaatiotasoa. Näitä laajennuksia kutsutaan usein nimellä "flavors", ja ne tuovat lisäominaisuuksia, joita alkuperäinen Markdown ei sisällä. Tunnetuin esimerkki on Github Flavored Markdown (GFM), jota käytetään ohjelmistokehityksessä ja versionhallintaympäristöissä (Github). @zotero-item-26
 
-Github Flavored Markdown laajentaa perussyntaksia muun muassa talukoiden tehtävälistojen (checkbox-listat) sekä korostettujen koodilohkojen tuella. Näiden avulla dokumentaation havainnollistamista helpotetaan vaikeuttamatta syntaksia ja saadaan siitä samalla rakenteellisesti monipuolisempaa. @zotero-item-26
+Github Flavored Markdown laajentaa perussyntaksia muun muassa talukoiden, tehtävälistojen (checkbox-listat) sekä korostettujen koodilohkojen tuella. Näiden avulla dokumentaation havainnollistamista helpotetaan vaikeuttamatta syntaksia ja saadaan siitä samalla rakenteellisesti monipuolisempaa. @zotero-item-26
 
 Lisäksi monet Markdown-laajennukset tukevat automaattista linkkien tunnistamista, sisällysluetteloiden muodostamista sekä erilaisten lisäelemenntien, kuten huomautuslaatikoen käyttöä. Näiden ansiosta Markdownin käyttöä saa sovellettua entistä laajemmin dokumentaatiokokonaisuuksien tuottamiseen ja ylläpitoon. Laajennusten käyttö kuitenkin riippuu käytetystä työkalusta tai alustasta, mikä voi vaikuttaa dokumentaation yhteensopviuuteen eri ympäristöissä. @zotero-item-27
 
