@@ -36,7 +36,7 @@ Hyvä dokumentaatio perustuu selkeisiin periaatteisiin, joiden tavoitteena on te
 
 Hyvään dokumentaatioon kuuluu esimerkkien hyödyntäminen, sillä konkreettiset esimerkit auttavat ymmärtämään abstrakteja käsitteitä ja nopeuttavat oppimista. Dokumentaation tulisi myös olla johdonmukaista sekä kielen että rakenteen osalta, jotta sen käyttö olisi luontevaa eri osioiden välillä. @zotero-item-16
 
-![Konkreettinen esimerkki]()
+![Konkreettinen esimerkki](https://github.com/kejjjjj/oppari/blob/main/dokumentaation_merkitys.png?raw=true)
 
 *Kuva 1.* Konkreettinen esimerkki abstraktista käsitteestä
 
