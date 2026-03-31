@@ -100,27 +100,39 @@ Github Flavored Markdown laajentaa perussyntaksia muun muassa talukoiden, tehtä
 
 Lisäksi monet Markdown-laajennukset tukevat automaattista linkkien tunnistamista, sisällysluetteloiden muodostamista sekä erilaisten lisäelemenntien, kuten huomautuslaatikoen käyttöä. Näiden ansiosta Markdownin käyttöä saa sovellettua entistä laajemmin dokumentaatiokokonaisuuksien tuottamiseen ja ylläpitoon. Laajennusten käyttö kuitenkin riippuu käytetystä työkalusta tai alustasta, mikä voi vaikuttaa dokumentaation yhteensopviuuteen eri ympäristöissä. @zotero-item-27
 
-## 2.4 Markdown dokumentaation työkaluna
-### 2.4.1 Markdownin hyödyt
-### 2.4.2 Markdownin rajoitukset ja haasteet
-### 2.4.3 Dokumentaation luettavuus ja rakenteistaminen Markdownilla
+### 2.3.4 Markdownin rajoitukset ja haasteet
+
+Vaikka Markdown on kevyt ja helppokäyttöinen, siihen liittyy myös rajoituksia, jotka voivat vaikuttaa sen soveltuvuuteen tietyissä käyttötapauksissa. Yksi haaste on sen rajallinen ilmaisuvoima verrattuna esimerkiksi puhtaaseen HTML-koodiin. Markdownin perussyntaksi ei tue kaikki monimutkaisia rakenteita tai visuaalisia elementtejä, minkä vuoksi käyttäjät joutuvat välillä turvautumaan HTML-koodiin tai käyttäämään virityksiä saadaakseen haluamansa lopputuloksen. @zotero-item-28
+
+Rajoituksia liittyy myös eri Markdown-versioiden välisiin eroihin. Koska Markdownista on olemassa useita laajenuuksia ja toteutuksia, kuten GitHub Flavored Markdown, kaikki ominaisuudet eivät ole yhteensopivia eri alustuojen ävlillä. Tämä saattaa aiheuttaa ongelmia dokumentaation siirrettävyydessä ja yhtenäisyydessä, jos sama sisältö ei toimi odotetusti eri ympäristöissä. @zotero-item-27
+
+Markdown ei tarjoa itsessään valmiita ratkaisuja visuaaliseen ulkoasuun tai käyttöliittymään, vaan lopullinen esitysmuoto riippuu käytetystä alustasta tai muunnostyökalusta. Tämä saattaa johtaa tilanteisiin, joissa sama dokumentti näyttää erilaiselta eri ympäristöissä. Näistä rajoituksista huolimatta Markdown on edelleen tehokas työkalu, kun sen käyttöä tuetaan sopivilla työkaluilla. @zotero-item-30
+
+## 2.4 Dokumentaation hallinta ja yhteistyö
+
+Dokumentaation hallinta ja yhteistyö ovat nykyisessä työelämässä tärkeitä, sillä usein monen eri ihmisen pitää osallistua saman tiedon tuottamiseen ja ylläpitämiseen. Tehokas dokumentaation hallinta tarkoittaa sitä, että tieto on ajantaista ja helposti löydettävissä. Tämä edellyttää työkaluja sekä vastuunjakoa dokumentaation tuottamisessa ja ylläpidossa. @zotero-item-31
+
+Yhteistyön näkökulmasta dokumentaation merkitys näkyy erityisesti hajautetuissa työmpäristöissä ja tiimityössä. Useat käyttäjät voivat osallistua dokumentaation kirjoittamiseen, kommentointiin ja kehittämiseen samanaikaisesti, mikä parantaa tiedon laatua ja kattavuutta. Versionhallintajärjestelmät, kuten Git, tukevat tätä mahdollistamalla muutosten seurannan, versioiden vertailun sekä aiempien versioiden palauttamisen tarvittaessa. @zotero-item-32
+
+Dokumentaation hallintaan liittyy sen elinkaaren huomioiminen. Dokumentaatio on dynaaminen tuote, jota tulee päivittää ja kehittää jatkuvasti vastaamaan muuttuvia tarpeita. Tämä vaatii organisaatiolta sitoutumista ylläpitoon sekä toimintamalleja, joissa dokumentointi on osa päivittäistä työskentelyä. @zotero-item-33
+
+Markdownin kaltaiset kevyet merkintäkielet edistävät tätä toimintaa, sillä ne mahdollistavat sisällön käsittelyn yksinkertaisessa tekstimuodossa. Tämä tekee dokumentaatiosta helposti muokattavaa ja jaettavaa. Näin dokumentaatio voidaan pitää ajantasaisena ja hyödyllisenä koko organisaation näkökulmasta. @zotero-item-34
+
+### 2.4.1 Versionhallinnan merkitys dokumentaatiossa (Git)
+### 2.4.2 Yhteistyö dokumentaation tuottamisessa (GitHub)
+### 2.4.3 Dokumentaation ylläpidettävyys
 ### 2.4.4 Dokumentaatiomenetelmien vertailu
 
-## 2.5 Dokumentaation hallinta ja yhteistyö
-### 2.5.1 Versionhallinnan merkitys dokumentaatiossa (Git)
-### 2.5.2 Yhteistyö dokumentaation tuottamisessa (GitHub)
-### 2.5.3 Dokumentaation ylläpidettävyys
+## 2.5 Dokumentaation automaatio ja työkalut
+### 2.5.1 Markdown-editorit
+### 2.5.2 Dokumentaation muunnostyökalut (HTML, PDF)
+### 2.5.3 JavaScript ja TypeScript dokumentaation käsittelyssä
 
-## 2.6 Dokumentaation automaatio ja työkalut
-### 2.6.1 Markdown-editorit
-### 2.6.2 Dokumentaation muunnostyökalut (HTML, PDF)
-### 2.6.3 JavaScript ja TypeScript dokumentaation käsittelyssä
+## 2.6 Web scraping dokumentaation tuottamisessa
+### 2.6.1 Web scraping -menetelmän perusteet
+### 2.6.2 Sisällön kerääminen ja muuntaminen Markdown-muotoon
+### 2.6.3 Eettiset ja tietoturvaan liittyvät näkökulmat
 
-## 2.7 Web scraping dokumentaation tuottamisessa
-### 2.7.1 Web scraping -menetelmän perusteet
-### 2.7.2 Sisällön kerääminen ja muuntaminen Markdown-muotoon
-### 2.7.3 Eettiset ja tietoturvaan liittyvät näkökulmat
-
-## 2.8 Markdown työelämässä ja tulevaisuudessa
-### 2.8.2 Markdownin käyttöönotto organisaatiossa
-### 2.8.3 Dokumentaation tulevaisuuden suuntaukset
+## 2.7 Markdown työelämässä ja tulevaisuudessa
+### 2.7.2 Markdownin käyttöönotto organisaatiossa
+### 2.7.3 Dokumentaation tulevaisuuden suuntaukset
