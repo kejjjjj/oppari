@@ -1,7 +1,6 @@
 
 [1]: https://github.com/kejjjjj/oppari/blob/main/dokumentaation_merkitys.png?raw=true
-[2]: https://raw.githubusercontent.com/kejjjjj/oppari/refs/heads/main/docs_as_ecosystem.png
-[3]: https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true
+[2]: https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true
 
 # Abstrakti
 tekstiä tänne
@@ -23,20 +22,17 @@ Työssä haetaan vastauksia muun muassa seuraaviin kysymyksiin:
 3. Millä tavoin Markdown helpottaa dokumentaation ylläpitoa versionhallintajärjestelmissä?
 
 # 2 Introduction to the knowledge base
-tekstiä tänne?
-## 2.1 Markdown dokumentaation työkaluna
-tekstiä tänne?
-### 2.1.1 Dokumentaation merkitys työelämässä
+### 2.1 Dokumentaation merkitys työelämässä
 Dokumentaatio on osa organisaation tiedonhallintaa, sillä se auttaa säilyttämään ja jakamaan tietoa tilanteissa, joissa alkuperäiset tekijät eivät enää ole mukana tai tieto ei ole helposti saatavilla. Ilman dokumentaatiota organisaatiot joutuvat usein toimimaan puuttelisen tiedon varassa, mikä voi hidastaa työskentelyä ja vaikeuttaa uusien projektien käynnistämistä. Hyvin toteutettu dokumentaatio tarjoaa sen sijaan selkeän lähtökohdan päätöksenteolle ja työn jatkamiselle, mikä tekee siitä enemmän kuin pelkän muodollisuuden. @zotero-item-12
 
 Dokumentaatio on ohjelmistokehityksen ja tiimityön tukena koko projektin elinkaaren ajan. Sen avulla varmistetaan, että tieto  esimerkiksi järjestelmän rakenteesta, käytännöistä ja toteutustavoista on kaikkien tiimin jäsenten saatavilla ja ymmärrettävissä. Tämä helpottaa erityisesti uusien työntekijöiden perehdyttämistä sekä tukee yhteistyötä tilanteissa, joissa työ jakautuu useille henkilöille tai tiimeille. Laadukas dokumentaatio vähentää myös riippuvuutta yksittäisten henkilöiden osaamisesta ja parantaa projektin sujuvuutta. @zotero-item-13
 
-### 2.1.2 Tekninen dokumentaatio
+### 2.1.1 Tekninen dokumentaatio
 Tekninen dokumentaatio on kirjallista aineistoa, jonka tavoitteena on selittää, kuvata ja ohjeistaa teknisten järjestelmien, ohjelmistojen tai prosessien toimintaa. Tekninen dokumentaatio ei keskity tarinallisuuteen, vaan tarjoaa selkeitä, tarkkoja ja käytännöllisiä ohjeita sekä tietoa järjestelmän käytöstä ja rakenteesta. @zotero-item-14
 
 Teknisen dokumentaation piirteenä on sen jatkuva kehittyminen. Järjestelmät ja ohjelmistot muuttuvat jatkuvasti, joten dokumentaation on pysyttävä mukana näissä muutoksissa, jotta se säilyttää hyödyllisyytensä. Tästä syystä tekninen dokumentaatio nähdään usein elävänä kokonaisuutena, jota päivitetään ja ylläpidetään koko järjestelmän elinkaaren ajan.
 
-### 2.1.3 Hyvän dokumentaation periaatteet
+### 2.1.2 Hyvän dokumentaation periaatteet
 Hyvä dokumentaatio perustuu selkeisiin periaatteisiin, joiden tavoitteena on tehdä sisällöstä helposti ymmärrettävää, yhdenmukaista ja löydettävää. Dokumentaation tulisi olla ensisijaisesit käyttäjälähtöistä, eli sen sisältö ja rakenne suunnitellaan kohdeyleisön tarpeiden mukaan. Esimerkiksi tiedon esitystapa pidetään yksinkertaisena ja tarkoituksenmukaisena ilman turhaa monimutkaisuutta. @zotero-item-15
 
 Hyvään dokumentaatioon kuuluu esimerkkien hyödyntäminen, sillä konkreettiset esimerkit auttavat ymmärtämään abstrakteja käsitteitä ja nopeuttavat oppimista. Dokumentaation tulisi myös olla johdonmukaista sekä kielen että rakenteen osalta, jotta sen käyttö olisi luontevaa eri osioiden välillä. @zotero-item-16
@@ -52,10 +48,6 @@ Ajantasaisuus on tärkeää, sillä vanhentunut dokumentaatio voi olla jopa hait
 Dokumentaatiomenetelmät ovat kehittyneet pitkälti teknologian ja työskentelytapojen muutosten mukana. Aikaisemmin dokumentaatio tuotettiin pääasiassa erillisillä tekstinkäsittelyohjelmilla, ja sitä ylläpidettiin tiedostomuotoisina dokumentteina. Tämä malli oli yksinkertainen, mutta sen haasteena oli versioiden hallinnan vaikeus sekä se, että usean henkilön samanaikainen työskentely saman dokumentin parissa oli usein hankalaa.
 
 Tätä varten kehitettiin menetelmä nimeltä "Docs-as-Code", joka viittaa menetelmään, jossa dokumentaatiota käsitellään samoilla työkaluilla kun koodia tehdessä. Tämä menetelmä mahdollistaa yhteistyön ja versionhallinnan, sillä dokumentaatio ei ole enää yksittäinen staattinen tiedosto, vaan osa laajempaa kehitysympäristöä. Tällaisessa mallissa dokumentaatio elää yhdessä järjestelmän ja sen kehityksen kanssa, ja siihen tehtävät muutokset voidaan hallita samalla tavalla kuin ohjelmakoodia versionhallinnan avulla. Tämä vähentää ristiriitoja eri versioiden välillä ja parantaa dokumentaation ajantasaisuutta. @zotero-item-18
-
-![docs-as-code][2]
-
-*Kuva 2.* Kolme syytä ottaa käyttöön docs-as-code malli
 
 ### 2.2.1 Perinteiset dokumentointimenetelmät (tekstinkäsittelyohjelmat)
 
@@ -91,9 +83,9 @@ Markdownin perussyntaksi perustuu yksinkertaisiin ja helposti muistettaviin merk
 
 Markdown mahdollistaa myös linkkien ja kuvien lisäämisen selkeällä syntaksilla, jossa linkkiteksti ja osoite eroitetaan toisistaan hakasulkeiden [] ja sulkujen avulla (). Koodin esittämiseen voidaan käyttää yksittäisi tai kolmoistakaperäisiä heittomerkkejä (\`), mikä tekeee siitä erityisen hyödyllisen ohjelmistokehityksessä. Näiden rakenteiden ansiosta Markdown soveltuu hyvin tekniseen dokuemntointiin. @zotero-item-25
 
-![Markdown esimerkki][3]
+![Markdown esimerkki][2]
 
-*Kuva 3.* Havainnollistaa Markdownin syntaksia.
+*Kuva 2.* Havainnollistaa Markdownin syntaksia.
 
 ### 3.1.3 Markdownin laajennukset
 
@@ -190,8 +182,6 @@ Markdown on vakiinnuttanut asemansa osana nykyaikaista työelämää teknisessä
 
 Työelämässä Markdownin käyttö liittyy usein versionhallintaan, yhteistyöhön sekä automaatioon. Dokumentaatio voidaan tallentaa samaan ympäristöön kuin ohjelmakoodi, jolloin muutokset ovat helposti seurattavissa ja hallittavissa. Tämä parantaa tiimityötä ja vähentää tiedon siiloutumista, kun dokumentaatio on kaikkien saatavilla yhtenäisessä muodossa. @zotero-item-48
 
-### 3.5.1 Markdownin käyttöönotto organisaatiossa
-
 Markdownin käyttöönotto organisaatiossa vaatii sekä teknisiä ratkaisuja että toimintatapojen muutosta. On tärkeää määritellä miten dokumentaatiota tuotetaan, missä sitä säilytetään ja millä työkaluilla sitä hallitaan. Usein käyttöönotto liittyy versionhallintajärjestelmien, kuten Gitin, sekä yhteisten alustojen, kuten GitHubin, hyödyntämiseen, jolloin dokumentaatio voidaan integroida osaksi muuta kehitystyötä. @zotero-item-49
 
 Onnistunut käyttöönotto edellyttää myös yhteisten käytäntöjen ja ohjeistusten luomista. Näihin kuuluvat esimerkiksi dokumentaation rakenne, nimeämiskäytännöt sekä kirjoitustyyli. Yhtenäiset toimintamallit parantavat dokumentaation laatua ja tekevät siitä helpommin ymmärrettävää kaikille käyttäjille. Lisäksi henkilöstön koulutus on tärkeää, jotta kaikki osaavat hyödyntää Markdownia ja siihen liittyviä työkaluja tehokkaasti. @zotero-item-50
@@ -199,6 +189,25 @@ Onnistunut käyttöönotto edellyttää myös yhteisten käytäntöjen ja ohjeis
 Käyttöönottoon liittyy myös haasteita, kuten muutosvastarinta ja uuden työskentelytavan opettelu. Erityisesti organisaatioissa, joissa on totuttu perinteisiin dokumentointimenetelmiin, siirtyminen tekstipohjaiseen ratkaisuun voi vaatia aikaa ja tukea. Näitä haasteita voidaan kuitenkin vähentää tarjoamalla selkeitä ohjeita, esimerkkejä ja käytännön hyötyjä, jotka konkretisoivat Markdownin edut. @zotero-item-50
 
 # 4 Research method
+
+## 4.1 Käytännön toteutukseen perustuva tapaustutkimusmenetelmä
+
+Tämän työn tutkimusmenetelmänä käytetään käytännönläheistä ja soveltavaa lähestymistapaa, jossa teoreettista tarkastelua täydennetään konkreettisella toteutuksella. Menetelmä perustuu tapaustutkimuksen kaltaiseen lähestymistapaan, jossa Markdownin soveltuvuutta arvioidaan todellisessa käyttötilanteessa muuntamalla olemassa olevaa dokumentaatiota uuteen muotoon.
+
+Tutkimuksen käytännön osuus toteutetaan vaiheittain. Ensin valitaan kohteeksi HAMK:n tekstipohjaiset dokumentaatiosivut, joiden sisältö kerätään web scraping -menetelmällä. Tiedonkeruu toteutetaan TypeScript-pohjaisilla työkaluilla, joiden avulla verkkosivujen HTML-rakenne haetaan ja siitä erotellaan oleellinen sisältö. Tämän jälkeen kerätty sisältö muokataan ohjelmallisesti Markdown-muotoon hyödyntäen muunnostyökaluja ja skriptejä.
+
+Muokattu dokumentaatio tallennetaan versionhallintaan Gitin avulla ja julkaistaan GitHub-repositoriossa. Tämä mahdollistaa dokumentaation hallinnan, muutosten seurannan sekä yhteistyön simuloinnin käytännön tasolla. Versionhallinnan käyttö on osa tutkimusmenetelmää, sillä se vastaa nykyaikaisia dokumentaatiokäytäntöjä.
+
+Menetelmän tavoitteena on arvioida Markdownin soveltuvuutta dokumentaation tuottamiseen ja ylläpitoon käytännön toteutuksen kautta. Tutkimuksessa tarkastellaan erityisesti prosessin toimivuutta, työkalujen käytettävyyttä sekä lopputuloksen laatua suhteessa alkuperäiseen dokumentaatioon.
+
+## 4.2 Metatutkimus: Markdownin muuntaminen opinnäytetyömuotoon
+
+Tutkimusmenetelmään sisältyy myös metatasoinen tarkastelu, jossa arvioidaan Markdown-muotoisen dokumentaation muuntamista HAMK:n viralliseen opinnäytetyömuotoon. Tässä työssä tarkastelun kohteena on Markdown-dokumentin muuntaminen HAMK:n opinnäytetyöpohjan mukaiseen Microsoft Word -muotoon sekä viitteidenhallinnan (Zotero) integrointi osaksi prosessia.
+
+Muunnosprosessi perustuu työkaluihin, jotka mahdollistavat Markdown-tiedostojen konvertoinnin Word-muotoon (.docx). Tällaiset työkalut, kuten Pandoc, pystyvät säilyttämään dokumentin rakenteen (otsikot, kappaleet, listat) ja muuntamaan sen Word-yhteensopivaan muotoon. Tämän jälkeen dokumentti voidaan sovittaa HAMK:n viralliseen opinnäytetyöpohjaan, jossa huomioidaan esimerkiksi tyylit, otsikkotasot ja sivuasetukset.
+
+Metatutkimuksen tavoitteena on arvioida kuinka hyvin Markdown-pohjainen kirjoitusprosessi soveltuu opinnäytetyön kaltaiseen formaaliin dokumentointiin. Erityisesti tarkastellaan muunnosprosessin toimivuutta, rakenteen säilymistä sekä viitteidenhallinnan yhteensopivuutta. Tämä näkökulma täydentää varsinaista tutkimusta tuomalla esiin Markdownin käytettävyyden myös akateemisessa kontekstissa.
+
 # 5 Research
 # 6 Results
 # 7 Conclusions
