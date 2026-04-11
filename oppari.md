@@ -209,6 +209,43 @@ Muunnosprosessi perustuu työkaluihin, jotka mahdollistavat Markdown-tiedostojen
 Metatutkimuksen tavoitteena on arvioida kuinka hyvin Markdown-pohjainen kirjoitusprosessi soveltuu opinnäytetyön kaltaiseen formaaliin dokumentointiin. Erityisesti tarkastellaan muunnosprosessin toimivuutta, rakenteen säilymistä sekä viitteidenhallinnan yhteensopivuutta. Tämä näkökulma täydentää varsinaista tutkimusta tuomalla esiin Markdownin käytettävyyden myös akateemisessa kontekstissa.
 
 # 5 Research
+## 5.1 HAMK:n julkisten sivujen muuntaminen Markdown-muotoon
+### 5.1.1 Tutkimuksen suunnittelu
+
+Tutkimuksen ensimmäisessä vaiheessa tarkastellaan kohdesivuston rakennetta ja toteutusteknologiaa, jotta tiedonkeruu voidaan toteuttaa systemaattisesti ja tarkoituksenmukaisesti. Koska sivuston toteutustapaa ei ole ennalta tiedossa, sen taustateknologia selvitetään hyödyntämällä useita rinnakkaisia tunnistusmenetelmiä. Näihin kuuluvat HTML-lähdekoodin analysointi, HTTP-otsakkeiden tarkastelu sekä selaimen kehitystyökalujen (DevTools) käyttö. Tavoitteena on tunnistaa mahdollisia viitteitä käytetystä sisällönhallintajärjestelmästä, kuten tiedostopolkuja, skriptejä ja meta-tietoja, jotka voivat viitata esimerkiksi WordPressiin tai muuhun vastaavaan järjestelmään.
+
+Sivuston taustateknologian tunnistaminen toteutetaan useiden teknisten tarkastelumenetelmien avulla, koska sivuston toteutustapa ei ole aluksi tiedossa. Lähdekoodin analysointi toteutetaan avaamalla kohdesivusto selaimessa (https://hamk.fi) ja tarkastelemalla sen HTML-rakennetta joko “Näytä sivun lähdekoodi” -toiminnolla tai selaimen kehitystyökaluilla. @zotero-item-52
+
+Lähdekoodista etsimme ensin WordPressille tyypillisiä rakenteita, kuten viittauksia `wp-content`- ja `wp-includes`-hakemistoihin, jotka näkyvät esimerkiksi linkkeinä CSS- ja JavaScript-tiedostoihin. Lisäksi tarkastelemme, sisältääkö koodi meta-tagin kuten `<meta name="generator" content="WordPress">`, joka suoraan kertoo käytetystä julkaisujärjestelmästä. @zotero-item-51
+
+Käytännössä kun lähdekoodia selaa, niin sieltä löytyy monia eri vihjeitä, jotka vihjaavat Wordpressin olemassaoloon.
+
+```html
+Rivi 66: <meta property="og:image" content="https://www.hamk.fi/wp-content/uploads/2023/11/HAMK_2023_CarlBergman_4G4A7614web.jpg" />
+Rivi 316: <link rel='stylesheet' id='wp-components-css' href='https://www.hamk.fi/wp-includes/css/dist/components/style.min.css?ver=6.9.4' type='text/css' media='all' />
+Rivi 367: <meta name="generator" content="WordPress 6.9.4" />
+```
+*Ohjelmakoodi 1.* Havainnollistaa WordPress-julkaisujärjestelmään viittaavista rakenteista HTML-lähdekoodissa.
+
+Lähdekoodianalyysin lisäksi hyödynnetään selaimen kehitystyökaluja verkkoliikenteen tarkasteluun. Network-välilehden kautta voidaan analysoida sivun lataamia resursseja ja havaita, mistä lähteistä sisältöä haetaan. Tarkastelun perusteella havaitaan, että sivusto hyödyntää wp-content-hakemistoa resurssien lataamiseen, mikä tukee oletusta WordPress-pohjaisesta toteutuksesta. @zotero-item-53
+
+![Wordpress network tab][4]
+
+*Kuva 4.* Paljastaa, että sivut hakevat tietoa aiemmin mainitusta "wp-content" nimisestä sijainnista, joka viittaa Wordpress-järjestelmään. 
+
+Näiden havaintojen perusteella voidaan päätellä, että kohdesivusto on toteutettu WordPress-sisällönhallintajärjestelmällä, ja käytössä oleva versio on 6.9.4. Tämä tieto ohjaa tutkimuksen seuraavia vaiheita, erityisesti tiedonkeruumenetelmien valintaa.
+
+### 5.1.2 Kohdesivuston teknologian ja rakenteen analysointi
+### 5.1.3 Web scraping -menetelmän ja työkalujen valinta (TypeScript)
+### 5.1.4 Tietojen kerääminen verkkosivuilta
+### 5.1.5 HTML-sisällön jäsentäminen ja datan parsiminen
+### 5.1.6 Sisällön muuntaminen Markdown-muotoon
+### 5.1.7 Dokumentaation rakenteen säilyttäminen ja korjaaminen
+### 5.1.8 Versionhallintaan siirtäminen (Git)
+### 5.1.9 Julkaisu ja tallennus GitHub-repositorioon
+### 5.1.10 Tulosten validointi ja vertailu alkuperäiseen dokumentaatioon
+### 5.1.11 Prosessin arviointi ja kehityskohteiden tunnistaminen
+
 # 6 Results
 # 7 Conclusions
 # 8 Further research?
