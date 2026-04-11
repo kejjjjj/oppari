@@ -209,9 +209,12 @@ Muunnosprosessi perustuu työkaluihin, jotka mahdollistavat Markdown-tiedostojen
 Metatutkimuksen tavoitteena on arvioida kuinka hyvin Markdown-pohjainen kirjoitusprosessi soveltuu opinnäytetyön kaltaiseen formaaliin dokumentointiin. Erityisesti tarkastellaan muunnosprosessin toimivuutta, rakenteen säilymistä sekä viitteidenhallinnan yhteensopivuutta. Tämä näkökulma täydentää varsinaista tutkimusta tuomalla esiin Markdownin käytettävyyden myös akateemisessa kontekstissa.
 
 # 5 Research
+tekstiä tänne?
 ## 5.1 HAMK:n julkisten sivujen muuntaminen Markdown-muotoon
+tekstiä tänne?
 ### 5.1.1 Tutkimuksen suunnittelu
-
+tekstiä tänne?
+### 5.1.2 Kohdesivuston teknologian tunnistaminen
 Tutkimuksen ensimmäisessä vaiheessa tarkastellaan kohdesivuston rakennetta ja toteutusteknologiaa, jotta tiedonkeruu voidaan toteuttaa systemaattisesti ja tarkoituksenmukaisesti. Koska sivuston toteutustapaa ei ole ennalta tiedossa, sen taustateknologia selvitetään hyödyntämällä useita rinnakkaisia tunnistusmenetelmiä. Näihin kuuluvat HTML-lähdekoodin analysointi, HTTP-otsakkeiden tarkastelu sekä selaimen kehitystyökalujen (DevTools) käyttö. Tavoitteena on tunnistaa mahdollisia viitteitä käytetystä sisällönhallintajärjestelmästä, kuten tiedostopolkuja, skriptejä ja meta-tietoja, jotka voivat viitata esimerkiksi WordPressiin tai muuhun vastaavaan järjestelmään.
 
 Sivuston taustateknologian tunnistaminen toteutetaan useiden teknisten tarkastelumenetelmien avulla, koska sivuston toteutustapa ei ole aluksi tiedossa. Lähdekoodin analysointi toteutetaan avaamalla kohdesivusto selaimessa (https://hamk.fi) ja tarkastelemalla sen HTML-rakennetta joko “Näytä sivun lähdekoodi” -toiminnolla tai selaimen kehitystyökaluilla. @zotero-item-52
@@ -227,7 +230,7 @@ Rivi 367: <meta name="generator" content="WordPress 6.9.4" />
 ```
 *Ohjelmakoodi 1.* Havainnollistaa WordPress-julkaisujärjestelmään viittaavista rakenteista HTML-lähdekoodissa.
 
-Lähdekoodianalyysin lisäksi hyödynnetään selaimen kehitystyökaluja verkkoliikenteen tarkasteluun. Network-välilehden kautta voidaan analysoida sivun lataamia resursseja ja havaita, mistä lähteistä sisältöä haetaan. Tarkastelun perusteella havaitaan, että sivusto hyödyntää wp-content-hakemistoa resurssien lataamiseen, mikä tukee oletusta WordPress-pohjaisesta toteutuksesta. @zotero-item-53
+Lähdekoodianalyysin lisäksi hyödynnetään selaimen kehitystyökaluja verkkoliikenteen tarkasteluun. Network-välilehden kautta voidaan analysoida sivun lataamia resursseja ja havaita, mistä lähteistä sisältöä haetaan. Tarkastelun perusteella havaitaan, että sivusto hyödyntää `wp-content`-hakemistoa resurssien lataamiseen, mikä tukee oletusta WordPress-pohjaisesta toteutuksesta. @zotero-item-53
 
 ![Wordpress network tab][3]
 
@@ -235,16 +238,16 @@ Lähdekoodianalyysin lisäksi hyödynnetään selaimen kehitystyökaluja verkkol
 
 Näiden havaintojen perusteella voidaan päätellä, että kohdesivusto on toteutettu WordPress-sisällönhallintajärjestelmällä, ja käytössä oleva versio on 6.9.4. Tämä tieto ohjaa tutkimuksen seuraavia vaiheita, erityisesti tiedonkeruumenetelmien valintaa.
 
-### 5.1.2 Kohdesivuston teknologian ja rakenteen analysointi
-### 5.1.3 Web scraping -menetelmän ja työkalujen valinta (TypeScript)
-### 5.1.4 Tietojen kerääminen verkkosivuilta
-### 5.1.5 HTML-sisällön jäsentäminen ja datan parsiminen
-### 5.1.6 Sisällön muuntaminen Markdown-muotoon
-### 5.1.7 Dokumentaation rakenteen säilyttäminen ja korjaaminen
-### 5.1.8 Versionhallintaan siirtäminen (Git)
-### 5.1.9 Julkaisu ja tallennus GitHub-repositorioon
-### 5.1.10 Tulosten validointi ja vertailu alkuperäiseen dokumentaatioon
-### 5.1.11 Prosessin arviointi ja kehityskohteiden tunnistaminen
+### 5.1.3 Kohdesivuston teknologian hyödyntäminen
+### 5.1.4 Web scraping -menetelmän ja työkalujen valinta (TypeScript)
+### 5.1.5 Tietojen kerääminen verkkosivuilta
+### 5.1.6 HTML-sisällön jäsentäminen ja datan parsiminen
+### 5.1.7 Sisällön muuntaminen Markdown-muotoon
+### 5.1.8 Dokumentaation rakenteen säilyttäminen ja korjaaminen
+### 5.1.9 Versionhallintaan siirtäminen (Git)
+### 5.1.10 Julkaisu ja tallennus GitHub-repositorioon
+### 5.1.11 Tulosten validointi ja vertailu alkuperäiseen dokumentaatioon
+### 5.1.12 Prosessin arviointi ja kehityskohteiden tunnistaminen
 
 # 6 Results
 # 7 Conclusions
