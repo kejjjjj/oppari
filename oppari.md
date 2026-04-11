@@ -1,7 +1,7 @@
 
 [1]: https://github.com/kejjjjj/oppari/blob/main/dokumentaation_merkitys.png?raw=true
 [2]: https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true
-
+[3]: https://github.com/kejjjjj/oppari/blob/main/wordpress_tunnistus_network.png?raw=true
 # Abstrakti
 tekstiä tänne
 # Abstract
@@ -229,9 +229,9 @@ Rivi 367: <meta name="generator" content="WordPress 6.9.4" />
 
 Lähdekoodianalyysin lisäksi hyödynnetään selaimen kehitystyökaluja verkkoliikenteen tarkasteluun. Network-välilehden kautta voidaan analysoida sivun lataamia resursseja ja havaita, mistä lähteistä sisältöä haetaan. Tarkastelun perusteella havaitaan, että sivusto hyödyntää wp-content-hakemistoa resurssien lataamiseen, mikä tukee oletusta WordPress-pohjaisesta toteutuksesta. @zotero-item-53
 
-![Wordpress network tab][4]
+![Wordpress network tab][3]
 
-*Kuva 4.* Paljastaa, että sivut hakevat tietoa aiemmin mainitusta "wp-content" nimisestä sijainnista, joka viittaa Wordpress-järjestelmään. 
+*Kuva 3.* Paljastaa, että sivut hakevat tietoa aiemmin mainitusta "wp-content" nimisestä sijainnista, joka viittaa Wordpress-järjestelmään. 
 
 Näiden havaintojen perusteella voidaan päätellä, että kohdesivusto on toteutettu WordPress-sisällönhallintajärjestelmällä, ja käytössä oleva versio on 6.9.4. Tämä tieto ohjaa tutkimuksen seuraavia vaiheita, erityisesti tiedonkeruumenetelmien valintaa.
 
