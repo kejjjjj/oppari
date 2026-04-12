@@ -9,6 +9,50 @@ tekstiä tänne
 # Abstract
 text here
 
+# Sanasto
+**Markdown**	Kevyt merkintäkieli, jonka avulla voidaan tuottaa rakenteellista ja helposti        luettavaa tekstiä yksinkertaisella syntaksilla.
+
+**Git** 	Versionhallintajärjestelmä, jonka avulla voidaan seurata tiedostojen muutoksia, 
+hallita eri versioita ja mahdollistaa yhteistyö useiden käyttäjien välillä.
+
+**Github**	Verkkopohjainen alusta, joka hyödyntää Git-versionhallintaa ja mahdollistaa projektien tallentamisen, jakamisen ja yhteistyön.
+
+**Versionhallinta**	Menetelmä, jolla seurataan tiedostojen muutoksia ja hallitaan eri versioita järjestelmällisesti.
+
+**Web scraping**	Menetelmä, jossa tietoa kerätään automaattisesti verkkosivuilta ohjelmallisesti.
+
+**HTML**	Verkkosivujen rakenteen määrittelyyn käytettävä merkintäkieli.
+
+**Markdown-muunnos**	Prosessi, jossa sisältö muunnetaan esimerkiksi HTML-muodosta Markdown-muotoon tai päinvastoin.
+
+**Static Site Generator**	Työkalu, joka muuntaa esimerkiksi Markdown-tiedostoja valmiiksi HTML-sivuiksi ilman dynaamista palvelinpuolen käsittelyä.
+
+**Dokumentaatio**	Kirjallinen kuvaus järjestelmästä, prosessista tai tuotteesta, jonka tarkoituksena on välittää tietoa käyttäjille tai kehittäjille.
+
+**CI/CD**	Kehitysprosessi, jossa muutokset integroidaan ja julkaistaan automaattisesti osana ohjelmistokehitystä.
+
+**JavaScript**	Ohjelmointikieli, jota käytetään erityisesti web-sovellusten kehittämisessä ja selaimessa suoritettavassa logiikassa.
+
+**TypeScript**	JavaScriptiin perustuva ohjelmointikieli, joka sisältää staattisen tyyppijärjestelmän.
+
+**Visual Studio Code**	Koodieditori, joka tukee Markdownia sekä tarjoaa lisäosia ja työkaluja dokumentaation tuottamiseen.
+
+**Pandoc**	Työkalu, jolla voidaan muuntaa dokumentteja eri formaattien välillä, kuten Markdownista Word- tai PDF-muotoon.
+
+**Zotero**	Viitteidenhallintatyökalu, jota käytetään lähteiden keräämiseen, hallintaan ja viittausten tuottamiseen.
+
+**BibTeX**	Viitetiedostomuoto, jota käytetään lähteiden tallentamiseen ja hallintaan erityisesti tieteellisessä kirjoittamisessa.
+
+**GitHub-repositorio**	Projektin tallennuspaikka GitHubissa, joka sisältää tiedostot, versionhistorian ja mahdollistaa yhteistyön.
+
+**JSON** Kevyt, ihmisluettava ja koneluettava tiedonvaihtoformaatti.
+
+**Wordpress** Avoimeen lähdekoodiin perustuva sisällönhallintajärjestelmä (CMS).
+
+**REST** Arkkitehtuurimalli, jonka tarkoitus on mahdollistaa järjestelmien välinen kevyt ja standardoitu tiedonsiirto internetissä.
+
+**API** Komponenttien ja moduulien välinen raja ohjelmoitavassa järjestelmässä.
+
 # 1 Introduction
 
 Digitaalisen dokumentaation merkitys on kasvanut työelämässä, jossa tiedon selkeä ja helposti ylläpidettävä esittäminen on tärkeää. Teknisessä viestinnässä ja ohjelmistokehityksessä tarvitaan ratkaisuja, jotka edesauttavat versionhallintaa ja yhteistyötä. Tästä näkökulmasta Markdown on noussut varteenotettavaksi vaihtoehdoksi perinteisille dokumentointimenetelmille, kuten tekstinkäsittelyohjelmille ja HTML-pohjaisille ratkaisuille. Kiinnostus aiheeseen pohjautuu tarpeeseen löytää yksinkertaisempi ja tehokkaampi tapa tuottaa ja ylläpitää dokumentaatiota, joka on helposti muokattavissa ja siirrettävissä eri ympäristöjen välillä.
@@ -244,15 +288,15 @@ Näiden havaintojen perusteella voidaan päätellä, että kohdesivusto on toteu
 
 Kun kohdesivuston toteutusteknologiaksi on tunnistettu WordPress, voidaan tiedonkeruussa hyödyntää sen tarjoamia rajapintoja perinteisen HTML-pohjaisen web scrapingin sijaan. WordPress sisältää REST API -rajapinnan, jonka avulla sivuston sisältöä voidaan hakea ohjelmallisesti rakenteisessa muodossa. Tämä mahdollistaa luotettavamman tavan kerätä dokumentaatiota verrattuna pelkkään HTML-rakenteen parsimiseen. @zotero-item-54
 
-Tässä tutkimuksessa hyödynnetään erityisesti WordPressin Pages-endpointia, jonka kautta voidaan hakea sivuston sivusisältö JSON-muodossa. Pages-endpoint palauttaa kullekin sivulle keskeiset tiedot, kuten otsikon, sisällön, tunnisteen (ID), julkaisutilan sekä mahdolliset viittaukset yläsivuihin (parent). Näiden tietojen avulla voidaan muodostaa kokonaiskuva sivuston rakenteesta ja sisällöstä ilman, että HTML-koodia tarvitsee erikseen jäsentää. @zotero-item-55
+Tässä tutkimuksessa hyödynnetään erityisesti WordPressin Pages-päätepistettä, jonka kautta voidaan hakea sivuston sivusisältö JSON-muodossa. Pages-päätepiste palauttaa kullekin sivulle keskeiset tiedot, kuten otsikon, sisällön, tunnisteen (ID), julkaisutilan sekä mahdolliset viittaukset yläsivuihin (parent). Näiden tietojen avulla voidaan muodostaa kokonaiskuva sivuston rakenteesta ja sisällöstä ilman, että HTML-koodia tarvitsee erikseen jäsentää. @zotero-item-55
 
 Kohdesivuston osalta varmistetaan käytännössä, että kyseinen rajapinta on käytettävissä. Tämä voidaan todeta tekemällä HTTP-pyyntö osoitteeseen https://www.hamk.fi/wp-json/wp/v2/pages, joka palauttaa sivuston sivuja JSON-muodossa. Vastauksen perusteella voidaan todeta, että HAMK:n sivusto tukee WordPressin REST API -rajapintaa, mikä mahdollistaa sen hyödyntämisen tiedonkeruussa.
 
 ![Wordpress rajapinta][4]
 
-*Kuva 4.* Paljastaa, että https://www.hamk.fi sallii Wordpress REST -rajapinnan käytön.
+*Kuva 4.* Paljastaa, että https://www.hamk.fi sallii Wordpress REST API -rajapinnan käytön.
 
-Tiedonkeruu toteutetaan siten, että Pages-endpointista haetaan kaikki saatavilla olevat sivut. Koska WordPress-sivut voivat muodostaa hierarkkisen rakenteen, aineisto käsitellään rekursiivisesti siten, että myös alasivut ja niiden suhteet otetaan huomioon. Näin voidaan säilyttää alkuperäinen sivurakenne ja siirtää se edelleen Markdown-muotoiseen dokumentaatioon. @zotero-item-55
+Tiedonkeruu toteutetaan siten, että Pages-päätepisteestä haetaan kaikki saatavilla olevat sivut. Koska WordPress-sivut voivat muodostaa hierarkkisen rakenteen, aineisto käsitellään rekursiivisesti siten, että myös alasivut ja niiden suhteet otetaan huomioon. Näin voidaan säilyttää alkuperäinen sivurakenne ja siirtää se edelleen Markdown-muotoiseen dokumentaatioon. @zotero-item-55
 
 ### 5.1.4 Työkalujen valinta
 
@@ -267,6 +311,30 @@ Dokumentaation versionhallintaan otetaan käyttöön Git. Sen avulla muutoksia v
 Itse dokumentaation kirjoittamiseen ja lukemiseen käytetään Visual Studio Codea. Se tarjoaa hyvän tuen Markdownille, live-esikatselun sekä erilaisia laajennuksia, jotka helpottavat työskentelyä. @zotero-item-40
 
 ### 5.1.5 Tietojen kerääminen verkkosivuilta
+
+Tietojen kerääminen toteutetaan hyödyntämällä WordPressin REST API -rajapintaa ohjelmallisesti TypeScriptin avulla. Toteutuksessa rakennetaan funktio, joka muodostaa HTTP-pyynnön Pages-päätepisteeseen (`/wp-json/wp/v2/pages`) ja hakee sivujen sisällön JSON-muodossa. Pyyntöön liitetään parametreja, kuten sivunumero (page) ja haettavien tulosten määrä (per_page), joiden avulla voidaan hallita hakuprosessia ja käsitellä suuria tietomääriä vaiheittain. @zotero-item-55
+
+```
+https://www.hamk.fi/wp-json/wp/v2/Pages?page=1&per_page=10
+```
+
+*Ohjelmakoodi 2.* Havainnollistaa hakuprosessin yhtenä osoitteena.
+
+Keräysprosessi on toteutettu sivutettuna (pagination), mikä tarkoittaa, että sisältö haetaan useassa osassa yksittäisten pyyntöjen sijaan. Jokaisen pyynnön jälkeen tarkastellaan vastausotsakkeita (`X-WP-Total` ja `X-WP-TotalPages`), joiden avulla saadaan tieto kokonaissivumäärästä sekä siitä, kuinka monta sivua on vielä käsittelemättä @zotero-item-58. Tämän perusteella ohjelma jatkaa pyyntöjen tekemistä, kunnes kaikki sivut on haettu.
+
+Tiedonkeruussa huomioidaan myös duplikaattien välttäminen tallentamalla jo käsitellyt sivut tietorakenteeseen, jossa ne yksilöidään esimerkiksi URL-osoitteen perusteella. Lisäksi pyyntöjen väliin lisätään viive, jotta palvelimen kuormitus pysyy kohtuullisena.
+
+```
+hae sivu (page = 1)
+toista niin kauan kuin sivuja on jäljellä:
+    tallenna uudet sivut (vältä duplikaatit)
+    siirry seuraavaan sivuun
+    odota hetki (rate limiting)
+palauta kaikki sivut
+```
+
+*Ohjelmakoodi 3.* Tiedonkeruuprosessin peruslogiikka pseudokoodina.
+
 ### 5.1.6 HTML-sisällön jäsentäminen ja datan parsiminen
 ### 5.1.7 Sisällön muuntaminen Markdown-muotoon
 ### 5.1.8 Dokumentaation rakenteen säilyttäminen ja korjaaminen

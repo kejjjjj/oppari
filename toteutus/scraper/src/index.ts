@@ -1,11 +1,12 @@
-import { getWordpressPage } from "./get/page.js";
+import { getEveryWordpressPage } from "./get/page.js";
+
+const TARGET_URL = "www.hamk.fi";
 
 try {
-    const pages = await getWordpressPage("www.hamk.fi");
+    const results = await getEveryWordpressPage(TARGET_URL, 1000);
 
-    for(const page of pages){
-        console.log(page.link);
-    }
+    console.log("RESULTS: ", results);
+
     
 } catch(ex : unknown) {
     console.error(ex);
