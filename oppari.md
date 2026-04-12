@@ -2,7 +2,7 @@
 [1]: https://github.com/kejjjjj/oppari/blob/main/dokumentaation_merkitys.png?raw=true
 [2]: https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true
 [3]: https://github.com/kejjjjj/oppari/blob/main/wordpress_tunnistus_network.png?raw=true
-[4]: https://github.com/kejjjjj/oppari/blob/main/wordpress_tunnistus_network.png?raw=true
+[4]: https://github.com/kejjjjj/oppari/blob/main/hamk_wordpress_api_rajapinta.png?raw=true
 
 # Abstrakti
 tekstiä tänne
@@ -214,7 +214,7 @@ Metatutkimuksen tavoitteena on arvioida kuinka hyvin Markdown-pohjainen kirjoitu
 tekstiä tänne?
 ## 5.1 HAMK:n julkisten sivujen muuntaminen Markdown-muotoon
 tekstiä tänne?
-### 5.1.1 Tutkimuksen suunnittelu
+### 5.1.1 Tutkimuksen suunnittelu ja rajaus
 tekstiä tänne?
 ### 5.1.2 Kohdesivuston teknologian tunnistaminen
 Tutkimuksen ensimmäisessä vaiheessa tarkastellaan kohdesivuston rakennetta ja toteutusteknologiaa, jotta tiedonkeruu voidaan toteuttaa systemaattisesti ja tarkoituksenmukaisesti. Koska sivuston toteutustapaa ei ole ennalta tiedossa, sen taustateknologia selvitetään hyödyntämällä useita rinnakkaisia tunnistusmenetelmiä. Näihin kuuluvat HTML-lähdekoodin analysointi, HTTP-otsakkeiden tarkastelu sekä selaimen kehitystyökalujen (DevTools) käyttö. Tavoitteena on tunnistaa mahdollisia viitteitä käytetystä sisällönhallintajärjestelmästä, kuten tiedostopolkuja, skriptejä ja meta-tietoja, jotka voivat viitata esimerkiksi WordPressiin tai muuhun vastaavaan järjestelmään.
@@ -254,7 +254,18 @@ Kohdesivuston osalta varmistetaan käytännössä, että kyseinen rajapinta on k
 
 Tiedonkeruu toteutetaan siten, että Pages-endpointista haetaan kaikki saatavilla olevat sivut. Koska WordPress-sivut voivat muodostaa hierarkkisen rakenteen, aineisto käsitellään rekursiivisesti siten, että myös alasivut ja niiden suhteet otetaan huomioon. Näin voidaan säilyttää alkuperäinen sivurakenne ja siirtää se edelleen Markdown-muotoiseen dokumentaatioon. @zotero-item-55
 
-### 5.1.4 Web scraping -menetelmän ja työkalujen valinta (TypeScript)
+### 5.1.4 Työkalujen valinta
+
+Työkalut valitaan työn tavoitteiden perusteella. Tavoitteena on rakentaa mahdollisimman automaattinen ja toistettava prosessi, jolla verkkosivujen sisältö haetaan, käsitellään ja muutetaan Markdown-muotoon. Samalla halutaan varmistaa, että kaikki sopii yhteen nykyisten kehityskäytäntöjen kanssa.
+
+Tiedonkeruuseen valitaan TypeScript. Se tuo mukanaan staattisen tyypityksen, mikä tekee koodista selkeämpää ja helpompaa ylläpitää verrattuna tavalliseen JavaScriptiin. TypeScript sopii hyvin myös HTTP-pyyntöjen tekemiseen sekä JSON-datan käsittelyyn – molemmat ovat oleellisia, kun haetaan sisältöä WordPressin REST API:sta @zotero-item-56. Skriptit ajetaan Node.js-ympäristössä, joten ne voi käynnistää suoraan komentoriviltä. @zotero-item-57
+
+HTML:n muuntamiseen Markdowniksi käytetään valmiita kirjastoja ja työkaluja, jotka osaavat käsitellä HTML-rakennetta ja tuottaa siitä toimivaa Markdown-syntaksia. Näiden avulla suurin osa muunnosprosessista automatisoituu, vaikka joissain tapauksissa sisältö vaatii vielä pientä manuaalista viilausta lopputuloksen viimeistelemiseksi.
+
+Dokumentaation versionhallintaan otetaan käyttöön Git. Sen avulla muutoksia voi seurata, eri versioita hallita ja työtä jatkaa myöhemmin ilman ongelmia. Valmis dokumentaatio tallennetaan GitHub-repositorioon, jossa sitä on helppo jakaa, tarkastella ja kehittää yhdessä muiden kanssa.
+
+Itse dokumentaation kirjoittamiseen ja lukemiseen käytetään Visual Studio Codea. Se tarjoaa hyvän tuen Markdownille, live-esikatselun sekä erilaisia laajennuksia, jotka helpottavat työskentelyä. @zotero-item-40
+
 ### 5.1.5 Tietojen kerääminen verkkosivuilta
 ### 5.1.6 HTML-sisällön jäsentäminen ja datan parsiminen
 ### 5.1.7 Sisällön muuntaminen Markdown-muotoon
