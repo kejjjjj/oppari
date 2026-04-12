@@ -2,6 +2,8 @@
 [1]: https://github.com/kejjjjj/oppari/blob/main/dokumentaation_merkitys.png?raw=true
 [2]: https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true
 [3]: https://github.com/kejjjjj/oppari/blob/main/wordpress_tunnistus_network.png?raw=true
+[4]: https://github.com/kejjjjj/oppari/blob/main/wordpress_tunnistus_network.png?raw=true
+
 # Abstrakti
 tekstiä tänne
 # Abstract
@@ -219,7 +221,7 @@ Tutkimuksen ensimmäisessä vaiheessa tarkastellaan kohdesivuston rakennetta ja 
 
 Sivuston taustateknologian tunnistaminen toteutetaan useiden teknisten tarkastelumenetelmien avulla, koska sivuston toteutustapa ei ole aluksi tiedossa. Lähdekoodin analysointi toteutetaan avaamalla kohdesivusto selaimessa (https://hamk.fi) ja tarkastelemalla sen HTML-rakennetta joko “Näytä sivun lähdekoodi” -toiminnolla tai selaimen kehitystyökaluilla. @zotero-item-52
 
-Lähdekoodista etsimme ensin WordPressille tyypillisiä rakenteita, kuten viittauksia `wp-content`- ja `wp-includes`-hakemistoihin, jotka näkyvät esimerkiksi linkkeinä CSS- ja JavaScript-tiedostoihin. Lisäksi tarkastelemme, sisältääkö koodi meta-tagin kuten `<meta name="generator" content="WordPress">`, joka suoraan kertoo käytetystä julkaisujärjestelmästä. @zotero-item-51
+Yleisin sisällönhallintajärjestelmä on Wordpress, joten lähdekoodista etsimme ensin sille tyypillisiä rakenteita, kuten viittauksia `wp-content`- ja `wp-includes`-hakemistoihin, jotka näkyvät esimerkiksi linkkeinä CSS- ja JavaScript-tiedostoihin. Lisäksi tarkastelemme, sisältääkö koodi meta-tagin kuten `<meta name="generator" content="WordPress">`, joka suoraan kertoo käytetystä julkaisujärjestelmästä. @zotero-item-51
 
 Käytännössä kun lähdekoodia selaa, niin sieltä löytyy monia eri vihjeitä, jotka vihjaavat Wordpressin olemassaoloon.
 
@@ -239,6 +241,19 @@ Lähdekoodianalyysin lisäksi hyödynnetään selaimen kehitystyökaluja verkkol
 Näiden havaintojen perusteella voidaan päätellä, että kohdesivusto on toteutettu WordPress-sisällönhallintajärjestelmällä, ja käytössä oleva versio on 6.9.4. Tämä tieto ohjaa tutkimuksen seuraavia vaiheita, erityisesti tiedonkeruumenetelmien valintaa.
 
 ### 5.1.3 Kohdesivuston teknologian hyödyntäminen
+
+Kun kohdesivuston toteutusteknologiaksi on tunnistettu WordPress, voidaan tiedonkeruussa hyödyntää sen tarjoamia rajapintoja perinteisen HTML-pohjaisen web scrapingin sijaan. WordPress sisältää REST API -rajapinnan, jonka avulla sivuston sisältöä voidaan hakea ohjelmallisesti rakenteisessa muodossa. Tämä mahdollistaa luotettavamman tavan kerätä dokumentaatiota verrattuna pelkkään HTML-rakenteen parsimiseen. @zotero-item-54
+
+Tässä tutkimuksessa hyödynnetään erityisesti WordPressin Pages-endpointia, jonka kautta voidaan hakea sivuston sivusisältö JSON-muodossa. Pages-endpoint palauttaa kullekin sivulle keskeiset tiedot, kuten otsikon, sisällön, tunnisteen (ID), julkaisutilan sekä mahdolliset viittaukset yläsivuihin (parent). Näiden tietojen avulla voidaan muodostaa kokonaiskuva sivuston rakenteesta ja sisällöstä ilman, että HTML-koodia tarvitsee erikseen jäsentää. @zotero-item-55
+
+Kohdesivuston osalta varmistetaan käytännössä, että kyseinen rajapinta on käytettävissä. Tämä voidaan todeta tekemällä HTTP-pyyntö osoitteeseen https://www.hamk.fi/wp-json/wp/v2/pages, joka palauttaa sivuston sivuja JSON-muodossa. Vastauksen perusteella voidaan todeta, että HAMK:n sivusto tukee WordPressin REST API -rajapintaa, mikä mahdollistaa sen hyödyntämisen tiedonkeruussa.
+
+![Wordpress rajapinta][4]
+
+*Kuva 4.* Paljastaa, että https://www.hamk.fi sallii Wordpress REST -rajapinnan käytön.
+
+Tiedonkeruu toteutetaan siten, että Pages-endpointista haetaan kaikki saatavilla olevat sivut. Koska WordPress-sivut voivat muodostaa hierarkkisen rakenteen, aineisto käsitellään rekursiivisesti siten, että myös alasivut ja niiden suhteet otetaan huomioon. Näin voidaan säilyttää alkuperäinen sivurakenne ja siirtää se edelleen Markdown-muotoiseen dokumentaatioon. @zotero-item-55
+
 ### 5.1.4 Web scraping -menetelmän ja työkalujen valinta (TypeScript)
 ### 5.1.5 Tietojen kerääminen verkkosivuilta
 ### 5.1.6 HTML-sisällön jäsentäminen ja datan parsiminen
