@@ -17,5 +17,9 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "node-html-parser": "^7.1.0",
+    "turndown": "^7.2.4"
   }
 }

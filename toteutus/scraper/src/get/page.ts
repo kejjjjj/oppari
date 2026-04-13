@@ -65,8 +65,9 @@ export async function getEveryWordpressPage(url: string, intervalMs : number = 1
                 continue;
 
             browsedPages.set(resultPage.link, resultPage);
-            console.log(resultPage.link);
+            //console.log(resultPage.link);
         }
+        break;
 
         await sleep(intervalMs);
 

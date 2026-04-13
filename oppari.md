@@ -336,6 +336,62 @@ palauta kaikki sivut
 *Ohjelmakoodi 3.* Tiedonkeruuprosessin peruslogiikka pseudokoodina.
 
 ### 5.1.6 HTML-sisällön jäsentäminen ja datan parsiminen
+
+Kerätyn aineiston jatkokäsittelyssä keskitytään HTML-sisällön jäsentämiseen ja olennaisen datan erotteluun. WordPressin REST API:n kautta haettu sisältö sisältää sivujen varsinaisen sisällön HTML-muodossa, tyypillisesti `content.rendered`-kentässä (@zotero-item-55). Tämän ansiosta HTML-koodiin päästään suoraan käsiksi ilman erillistä sivun lataamista selaimen kautta, mikä helpottaa tiedon käsittelyä ja mahdollistaa täysin ohjelmallisen lähestymistavan.
+
+```
+syöte = page.content.rendered
+```
+
+*Ohjelmakoodi 4.* Luo "syöte" nimisen muuttujan, jonka arvoksi asetetaan sivun HTML-rakenne.
+
+Jokaisen haetun sivun HTML-sisältö käydään systemaattisesti läpi analysoimalla sen rakenne. Tavoitteena on tunnistaa ja poimia dokumentaation kannalta oleelliset elementit, kuten otsikot, kappaleet, linkit ja kuvat. Jäsentäminen toteutetaan ohjelmallisesti siten, että HTML-koodista tunnistetaan eri elementtejä vastaavat tagit, kuten otsikkotasot (`<h1>-<h6>`), kappaleet (`<p>`), hyperlinkit (`<a>`) sekä kuvat (`<img>`).
+
+Näiden elementtien sisältö ja attribuutit, kuten linkkien URL-osoitteet tai kuvien lähdepolut, erotellaan jatkokäsittelyä varten. Prosessin tavoitteena on muuntaa HTML-muotoinen sisältö jäsennellyksi tietorakenteeksi, jota voidaan hyödyntää myöhemmässä vaiheessa Markdown-muotoon konvertoinnissa. Samalla pyritään säilyttämään alkuperäinen dokumenttirakenne mahdollisimman tarkasti.
+
+Ensimmäisessä vaiheessa HTML jäsennetään DOM-puuksi, jonka jälkeen sisältöalue käsitellään yhtenä kokonaisuutena. Tässä tutkimuksessa oletetaan, että varsinainen sisältö sijaitsee juurielementissä, mutta rakenteen vaihtelun vuoksi käytetään lähestymistapaa, jossa koko DOM-puu toimii lähtöpisteenä.
+
+```
+htmlPuu = jäsennäHTML(syöte)
+sisältöJuuri = htmlPuu // fallback: koko puu
+```
+
+*Ohjelmakoodi 5.* Havainnollistaa DOM-puun jäsentämistä
+
+Seuraavaksi sisältöä siistitään poistamalla dokumentaation kannalta epäolennaiset elementit. Tällaisia ovat esimerkiksi navigaatioon ja visuaalisiin tehosteisiin liittyvät elementit, kuten breadcrumb-polut, SVG-grafiikka, kuvat sekä metatiedot. Tämän vaiheen tarkoituksena on vähentää kohinaa ja varmistaa, että lopullinen data sisältää vain dokumentaation kannalta relevantin sisällön.
+
+```
+poista sisältöJuuresta:
+    breadcrumbit
+    svg-elementit
+    kuvat
+    metatiedot
+```
+
+*Ohjelmakoodi 6.* Havainnollistaa epäollenaisten elementtien poistamista DOM-puusta. 
+
+Tämän jälkeen DOM-puusta suodatetaan vain Markdown-muunnoksen kannalta olennaiset HTML-elementit, kuten otsikot, kappaleet, listat ja rivinvaihdot. Näin muodostetaan rajattu ja hallittu rakenne, joka voidaan muuntaa edelleen tekstipohjaiseen muotoon.
+
+```
+sallitutTagit = [otsikot, kappale, lista, li, rivinvaihto]
+suodatetutSolmut = hae sisältöJuuresta vain sallitutTagit
+```
+
+*Ohjelmakoodi 7.* Avulla suodatetaan pois turhat tagit. 
+
+
+Prosessin lopuksi jäljelle jääneet elementit serialisoidaan yhtenäiseksi HTML-rakenteeksi, joka toimii välivaiheena Markdown-muunnoksessa. Serialisointi säilyttää dokumentin rakenteen, mutta poistaa ylimääräiset elementit ja normalisoi sisällön käsittelyä varten.
+
+```
+tulos = ""
+jokaiselle solmulle suodatetuissaSolmuissa:
+    tulos += muunnaHTML(solmu)
+palauta tulos
+```
+
+*Ohjelmakoodi 8.* Havainnollistaa tuloksen luomista suodatetuista solmuista. 
+
+
 ### 5.1.7 Sisällön muuntaminen Markdown-muotoon
 ### 5.1.8 Dokumentaation rakenteen säilyttäminen ja korjaaminen
 ### 5.1.9 Versionhallintaan siirtäminen (Git)
