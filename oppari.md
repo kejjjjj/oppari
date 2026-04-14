@@ -351,12 +351,29 @@ Näiden elementtien sisältö ja attribuutit, kuten linkkien URL-osoitteet tai k
 
 Ensimmäisessä vaiheessa HTML jäsennetään DOM-puuksi, jonka jälkeen sisältöalue käsitellään yhtenä kokonaisuutena. Tässä tutkimuksessa oletetaan, että varsinainen sisältö sijaitsee juurielementissä, mutta rakenteen vaihtelun vuoksi käytetään lähestymistapaa, jossa koko DOM-puu toimii lähtöpisteenä.
 
-```
-htmlPuu = jäsennäHTML(syöte)
-sisältöJuuri = htmlPuu // fallback: koko puu
+```html
+<html lang="en">
+  <head>
+    <title>My Document</title>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <p>Paragraph</p>
+  </body>
+</html>
 ```
 
-*Ohjelmakoodi 5.* Havainnollistaa DOM-puun jäsentämistä
+*Ohjelmakoodi 5.* Havainnollistaa DOM-rakennetta koodimuodossa.
+
+![DOM-tree](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/using_the_w3c_dom_level_1_core-doctree.jpg)
+
+*Kuva 5.* Havainnollistaa ylläolevaa HTML-koodia kuvana @zotero-item-59.
+
+```
+sisältöJuuri = jäsennäHTML(syöte)
+```
+
+*Ohjelmakoodi 6.* Havainnollistaa DOM-puun jäsentämistä
 
 Seuraavaksi sisältöä siistitään poistamalla dokumentaation kannalta epäolennaiset elementit. Tällaisia ovat esimerkiksi navigaatioon ja visuaalisiin tehosteisiin liittyvät elementit, kuten breadcrumb-polut, SVG-grafiikka, kuvat sekä metatiedot. Tämän vaiheen tarkoituksena on vähentää kohinaa ja varmistaa, että lopullinen data sisältää vain dokumentaation kannalta relevantin sisällön.
 
@@ -368,7 +385,7 @@ poista sisältöJuuresta:
     metatiedot
 ```
 
-*Ohjelmakoodi 6.* Havainnollistaa epäollenaisten elementtien poistamista DOM-puusta. 
+*Ohjelmakoodi 7.* Havainnollistaa epäollenaisten elementtien poistamista DOM-puusta. 
 
 Tämän jälkeen DOM-puusta suodatetaan vain Markdown-muunnoksen kannalta olennaiset HTML-elementit, kuten otsikot, kappaleet, listat ja rivinvaihdot. Näin muodostetaan rajattu ja hallittu rakenne, joka voidaan muuntaa edelleen tekstipohjaiseen muotoon.
 
@@ -377,8 +394,7 @@ sallitutTagit = [otsikot, kappale, lista, li, rivinvaihto]
 suodatetutSolmut = hae sisältöJuuresta vain sallitutTagit
 ```
 
-*Ohjelmakoodi 7.* Avulla suodatetaan pois turhat tagit. 
-
+*Ohjelmakoodi 8.* Avulla suodatetaan pois turhat tagit. 
 
 Prosessin lopuksi jäljelle jääneet elementit serialisoidaan yhtenäiseksi HTML-rakenteeksi, joka toimii välivaiheena Markdown-muunnoksessa. Serialisointi säilyttää dokumentin rakenteen, mutta poistaa ylimääräiset elementit ja normalisoi sisällön käsittelyä varten.
 
@@ -389,11 +405,73 @@ jokaiselle solmulle suodatetuissaSolmuissa:
 palauta tulos
 ```
 
-*Ohjelmakoodi 8.* Havainnollistaa tuloksen luomista suodatetuista solmuista. 
-
+*Ohjelmakoodi 9.* Havainnollistaa tuloksen luomista suodatetuista solmuista. 
 
 ### 5.1.7 Sisällön muuntaminen Markdown-muotoon
-### 5.1.8 Dokumentaation rakenteen säilyttäminen ja korjaaminen
+
+Kun HTML-sisältö on jäsennetty ja suodatettu edellisessä vaiheessa, se muunnetaan Markdown-muotoon jatkokäyttöä varten. Muunnos toteutetaan ohjelmallisesti siten, että jokaisen sivun käsitelty HTML syötetään muunnostyökalulle, joka tuottaa vastaavan Markdown-esityksen. Tämä vaihe mahdollistaa dokumentaation siirtämisen tekstipohjaiseen ja helposti versionhallittavaan muotoon.
+
+```
+funktio muunnaMarkdowniksi(html):
+    luo turndown-olio
+    palauta turndown.muunna(html)
+
+markdown = muunnaMarkdowniksi(tulos)
+```
+
+*Ohjelmakoodi 10.* Havainnollistaa tuloksen muuntamista markdown-muotoon.
+
+Markdown-muunnos toteutetaan käyttämällä valmista kirjastoa, joka osaa muuntaa HTML-rakenteet vastaaviksi Markdown-rakenteiksi. Tässä työssä hyödynnetään Turndown-kirjastoa, joka on TypeScript-ympäristössä yleisesti käytetty työkalu HTML / Markdown -muunnokseen. Kirjasto käsittelee automaattisesti yleisimmät HTML-elementit, kuten otsikot, kappaleet, listat ja linkit, ja muuntaa ne Markdown-syntaksia vastaavaan muotoon. @zotero-item-47
+
+```html
+<h1>Turndown Demo</h1>
+
+<p>This demonstrates <a href="https://github.com/mixmark-io/turndown">turndown</a> – an HTML to Markdown converter in JavaScript.</p>
+
+<h2>Usage</h2>
+
+<pre><code class="language-js">var turndownService = new TurndownService()
+console.log(turndownService.turndown('&lt;h1&gt;Hello world&lt;/h1&gt;'))</code></pre>
+
+<p>It aims to be <a href="http://commonmark.org/">CommonMark</a>
+ compliant, and includes options to style the output. These options include:</p>
+
+<ul>
+  <li>headingStyle (setext or atx)</li>
+</ul>
+```
+
+*Ohjelmakoodi 11.* Esimerkki muunnettavasta HTML-koodista.
+
+```markdown
+Turndown Demo
+=============
+
+This demonstrates [turndown](https://github.com/mixmark-io/turndown) – an HTML to Markdown converter in JavaScript.
+
+Usage
+-----
+
+    var turndownService = new TurndownService()
+    console.log(turndownService.turndown('<h1>Hello world</h1>'))
+
+It aims to be [CommonMark](http://commonmark.org/) compliant, and includes options to style the output. These options include:
+
+*   headingStyle (setext or atx)
+```
+
+*Ohjelmakoodi 12.* Havainnollistaa muunnettua koodia.
+
+Muunnoksen etuna on se, että Markdown säilyttää dokumentin rakenteen kevyessä ja helposti luettavassa muodossa. Esimerkiksi HTML-otsikot muunnetaan Markdown-otsikoiksi (#, ##), kappaleet säilyvät tekstinä ja listat muuttuvat Markdown-listoiksi. Näin alkuperäinen sisältö pysyy ymmärrettävänä, mutta sen esitysmuoto yksinkertaistuu merkittävästi.
+
+Lisäksi muunnosvaihe toimii eräänlaisena normalisointivaiheena, jossa eri sivuilta kerätty sisältö yhtenäistyy samaan formaattiin. Tämä helpottaa dokumentaation jatkokäsittelyä, versionhallintaa sekä julkaisemista eri alustoilla. Markdown-muotoinen sisältö voidaan esimerkiksi tallentaa suoraan GitHub-repositorioon tai muuntaa edelleen muihin formaatteihin, kuten HTML- tai PDF-muotoon.
+
+Lopputuloksena saadaan Markdown-muotoinen dokumentaatio, joka voidaan tallentaa tiedostoiksi ja siirtää versionhallintaan. Tämä mahdollistaa dokumentaation jatkokäsittelyn, julkaisemisen sekä integroinnin muihin työkaluihin, kuten staattisiin sivustogeneraattoreihin tai dokumentaatioalustoihin.
+
+### 5.1.8 Dokumentaation rakenteen muuntaminen tiedostorakenteeksi
+
+
+
 ### 5.1.9 Versionhallintaan siirtäminen (Git)
 ### 5.1.10 Julkaisu ja tallennus GitHub-repositorioon
 ### 5.1.11 Tulosten validointi ja vertailu alkuperäiseen dokumentaatioon

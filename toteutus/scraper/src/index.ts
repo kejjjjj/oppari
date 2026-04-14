@@ -1,3 +1,4 @@
+import { convertHtmlToMarkdown } from "./conversion/conversion.js";
 import { getEveryWordpressPage } from "./get/page.js";
 import { parseWordPressPage } from "./parsing/page.js";
 
@@ -7,8 +8,10 @@ try {
     const results = await getEveryWordpressPage(TARGET_URL, 1000);
 
     for(const page of results){
-        const _ = parseWordPressPage(page);
-        //console.log(result);
+        const htmlCode = parseWordPressPage(page);
+        const markdown = convertHtmlToMarkdown(htmlCode);
+
+        console.log(markdown);
     }
 
     //console.log("RESULTS: ", results);
