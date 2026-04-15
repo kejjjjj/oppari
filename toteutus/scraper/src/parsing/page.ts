@@ -28,8 +28,6 @@ export function parseWordPressPage(page: WpPage) : string {
     const filteredNodes = contentRoot.querySelectorAll(allowedTags.join(","));
     const result = convertToHtml(filteredNodes);
     
-    console.log(result);
-
     return result;
 }
 

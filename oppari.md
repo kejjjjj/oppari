@@ -470,7 +470,49 @@ Lopputuloksena saadaan Markdown-muotoinen dokumentaatio, joka voidaan tallentaa 
 
 ### 5.1.8 Dokumentaation rakenteen muuntaminen tiedostorakenteeksi
 
+Markdown-muotoon muunnettu sisältö tallennetaan lopuksi tiedostojärjestelmään siten, että se muodostaa loogisen ja navigoitavan dokumentaatiokokonaisuuden. Tässä vaiheessa yksittäiset Markdown-sisällöt yhdistetään tiedostorakenteeksi, joka vastaa mahdollisimman hyvin alkuperäisen verkkosivuston rakennetta.
 
+Prosessi alkaa muodostamalla jokaiselle sivulle yksilöllinen tunniste (key), joka perustuu sivun URL-osoitteeseen. URL:n polkuosasta poistetaan alku- ja loppuviivat, jolloin saadaan tiedostonimiä vastaava rakenne. Mikäli polku on tyhjä, käytetään oletuksena nimeä _index_, mikä vastaa tyypillistä verkkosivujen etusivurakennetta.
+
+```
+jokaiselle sivulle:
+    urlPolku = hae URL:n polkuosa
+    key = poista alun ja lopun kauttaviivat
+    jos key on tyhjä:
+        key = "index"
+```
+
+*Ohjelmakoodi 13.* Havainnollistaa tiedostonimen luontia.
+
+Seuraavaksi jokaisen sivun HTML muunnetaan Markdown-muotoon ja tallennetaan tietorakenteeseen, jossa avaimena toimii edellä muodostettu key. Tämä mahdollistaa sisällön käsittelyn ennen varsinaista tallennusta, esimerkiksi linkkien päivittämisen.
+
+Yksi oleellinen vaihe on sisäisten linkkien päivittäminen. Koska alkuperäiset linkit viittaavat lähdesivustoon, ne muunnetaan osoittamaan uuteen kohteeseen (esimerkiksi GitHub Pages -ympäristöön). Tämä tehdään etsimällä Markdown-sisällöstä kaikki alkuperäiseen osoitteeseen viittaavat URL-osoitteet ja korvaamalla ne vastaavilla uusilla osoitteilla, mikäli kohdesivu löytyy kerätystä aineistosta.
+
+```
+jokaiselle (key, markdown):
+    etsi kaikki linkit jotka viittaavat alkuperäiseen sivustoon
+    jos linkin kohde löytyy kerätystä datasta:
+        korvaa linkki uudella URL-osoitteella
+    tallenna päivitetty markdown
+```
+
+*Ohjelmakoodi 14.* Havainnollistaa URL-osoitteiden muuntamista.
+
+Lopuksi muodostetaan varsinainen tiedostorakenne ja kirjoitetaan Markdown-tiedostot levylle. Ennen tallennusta mahdollinen vanha hakemisto poistetaan, jotta vältetään vanhentuneen datan jääminen järjestelmään. Tiedostonimet normalisoidaan poistamalla mahdolliset erikoismerkit, ja tarvittavat hakemistot luodaan automaattisesti.
+
+```
+jos output-kansio on olemassa:
+    poista kansio
+
+jokaiselle (key, markdown):
+    tiedostonimi = key + ".md"
+    varmista että hakemisto on olemassa
+    kirjoita tiedosto levylle
+```
+
+*Ohjelmakoodi 15.* Havainnollistaa kansioiden ja tiedostojen luomista.
+
+Tämän vaiheen lopputuloksena syntyy selkeä tiedostopohjainen dokumentaatiorakenne, joka vastaa alkuperäisen sivuston loogista rakennetta. Rakennetta voidaan hyödyntää suoraan versionhallinnassa sekä julkaista esimerkiksi staattisena verkkosivustona.
 
 ### 5.1.9 Versionhallintaan siirtäminen (Git)
 ### 5.1.10 Julkaisu ja tallennus GitHub-repositorioon

@@ -56,9 +56,11 @@ export async function getEveryWordpressPage(url: string, intervalMs : number = 1
     const browsedPages = new Map<string, WpPage>();
 
     do{
-        console.log("page: ", page);
         fetchedPages = await getWordpressPage(url, page++, 10);
         
+        console.log("page: ", page - 1, " / ", fetchedPages.remainingPages, " (total: ", fetchedPages.totalPagesCount, ")");
+
+
         for(const resultPage of fetchedPages.pages){
 
             if(browsedPages.has(resultPage.link))
@@ -67,11 +69,11 @@ export async function getEveryWordpressPage(url: string, intervalMs : number = 1
             browsedPages.set(resultPage.link, resultPage);
             //console.log(resultPage.link);
         }
-        break;
 
         await sleep(intervalMs);
 
-    } while (fetchedPages.remainingPages > 0);
+        
+    } while (page < fetchedPages.remainingPages + 1);
 
     return Array.from(browsedPages.values());
 }

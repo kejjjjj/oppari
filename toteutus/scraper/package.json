@@ -19,6 +19,7 @@
     "typescript": "^6.0.2"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "node-html-parser": "^7.1.0",
     "turndown": "^7.2.4"
   }
