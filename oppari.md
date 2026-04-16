@@ -514,6 +514,16 @@ jokaiselle (key, markdown):
 
 Tämän vaiheen lopputuloksena syntyy selkeä tiedostopohjainen dokumentaatiorakenne, joka vastaa alkuperäisen sivuston loogista rakennetta. Rakennetta voidaan hyödyntää suoraan versionhallinnassa sekä julkaista esimerkiksi staattisena verkkosivustona.
 
+### 5.1.9. Static site generatorin käyttöönotto (Docusaurus)
+
+Kun dokumentaatio on muunnettu Markdown-muotoon ja tallennettu tiedostorakenteeksi, seuraava vaihe on sen julkaiseminen staattisena verkkosivustona. Tässä työssä tähän tarkoitukseen valitaan Docusaurus, joka on Node.js-ympäristössä toimiva staattisten sivustojen generaattori ja tukee Markdown-pohjaista dokumentaatiota suoraan. @zotero-item-60
+
+Docusauruksen käyttöönotto perustuu siihen, että kaikki tuotettu Markdown-sisältö sijoitetaan projektin `docs`-hakemistoon. Koska aiemmassa vaiheessa muodostettu tiedostorakenne vastaa loogisesti dokumentaation rakennetta, se voidaan siirtää sellaisenaan tähän hakemistoon ilman merkittäviä muutoksia. Näin dokumentaation hierarkia säilyy ja Docusaurus pystyy automaattisesti muodostamaan navigaation tiedostorakenteen perusteella.
+
+Kun tiedostot on siirretty, Docusaurus generoi automaattisesti staattisen sivuston Markdown-tiedostojen perusteella. Jokainen `.md`-tiedosto muunnetaan HTML-sivuksi, ja hakemistorakenne määrittää sivujen välisen navigaation. Lisäksi Docusaurus tarjoaa valmiita ominaisuuksia, kuten sivupalkit (sidebar), hakutoiminnallisuuden sekä versionhallinnan tuen.
+
+Tämän vaiheen lopputuloksena syntyy toimiva dokumentaatiosivusto, jossa aiemmin kerätty ja muunnettu sisältö on esitettävissä selkeässä ja käyttäjäystävällisessä muodossa.
+
 ### 5.1.9 Versionhallintaan siirtäminen (Git)
 ### 5.1.10 Julkaisu ja tallennus GitHub-repositorioon
 ### 5.1.11 Tulosten validointi ja vertailu alkuperäiseen dokumentaatioon
