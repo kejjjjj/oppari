@@ -3,6 +3,8 @@
 [2]: https://github.com/kejjjjj/oppari/blob/main/markdown_example.png?raw=true
 [3]: https://github.com/kejjjjj/oppari/blob/main/wordpress_tunnistus_network.png?raw=true
 [4]: https://github.com/kejjjjj/oppari/blob/main/hamk_wordpress_api_rajapinta.png?raw=true
+[5]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/using_the_w3c_dom_level_1_core-doctree.jpg
+[6]: https://github.com/kejjjjj/oppari/blob/main/docusaurus.png?raw=true
 
 # Abstrakti
 tekstiä tänne
@@ -365,7 +367,7 @@ Ensimmäisessä vaiheessa HTML jäsennetään DOM-puuksi, jonka jälkeen sisält
 
 *Ohjelmakoodi 5.* Havainnollistaa DOM-rakennetta koodimuodossa.
 
-![DOM-tree](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/using_the_w3c_dom_level_1_core-doctree.jpg)
+![DOM-tree][5]
 
 *Kuva 5.* Havainnollistaa ylläolevaa HTML-koodia kuvana @zotero-item-59.
 
@@ -514,7 +516,7 @@ jokaiselle (key, markdown):
 
 Tämän vaiheen lopputuloksena syntyy selkeä tiedostopohjainen dokumentaatiorakenne, joka vastaa alkuperäisen sivuston loogista rakennetta. Rakennetta voidaan hyödyntää suoraan versionhallinnassa sekä julkaista esimerkiksi staattisena verkkosivustona.
 
-### 5.1.9. Static site generatorin käyttöönotto (Docusaurus)
+### 5.1.9 Static site generatorin käyttöönotto (Docusaurus)
 
 Kun dokumentaatio on muunnettu Markdown-muotoon ja tallennettu tiedostorakenteeksi, seuraava vaihe on sen julkaiseminen staattisena verkkosivustona. Tässä työssä tähän tarkoitukseen valitaan Docusaurus, joka on Node.js-ympäristössä toimiva staattisten sivustojen generaattori ja tukee Markdown-pohjaista dokumentaatiota suoraan. @zotero-item-60
 
@@ -522,7 +524,13 @@ Docusauruksen käyttöönotto perustuu siihen, että kaikki tuotettu Markdown-si
 
 Kun tiedostot on siirretty, Docusaurus generoi automaattisesti staattisen sivuston Markdown-tiedostojen perusteella. Jokainen `.md`-tiedosto muunnetaan HTML-sivuksi, ja hakemistorakenne määrittää sivujen välisen navigaation. Lisäksi Docusaurus tarjoaa valmiita ominaisuuksia, kuten sivupalkit (sidebar), hakutoiminnallisuuden sekä versionhallinnan tuen.
 
+Käyttöönoton yhteydessä havaittiin kuitenkin joitakin alkuperäisestä aineistosta peräisin olevia ongelmia. Osa URL-linkeistä oli rikkinäisiä tai viittasi virheellisiin kohteisiin, minkä vuoksi niitä jouduttiin korjaamaan manuaalisesti. Lisäksi englanninkielisillä sivuilla esiintyi linkkejä suomenkielisiin sivuihin, mikä heikentää dokumentaation johdonmukaisuutta ja käyttäjäkokemusta. Nämä virheet eivät syntyneet muunnosprosessissa, vaan olivat jo osa alkuperäistä verkkosivustoa.
+
 Tämän vaiheen lopputuloksena syntyy toimiva dokumentaatiosivusto, jossa aiemmin kerätty ja muunnettu sisältö on esitettävissä selkeässä ja käyttäjäystävällisessä muodossa.
+
+![Docusaurus][6]
+
+*Kuva 6.* Havainnollistaa valmista Docusaurus-sivustoa.
 
 ### 5.1.9 Versionhallintaan siirtäminen (Git)
 ### 5.1.10 Julkaisu ja tallennus GitHub-repositorioon
