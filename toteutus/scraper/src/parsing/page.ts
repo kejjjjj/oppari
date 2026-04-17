@@ -35,10 +35,35 @@ function convertToHtml(nodes: HtmlParser.HTMLElement[]): string {
     return nodes.map(node => serialize(node)).join("\n").trim();
 }
 function escapeHtml(str: string): string {
-    return str
+    let result = str
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
+
+    result = result.replace(/https?:\/\/[^\s<>()]+(?:\s+[^\s<>()]+)*/g, (rawUrl) => {
+        const url = rawUrl.replace(/\s+/g, ""); // remove ALL whitespace
+
+        try {
+            const decoded = decodeURI(url);
+
+            const isSuspicious =
+                decoded.length > 200 ||
+                decoded.includes("xn--") ||
+                /[^\x00-\x7F]/.test(decoded);
+
+            if (isSuspicious) {
+                return `\`${url}\``;
+            }
+
+            new URL(url);
+            return url;
+
+        } catch {
+            return `\`${url}\``;
+        }
+    });
+
+    return result;
 }
 function serialize(node: HtmlParser.Node): string {
     // Handle text nodes (and other non-element nodes)
@@ -47,11 +72,11 @@ function serialize(node: HtmlParser.Node): string {
         return escapeHtml(text);
     }
 
-    // Now we know it's an element
+    // now we know it's an element
     const el = node as HtmlParser.HTMLElement;
     const tag = el.tagName.toLowerCase();
 
-    // Compute inner content once
+    // compute inner content once
     const inner = el.childNodes?.map(serialize).join("") ?? "";
 
     switch (tag) {
@@ -68,7 +93,6 @@ function serialize(node: HtmlParser.Node): string {
 
         case "a": {
             const href = el.getAttribute?.("href") ?? "";
-            // Basic escaping for safety (you can improve this later)
             const safeHref = escapeHtml(href);
             return `<a href="${safeHref}">${inner}</a>`;
         }
@@ -79,13 +103,10 @@ function serialize(node: HtmlParser.Node): string {
         case "br":
             return "<br>";
 
-        // You can easily extend this with more special cases
         // case "img":
         // case "div":
-        // etc.
 
         default:
-            // For unknown tags, just return their inner content (or you can wrap them)
             return inner;
     }
 }

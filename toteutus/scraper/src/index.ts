@@ -64,7 +64,7 @@ try {
         //     console.log("----");
         // }
 
-        updatedMap.set(key, updatedMarkdown);
+        updatedMap.set(key, updatedMarkdown.replace("https:// ", "https://"));
     }
     if(fs.existsSync(`./${OUTPUT_DIR}`))
         fs.rmSync(`./${OUTPUT_DIR}`, { recursive: true, force: true });
