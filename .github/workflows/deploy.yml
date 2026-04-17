@@ -32,7 +32,7 @@ jobs:
       # Run the scraper (TypeScript)
       - name: Run scraper
         working-directory: toteutus/scraper
-        run: npm run build
+        run: npm run start
 
       # Move generated docs into Docusaurus
       - name: Move generated docs
