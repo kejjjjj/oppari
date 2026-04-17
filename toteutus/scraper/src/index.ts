@@ -5,7 +5,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 const TARGET_URL = "www.hamk.fi";
-const MY_URL = "kejjjjj.github.io/thesis/docs/hamk";
+const MY_URL = "kejjjjj.github.io/oppari/docs/hamk";
 const OUTPUT_DIR = path.join(import.meta.dirname, "hamk");
 
 type Markdown = string;
