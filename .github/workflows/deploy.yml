@@ -29,7 +29,10 @@ jobs:
         working-directory: toteutus/scraper
         run: npm install
 
-      # Run the scraper (TypeScript)
+      - name: Build scraper
+        working-directory: toteutus/scraper
+        run: npm run build
+
       - name: Run scraper
         working-directory: toteutus/scraper
         run: npm run start
