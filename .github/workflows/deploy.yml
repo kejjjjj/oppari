@@ -1,0 +1,71 @@
+name: Build and Deploy Docusaurus
+
+on:
+  push:
+    branches:
+      - main 
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Install dependencies for scraper
+      - name: Install scraper deps
+        working-directory: toteutus/scraper
+        run: npm install
+
+      # Run the scraper (TypeScript)
+      - name: Run scraper
+        working-directory: toteutus/scraper
+        run: npm run build
+
+      # Move generated docs into Docusaurus
+      - name: Move generated docs
+        run: |
+          rm -rf toteutus/ssc/my-docs
+          mkdir -p toteutus/ssc/my-docs
+          cp -r toteutus/scraper/hamk/* toteutus/ssc/my-docs/
+
+      # Install Docusaurus deps
+      - name: Install Docusaurus deps
+        working-directory: toteutus/ssc
+        run: npm install
+
+      # Build Docusaurus
+      - name: Build site
+        working-directory: toteutus/ssc
+        run: npm run build
+
+      # Upload build output for Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: toteutus/ssc/build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

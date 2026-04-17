@@ -304,7 +304,7 @@ Tiedonkeruu toteutetaan siten, että Pages-päätepisteestä haetaan kaikki saat
 
 Työkalut valitaan työn tavoitteiden perusteella. Tavoitteena on rakentaa mahdollisimman automaattinen ja toistettava prosessi, jolla verkkosivujen sisältö haetaan, käsitellään ja muutetaan Markdown-muotoon. Samalla halutaan varmistaa, että kaikki sopii yhteen nykyisten kehityskäytäntöjen kanssa.
 
-Tiedonkeruuseen valitaan TypeScript. Se tuo mukanaan staattisen tyypityksen, mikä tekee koodista selkeämpää ja helpompaa ylläpitää verrattuna tavalliseen JavaScriptiin. TypeScript sopii hyvin myös HTTP-pyyntöjen tekemiseen sekä JSON-datan käsittelyyn – molemmat ovat oleellisia, kun haetaan sisältöä WordPressin REST API:sta @zotero-item-56. Skriptit ajetaan Node.js-ympäristössä, joten ne voi käynnistää suoraan komentoriviltä. @zotero-item-57
+Tiedonkeruuseen valitaan TypeScript. Se tuo mukanaan staattisen tyypityksen, mikä tekee koodista selkeämpää ja helpompaa ylläpitää verrattuna tavalliseen JavaScriptiin. TypeScript sopii hyvin myös HTTP-pyyntöjen tekemiseen sekä JSON-datan käsittelyyn - molemmat ovat oleellisia, kun haetaan sisältöä WordPressin REST API:sta @zotero-item-56. Skriptit ajetaan Node.js-ympäristössä, joten ne voi käynnistää suoraan komentoriviltä. @zotero-item-57
 
 HTML:n muuntamiseen Markdowniksi käytetään valmiita kirjastoja ja työkaluja, jotka osaavat käsitellä HTML-rakennetta ja tuottaa siitä toimivaa Markdown-syntaksia. Näiden avulla suurin osa muunnosprosessista automatisoituu, vaikka joissain tapauksissa sisältö vaatii vielä pientä manuaalista viilausta lopputuloksen viimeistelemiseksi.
 
@@ -428,7 +428,7 @@ Markdown-muunnos toteutetaan käyttämällä valmista kirjastoa, joka osaa muunt
 ```html
 <h1>Turndown Demo</h1>
 
-<p>This demonstrates <a href="https://github.com/mixmark-io/turndown">turndown</a> – an HTML to Markdown converter in JavaScript.</p>
+<p>This demonstrates <a href="https://github.com/mixmark-io/turndown">turndown</a> - an HTML to Markdown converter in JavaScript.</p>
 
 <h2>Usage</h2>
 
@@ -449,7 +449,7 @@ console.log(turndownService.turndown('&lt;h1&gt;Hello world&lt;/h1&gt;'))</code>
 Turndown Demo
 =============
 
-This demonstrates [turndown](https://github.com/mixmark-io/turndown) – an HTML to Markdown converter in JavaScript.
+This demonstrates [turndown](https://github.com/mixmark-io/turndown) - an HTML to Markdown converter in JavaScript.
 
 Usage
 -----
@@ -533,6 +533,32 @@ Tämän vaiheen lopputuloksena syntyy toimiva dokumentaatiosivusto, jossa aiemmi
 *Kuva 6.* Havainnollistaa valmista Docusaurus-sivustoa.
 
 ### 5.1.9 Versionhallintaan siirtäminen (Git)
+
+Kun dokumentaatio on muunnettu Markdown-muotoon ja järjestetty tiedostorakenteeksi, se siirretään versionhallintaan Gitin avulla. Versionhallinnan tarkoituksena on mahdollistaa muutosten seuranta, hallinta sekä dokumentaation kehittäminen hallitusti ajan kuluessa.
+
+Ensimmäisessä vaiheessa projektille alustetaan Git-repositorio, jonka jälkeen kaikki tuotetut tiedostot lisätään versionhallintaan. Tämä sisältää sekä Markdown-dokumentaation että mahdolliset konfiguraatiotiedostot, kuten Docusauruksen asetukset.
+
+```
+alusta git-repositorio
+lisää kaikki tiedostot (git add .)
+tee ensimmäinen commit (git commit)
+```
+
+*Ohjelmakoodi 15.* Havainnollistaa Git-repositorion alustamista.
+
+Tämän jälkeen projekti voidaan yhdistää etärepositorioon, kuten GitHubiin, mikä mahdollistaa dokumentaation jakamisen ja julkaisemisen verkossa. Etärepositorion avulla dokumentaatio voidaan myös integroida muihin työkaluihin, kuten jatkuvan integraation ja toimituksen (CI/CD) prosesseihin.
+
+```
+yhdistä etärepositorioon
+lähetä tiedostot (git push)
+```
+
+*Ohjelmakoodi 15.* Havainnollistaa yhdistämistä etärepositorioon.
+
+Versionhallinnan avulla dokumentaation muutokset tallentuvat selkeästi versiohistoriaan. Tämä mahdollistaa esimerkiksi aiempien versioiden tarkastelun, virheiden korjaamisen sekä muutosten vertailun eri versioiden välillä. Lisäksi Git tukee haarautumista (branching), mikä mahdollistaa uusien ominaisuuksien tai muutosten kehittämisen erillään pääversiosta. Tässä työssä Git toimii sekä teknisenä työkaluna että osana tutkimusmenetelmää, koska se heijastaa nykyaikaisia dokumentaatiokäytäntöjä ohjelmistokehityksessä.
+
+
+
 ### 5.1.10 Julkaisu ja tallennus GitHub-repositorioon
 ### 5.1.11 Tulosten validointi ja vertailu alkuperäiseen dokumentaatioon
 ### 5.1.12 Prosessin arviointi ja kehityskohteiden tunnistaminen
