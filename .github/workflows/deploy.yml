@@ -37,12 +37,19 @@ jobs:
         working-directory: toteutus/scraper
         run: npm run start
 
+      - name: Debug paths
+        run: |
+          echo "CWD:"
+          pwd
+          echo "Scraper contents:"
+          ls -R toteutus/scraper
+
       # Move generated docs into Docusaurus
       - name: Move generated docs
         run: |
-          rm -rf toteutus/ssc/my-docs
-          mkdir -p toteutus/ssc/my-docs
-          cp -r toteutus/scraper/hamk/* toteutus/ssc/my-docs/
+          rm -rf toteutus/ssc/docs
+          mkdir -p toteutus/ssc/docs
+          cp -r toteutus/scraper/dist/hamk/* toteutus/ssc/docs/
 
       # Install Docusaurus deps
       - name: Install Docusaurus deps
@@ -52,7 +59,7 @@ jobs:
       # Build Docusaurus
       - name: Build site
         working-directory: toteutus/ssc
-        run: npm run build
+        run: npm run build # errors because toteutus/ssc/my-docs is empty -> why?
 
       # Upload build output for Pages
       - name: Upload artifact

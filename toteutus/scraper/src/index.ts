@@ -6,11 +6,12 @@ import * as path from "path";
 
 const TARGET_URL = "www.hamk.fi";
 const MY_URL = "kejjjjj.github.io/thesis/docs/hamk";
-const OUTPUT_DIR = "hamk";
+const OUTPUT_DIR = path.join(import.meta.dirname, "hamk");
 
 type Markdown = string;
 
 try {
+    console.log(`output: ${OUTPUT_DIR}`);
     const results = await getEveryWordpressPage(TARGET_URL, 1000);
     const markdownData = new Map<string, Markdown>();
 
@@ -51,17 +52,17 @@ try {
             return match;
         });
 
-        if (changes.length > 0) {
-            console.log(`Updated: ${key}`);
+        // if (changes.length > 0) {
+        //     console.log(`Updated: ${key}`);
 
-            for (const change of changes) {
-                console.log("  Before:", change.before);
-                console.log("  After :", change.after);
-                console.log("  ---");
-            }
+        //     for (const change of changes) {
+        //         console.log("  Before:", change.before);
+        //         console.log("  After :", change.after);
+        //         console.log("  ---");
+        //     }
 
-            console.log("----");
-        }
+        //     console.log("----");
+        // }
 
         updatedMap.set(key, updatedMarkdown);
     }
