@@ -71,9 +71,6 @@ export async function getEveryWordpressPage(url: string, intervalMs : number = 1
         }
 
         await sleep(intervalMs);
-
-        break;
-
         
     } while (page < fetchedPages.remainingPages + 1);
 
