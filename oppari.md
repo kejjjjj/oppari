@@ -246,6 +246,8 @@ Tutkimuksen käytännön osuus toteutetaan vaiheittain. Ensin valitaan kohteeksi
 
 Muokattu dokumentaatio tallennetaan versionhallintaan Gitin avulla ja julkaistaan GitHub-repositoriossa. Tämä mahdollistaa dokumentaation hallinnan, muutosten seurannan sekä yhteistyön simuloinnin käytännön tasolla. Versionhallinnan käyttö on osa tutkimusmenetelmää, sillä se vastaa nykyaikaisia dokumentaatiokäytäntöjä.
 
+Lisäksi dokumentaation esittämisessä hyödynnetään staattisten sivustojen generaattoria, tässä tapauksessa Docusaurusta @zotero-item-60. Markdown-muotoinen sisältö siirretään Docusauruksen docs-hakemistoon, jonka perusteella työkalu generoi automaattisesti staattisen HTML-pohjaisen dokumentaatiosivuston. Tämä mahdollistaa dokumentaation julkaisemisen selkeässä ja käyttäjäystävällisessä muodossa sekä integroinnin osaksi automatisoitua julkaisuprosessia.
+
 Menetelmän tavoitteena on arvioida Markdownin soveltuvuutta dokumentaation tuottamiseen ja ylläpitoon käytännön toteutuksen kautta. Tutkimuksessa tarkastellaan erityisesti prosessin toimivuutta, työkalujen käytettävyyttä sekä lopputuloksen laatua suhteessa alkuperäiseen dokumentaatioon.
 
 ## 4.2 Metatutkimus: Markdownin muuntaminen opinnäytetyömuotoon
