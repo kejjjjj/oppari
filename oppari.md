@@ -614,27 +614,31 @@ Lopuksi rakennettu sivusto siirretään GitHub Pages -palveluun, jossa se julkai
 Automatisoitu työnkulku yhdistää koko prosessin yhdeksi jatkuvaksi putkeksi, jossa tiedonkeruu, muokkaus ja julkaisu tapahtuvat ilman manuaalista väliintuloa. Tämä vastaa nykyaikaisia DevOps-käytäntöjä ja tekee dokumentaation ylläpidosta tehokkaampaa.
 
 # 6 Results
-## 6.1 Markdown-muunnosprosessin arviointi ja kehityskohteiden tunnistaminen
+## 6.1 Markdown-muunnoksen tulokset
 
-Tutkimuksessa toteutettu prosessi osoittaa, että WordPress-pohjainen dokumentaatio voidaan muuntaa onnistuneesti Markdown-muotoon ja julkaista staattisena sivustona automatisoidun työkaluketjun avulla. Prosessi on kokonaisuudessaan toistettavissa ja skaalautuva, mikä tekee siitä soveltuvan myös laajempien dokumentaatiokokonaisuuksien käsittelyyn. Erityisesti web scrapingin, HTML-jäsentämisen ja Markdown-muunnoksen yhdistäminen osoittautui toimivaksi ratkaisuksi dokumentaation siirtämisessä uuteen ympäristöön.
+Markdown-muunnoksen tuloksena alkuperäinen WordPress-pohjainen dokumentaatio saatiin siirrettyä onnistuneesti tekstipohjaiseen ja rakenteellisesti selkeään muotoon. Suurin osa sivujen sisällöstä, kuten otsikot, kappaleet ja listat, säilyi hyvin muunnosprosessin läpi, ja lopputulos vastasi sisällöllisesti alkuperäistä dokumentaatiota.
 
-Tutkimuksen lopuksi tuotettua Docusaurus-pohjaista dokumentaatiosivustoa verrataan alkuperäiseen WordPress-pohjaiseen sivustoon. Vertailun tavoitteena on arvioida, kuinka hyvin Markdown-pohjainen ja staattinen ratkaisu vastaa alkuperäistä toteutusta sekä millaisia etuja ja rajoitteita siihen liittyy.
+Muunnosprosessin ansiosta dokumentaatio muuttui helpommin luettavaksi ja muokattavaksi. Markdownin yksinkertainen syntaksi teki rakenteesta selkeän, ja tiedostopohjainen esitystapa mahdollisti sisällön tarkastelun ilman erillisiä työkaluja. Tämä paransi erityisesti dokumentaation ylläpidettävyyttä ja soveltuvuutta versionhallintaan.
 
-Docusaurus-pohjaisen ratkaisun vahvuus on sen yksinkertaisuus ja hallittavuus. Markdown-muotoinen sisältö on helposti luettavaa ja muokattavaa, ja versionhallinnan avulla muutoksia voidaan seurata tarkasti. Lisäksi staattinen sivusto on suorituskykyinen ja turvallinen, koska se ei vaadi palvelinpuolen logiikkaa tai tietokantaa. Myös automaattinen julkaisu GitHub Actionsin avulla tekee päivitysprosessista tehokkaan ja toistettavan.
+Kaikki sisältö ei kuitenkaan siirtynyt täysin ongelmitta. Erityisesti monimutkaisemmat HTML-rakenteet, kuten upotetut elementit, kuvat ja visuaaliset komponentit, eivät aina muuntuneet täydellisesti Markdown-muotoon. Osa näistä elementeistä jouduttiin poistamaan tai yksinkertaistamaan, mikä vaikutti dokumentaation visuaaliseen ilmeeseen.
 
-Toisaalta Docusaurus-ratkaisussa on myös rajoitteita. Dynaamiset ominaisuudet, kuten sisällön hallinta käyttöliittymän kautta, puuttuvat kokonaan. Kaikki muutokset vaativat tiedostojen muokkaamista ja versionhallinnan käyttöä, mikä voi olla haaste käyttäjille, joilla ei ole teknistä taustaa. Lisäksi alkuperäisen sivuston visuaaliset elementit ja monimutkaisemmat rakenteet eivät aina siirry täydellisesti Markdown-muotoon.
+Lisäksi havaittiin, että alkuperäisessä dokumentaatiossa esiintyneet virheet, kuten rikkinäiset linkit ja epäjohdonmukaiset kieliversiot, siirtyivät myös Markdown-muotoiseen versioon. Tämä korostaa sitä, että muunnosprosessi säilyttää sisällön sellaisenaan, eikä automaattisesti korjaa lähdemateriaalin puutteita.
 
-WordPress-pohjaisen sivuston vahvuutena puolestaan on sen käyttäjäystävällisyys ja monipuolisuus. Sisältöä voidaan muokata graafisen käyttöliittymän kautta ilman ohjelmointiosaamista, ja järjestelmä tukee laajasti erilaisia lisäosia sekä dynaamisia toiminnallisuuksia. Tämä tekee siitä joustavan ratkaisun erityisesti ei-teknisille käyttäjille.
+Kokonaisuutena Markdown-muunnos voidaan arvioida onnistuneeksi, sillä se säilytti dokumentaation oleellisimman sisällön ja rakenteen, vaikka osa visuaalisista ja teknisistä yksityiskohdista jäi pois. Tulokset osoittavat, että Markdown soveltuu hyvin tekstipainotteisen dokumentaation esittämiseen, mutta vaatii lisätoimenpiteitä monimutkaisempien sisältöjen käsittelyssä.
 
-WordPressin heikkoutena on kuitenkin monimutkaisuus ja ylläpidon haasteet. Versionhallinta ei ole sisäänrakennettu samalla tavalla kuin Git-pohjaisessa ratkaisussa, ja muutosten seuraaminen voi olla vaikeampaa. Lisäksi suorituskyky ja tietoturva voivat kärsiä, erityisesti jos käytössä on paljon lisäosia. Dokumentaation rakenteen hallinta voi myös olla vähemmän läpinäkyvää verrattuna tiedostopohjaiseen lähestymistapaan.
+# 7 Conclusions
+## 7.1 Markdown-muunnosprosessin arviointi ja kehityskohteiden tunnistaminen
 
-Vertailun perusteella voidaan todeta, että Docusaurus soveltuu hyvin tekniseen dokumentaatioon, jossa oleellisimmat asiat ovat versionhallinta ja automaatio. WordPress puolestaan soveltuu paremmin tilanteisiin, joissa tarvitaan helppokäyttöinen sisällönhallintajärjestelmä ja monipuolisia dynaamisia ominaisuuksia.
+Tässä työssä toteutettu Markdown-muunnosprosessi osoittaa, että WordPress-pohjainen dokumentaatio voidaan siirtää tekstipohjaiseen ja versionhallintaa tukevaan muotoon. Prosessi kattaa koko ketjun tiedonkeruusta julkaisuun, ja sen vahvuus on automatisoitavuus. Web scraping, HTML-jäsentäminen, Markdown-muunnos sekä staattisen sivuston generointi muodostavat yhdessä yhtenäisen ja toistettavan työprosessin.
 
-Prosessin aikana havaittiin, että alkuperäisessä aineistossa esiintyi virheitä, kuten rikkinäisiä linkkejä ja epäjohdonmukaisuuksia kieliversioiden välillä. Näiden tunnistaminen ja korjaaminen jäi osittain manuaaliseksi työksi, mikä heikentää prosessin tehokkuutta.
+Muunnosprosessin tulokset osoittavat, että erityisesti tekstipainotteinen sisältö, kuten otsikot, kappaleet ja listat, säilyvät hyvin siirryttäessä HTML-muodosta Markdowniin. Tämä tekee Markdownista soveltuvan vaihtoehdon dokumentaatiolle, jossa rakenteellinen selkeys ja ylläpidettävyys ovat tärkeitä vaatimuksia. Lisäksi versionhallinnan integrointi parantaa dokumentaation hallittavuutta ja tukee nykyaikaisia kehitysprosesseja.
 
-Kokonaisuutena prosessi toimii hyvin perustana dokumentaation modernisoinnille, mutta sen kehittäminen edelleen parantaisi lopputuloksen laatua, automaation tasoa sekä käytettävyyttä erityisesti laajemmissa ja monimutkaisemmissa dokumentaatiokokonaisuuksissa.
+Prosessin aikana tunnistettiin kuitenkin myös useita kehityskohteita. Yksi keskeinen haaste liittyy HTML-rakenteen vaihteluun, mikä vaikeuttaa täysin yleispätevän parsintalogiikan toteuttamista. Eri sivujen erilaiset rakenteet edellyttävät joustavuutta ja mahdollisesti tapauskohtaisia käsittelysääntöjä.
+
+Lisäksi muunnosprosessia voitaisiin kehittää tukemaan paremmin monimutkaisempia sisältöelementtejä, kuten kuvia, upotuksia ja interaktiivisia komponentteja. Tällä hetkellä nämä elementit joko yksinkertaistuvat tai jäävät pois, mikä voi heikentää dokumentaation informaatiosisältöä tietyissä tapauksissa.
+
+Kokonaisuutena voidaan todeta, että Markdown-muunnosprosessi toimii tehokkaana ratkaisuna dokumentaation modernisointiin, mutta sen laadun ja käytettävyyden parantaminen edellyttää jatkokehitystä erityisesti automaation, validoinnin ja rakenteellisen joustavuuden osalta.
 
 Linkki Markdown-versioon löytyy [tästä](https://kejjjjj.github.io/oppari/docs/).
 
-# 7 Conclusions
 # 8 Further research?
