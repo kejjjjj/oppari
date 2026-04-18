@@ -258,7 +258,7 @@ Metatutkimuksen tavoitteena on arvioida kuinka hyvin Markdown-pohjainen kirjoitu
 
 # 5 Research
 tekstiä tänne?
-## 5.1 HAMK:n julkisten sivujen muuntaminen Markdown-muotoon
+## 5.1 HAMKin julkisten sivujen muuntaminen Markdown-muotoon
 tekstiä tänne?
 ### 5.1.1 Tutkimuksen suunnittelu ja rajaus
 tekstiä tänne?
@@ -557,12 +557,84 @@ lähetä tiedostot (git push)
 
 Versionhallinnan avulla dokumentaation muutokset tallentuvat selkeästi versiohistoriaan. Tämä mahdollistaa esimerkiksi aiempien versioiden tarkastelun, virheiden korjaamisen sekä muutosten vertailun eri versioiden välillä. Lisäksi Git tukee haarautumista (branching), mikä mahdollistaa uusien ominaisuuksien tai muutosten kehittämisen erillään pääversiosta. Tässä työssä Git toimii sekä teknisenä työkaluna että osana tutkimusmenetelmää, koska se heijastaa nykyaikaisia dokumentaatiokäytäntöjä ohjelmistokehityksessä.
 
+### 5.1.10 Dokumentaation automatisoitu julkaisu (GitHub Actions)
 
+Versionhallintaan siirtämisen jälkeen dokumentaation julkaisu automatisoidaan hyödyntämällä GitHub Actions -työnkulkuja. Automatisoinnin tavoitteena on poistaa manuaaliset vaiheet dokumentaation generoinnista ja julkaisemisesta sekä varmistaa, että sivusto päivittyy automaattisesti aina, kun lähdekoodiin tehdään muutoksia. @zotero-item-61
 
-### 5.1.10 Julkaisu ja tallennus GitHub-repositorioon
-### 5.1.11 Tulosten validointi ja vertailu alkuperäiseen dokumentaatioon
-### 5.1.12 Prosessin arviointi ja kehityskohteiden tunnistaminen
+Työnkulku käynnistyy automaattisesti, kun repositorion `main`-haaraan tehdään päivityksiä tai kun määritettyihin hakemistoihin tulee muutoksia. Tämä mahdollistaa sen, että dokumentaation päivitysprosessi on sidottu suoraan versionhallintaan.
+
+```yml
+on:
+  push:
+    branches:
+      - main 
+    paths:
+      - 'toteutus/**'
+      - '.github/workflows/deploy.yml'
+```
+
+*Ohjelmakoodi 15.* Havainnollistaa workflown aktivoitumista.
+
+Ensimmäisessä vaiheessa työnkulku hakee projektin lähdekoodin ja asettaa käyttöön tarvittavan Node.js-ympäristön. Tämän jälkeen suoritetaan scraper-työkalun riippuvuuksien asennus, käännös sekä varsinainen suoritus, jonka tuloksena syntyy ajantasainen Markdown-dokumentaatio.
+
+```
+hae repositorio
+asenna node-ympäristö
+
+asenna scraper-riippuvuudet
+rakenna scraper
+suorita scraper
+```
+
+*Ohjelmakoodi 16.* Havainnollistaa työnkulun ensimmäistä vaihetta.
+
+Kun dokumentaatio on generoitu, se siirretään automaattisesti Docusaurus-projektin `docs`-hakemistoon. Tämä vaihe yhdistää datankeruun ja dokumentaation esityskerrokseen, mahdollistaen päivitysprosessin.
+
+Seuraavaksi asennetaan Docusauruksen riippuvuudet ja rakennetaan staattinen sivusto. Rakennusvaiheessa Markdown-tiedostot muunnetaan HTML-sivuiksi, ja lopputuloksena syntyy valmis julkaistava sivusto.
+
+Lopuksi rakennettu sivusto siirretään GitHub Pages -palveluun, jossa se julkaistaan automaattisesti. Tämä mahdollistaa dokumentaation jatkuvan saatavuuden verkossa ilman erillisiä julkaisutoimenpiteitä.
+
+```yml
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+*Ohjelmakoodi 16.* Havainnollistaa sivuston julkaisemista Github Pages -palveluun.
+
+Automatisoitu työnkulku yhdistää koko prosessin yhdeksi jatkuvaksi putkeksi, jossa tiedonkeruu, muokkaus ja julkaisu tapahtuvat ilman manuaalista väliintuloa. Tämä vastaa nykyaikaisia DevOps-käytäntöjä ja tekee dokumentaation ylläpidosta tehokkaampaa.
 
 # 6 Results
+## 6.1 Markdown-muunnosprosessin arviointi ja kehityskohteiden tunnistaminen
+
+Tutkimuksessa toteutettu prosessi osoittaa, että WordPress-pohjainen dokumentaatio voidaan muuntaa onnistuneesti Markdown-muotoon ja julkaista staattisena sivustona automatisoidun työkaluketjun avulla. Prosessi on kokonaisuudessaan toistettavissa ja skaalautuva, mikä tekee siitä soveltuvan myös laajempien dokumentaatiokokonaisuuksien käsittelyyn. Erityisesti web scrapingin, HTML-jäsentämisen ja Markdown-muunnoksen yhdistäminen osoittautui toimivaksi ratkaisuksi dokumentaation siirtämisessä uuteen ympäristöön.
+
+Tutkimuksen lopuksi tuotettua Docusaurus-pohjaista dokumentaatiosivustoa verrataan alkuperäiseen WordPress-pohjaiseen sivustoon. Vertailun tavoitteena on arvioida, kuinka hyvin Markdown-pohjainen ja staattinen ratkaisu vastaa alkuperäistä toteutusta sekä millaisia etuja ja rajoitteita siihen liittyy.
+
+Docusaurus-pohjaisen ratkaisun vahvuus on sen yksinkertaisuus ja hallittavuus. Markdown-muotoinen sisältö on helposti luettavaa ja muokattavaa, ja versionhallinnan avulla muutoksia voidaan seurata tarkasti. Lisäksi staattinen sivusto on suorituskykyinen ja turvallinen, koska se ei vaadi palvelinpuolen logiikkaa tai tietokantaa. Myös automaattinen julkaisu GitHub Actionsin avulla tekee päivitysprosessista tehokkaan ja toistettavan.
+
+Toisaalta Docusaurus-ratkaisussa on myös rajoitteita. Dynaamiset ominaisuudet, kuten sisällön hallinta käyttöliittymän kautta, puuttuvat kokonaan. Kaikki muutokset vaativat tiedostojen muokkaamista ja versionhallinnan käyttöä, mikä voi olla haaste käyttäjille, joilla ei ole teknistä taustaa. Lisäksi alkuperäisen sivuston visuaaliset elementit ja monimutkaisemmat rakenteet eivät aina siirry täydellisesti Markdown-muotoon.
+
+WordPress-pohjaisen sivuston vahvuutena puolestaan on sen käyttäjäystävällisyys ja monipuolisuus. Sisältöä voidaan muokata graafisen käyttöliittymän kautta ilman ohjelmointiosaamista, ja järjestelmä tukee laajasti erilaisia lisäosia sekä dynaamisia toiminnallisuuksia. Tämä tekee siitä joustavan ratkaisun erityisesti ei-teknisille käyttäjille.
+
+WordPressin heikkoutena on kuitenkin monimutkaisuus ja ylläpidon haasteet. Versionhallinta ei ole sisäänrakennettu samalla tavalla kuin Git-pohjaisessa ratkaisussa, ja muutosten seuraaminen voi olla vaikeampaa. Lisäksi suorituskyky ja tietoturva voivat kärsiä, erityisesti jos käytössä on paljon lisäosia. Dokumentaation rakenteen hallinta voi myös olla vähemmän läpinäkyvää verrattuna tiedostopohjaiseen lähestymistapaan.
+
+Vertailun perusteella voidaan todeta, että Docusaurus soveltuu hyvin tekniseen dokumentaatioon, jossa oleellisimmat asiat ovat versionhallinta ja automaatio. WordPress puolestaan soveltuu paremmin tilanteisiin, joissa tarvitaan helppokäyttöinen sisällönhallintajärjestelmä ja monipuolisia dynaamisia ominaisuuksia.
+
+Prosessin aikana havaittiin, että alkuperäisessä aineistossa esiintyi virheitä, kuten rikkinäisiä linkkejä ja epäjohdonmukaisuuksia kieliversioiden välillä. Näiden tunnistaminen ja korjaaminen jäi osittain manuaaliseksi työksi, mikä heikentää prosessin tehokkuutta.
+
+Kokonaisuutena prosessi toimii hyvin perustana dokumentaation modernisoinnille, mutta sen kehittäminen edelleen parantaisi lopputuloksen laatua, automaation tasoa sekä käytettävyyttä erityisesti laajemmissa ja monimutkaisemmissa dokumentaatiokokonaisuuksissa.
+
+Linkki Markdown-versioon löytyy [tästä](https://kejjjjj.github.io/oppari/docs/).
+
 # 7 Conclusions
 # 8 Further research?
