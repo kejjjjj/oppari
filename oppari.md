@@ -274,6 +274,28 @@ Menetelmän tavoitteena on arvioida Markdownin soveltuvuutta dokumentaation tuot
 
 ## 4.2 Metatutkimus: Markdownin muuntaminen opinnäytetyömuotoon
 
+Tässä osuudessa tarkastellaan erillisenä metatutkimuksena, miten Markdown-muotoinen sisältö voidaan muuntaa opinnäytetyövaatimusten mukaiseen muotoon. Kyse ei ole pelkästään teknisestä konversiosta, vaan myös siitä, miten Markdown soveltuu akateemiseen kirjoittamiseen, jossa on tarkat vaatimukset esimerkiksi rakenteen, viittausten ja muotoilun osalta.
+
+Tutkimuksen kohteena on siis Markdownin ja perinteisen opinnäytetyömuodon (Word-pohjaisen mallipohjan) välinen yhteensopivuus. Tavoitteena on selvittää, millä tavoin Markdownilla tuotettu sisältö voidaan muuntaa vaadittuun formaattiin ilman merkittävää manuaalista työtä.
+
+Tutkimuskysymykset voidaan muotoilla käytännönläheisesti seuraavasti:
+
+1. Miten Markdown-muotoinen teksti muunnetaan Word-muotoon?
+2. Mitä työkaluja muunnokseen voidaan käyttää?
+3. Miten viittaukset ja lähteet säilyvät muunnoksessa?
+
+Metatutkimuksessa tarkastellaan erityisesti muunnostyökaluja, kuten dokumenttikonverttereita, jotka tukevat Markdown -> DOCX -muunnosta. Näiden työkalujen avulla pyritään säilyttämään dokumentin rakenne, kuten otsikkotasot, kappalejaot ja listat, mahdollisimman tarkasti alkuperäistä vastaavina.
+
+Erityistä huomiota kiinnitetään lähteiden hallintaan. Markdown-ympäristössä viittauksia voidaan hallita esimerkiksi erillisten viitetiedostojen avulla, mutta opinnäytetyössä viittausten tulee noudattaa tiettyä formaattia. Tässä yhteydessä tarkastellaan, miten viitteidenhallintatyökalut voidaan integroida osaksi muunnosprosessia siten, että lähdeluettelo ja tekstiviitteet säilyvät oikein muotoiltuina.
+
+Tutkimuksessa huomioidaan myös muotoiluun liittyvät haasteet. Vaikka Markdown tarjoaa selkeän rakenteen tekstille, se ei suoraan kata kaikkia opinnäytetyömallipohjan vaatimuksia, kuten tarkkoja sivuasetuksia, fontteja tai otsikkotyylejä. Näin ollen osa muotoilusta saattaa vaatia jälkikäsittelyä Word-ympäristössä.
+
+Tämä metatutkimus täydentää varsinaista tapaustutkimusta tarkastelemalla Markdownin käyttöä eri kontekstissa. Siinä missä varsinainen tutkimus keskittyy tekniseen dokumentaatioon ja sen julkaisuun, metatutkimus arvioi Markdownin soveltuvuutta akateemiseen kirjoittamiseen ja raportointiin.
+
+Kokonaisuutena metatutkimus toimii “toisena näkökulmana” Markdownin käyttöön. Se ei keskity dokumentaation tuotantoon ohjelmistokehityksessä, vaan siihen, miten samaa sisältöä voidaan hyödyntää muodollisemmassa ja standardoidummassa ympäristössä, kuten opinnäytetyössä.
+
+### 4.2.1 Menetelmän toteutus
+
 Tutkimusmenetelmään sisältyy myös metatasoinen tarkastelu, jossa arvioidaan Markdown-muotoisen dokumentaation muuntamista HAMK:n viralliseen opinnäytetyömuotoon. Tässä työssä tarkastelun kohteena on Markdown-dokumentin muuntaminen HAMK:n opinnäytetyöpohjan mukaiseen Microsoft Word -muotoon sekä viitteidenhallinnan (Zotero) integrointi osaksi prosessia.
 
 Muunnosprosessi perustuu työkaluihin, jotka mahdollistavat Markdown-tiedostojen konvertoinnin Word-muotoon (.docx). Tällaiset työkalut, kuten Pandoc, pystyvät säilyttämään dokumentin rakenteen (otsikot, kappaleet, listat) ja muuntamaan sen Word-yhteensopivaan muotoon. Tämän jälkeen dokumentti voidaan sovittaa HAMK:n viralliseen opinnäytetyöpohjaan, jossa huomioidaan esimerkiksi tyylit, otsikkotasot ja sivuasetukset.
