@@ -240,6 +240,28 @@ Käyttöönottoon liittyy myös haasteita, kuten muutosvastarinta ja uuden työs
 
 ## 4.1 Käytännön toteutukseen perustuva tapaustutkimusmenetelmä
 
+Tässä tutkimuksessa tarkastellaan Markdownin soveltuvuutta teknisen dokumentaation työkaluna erityisesti ohjelmistoprojektien kontekstissa. Tutkimuksen kohteena ei ole pelkästään Markdown kielenä, vaan kokonainen työkaluketju, jossa dokumentaatio tuotetaan, muokataan, hallitaan ja julkaistaan nykyaikaisilla kehitystyökaluilla. Näin ollen tutkimus keskittyy siihen, miten dokumentaatiota voidaan käsitellä osana ohjelmistokehitysprosessia, ei erillisenä kokonaisuutena.
+
+Tutkimus toteutetaan tapaustutkimuksena, jossa hyödynnetään käytännön toteutusta tutkimusmenetelmänä. Tämä tarkoittaa, että tutkimuskysymyksiin ei vastata pelkästään kirjallisuuden perusteella, vaan niitä tarkastellaan konkreettisen toteutuksen kautta. Toteutuksessa etsitään ja arvioidaan työkaluja, joilla dokumentaation muunnos, hallinta ja julkaisu voidaan toteuttaa mahdollisimman tehokkaasti.
+
+Tutkimuskysymykset voidaan muotoilla uudelleen käytännönläheisemmin seuraavasti:
+
+1. Miten olemassa oleva dokumentaatio voidaan muuntaa Markdown-muotoon?
+2. Mitä työkaluja tähän prosessiin tarvitaan?
+3. Miten Markdown integroidaan osaksi versionhallintaa ja julkaisua?
+
+Näiden kysymysten avulla tutkimus keskittyy “miten” eikä pelkästään “miksi” -näkökulmaan. Tarkastelun kohteena ovat erityisesti työkalut ja menetelmät, kuten web scraping -ratkaisut, HTML:n jäsentämiseen käytettävät kirjastot, Markdown-muunnostyökalut sekä staattisten sivustojen generaattorit.
+
+Tutkimuksessa oletetaan, että dokumentaation kehittämisessä keskeinen haaste ei ole pelkästään sisällön tuottaminen, vaan sen hallinta, ylläpito ja julkaisu. Tämän vuoksi tutkimus pyrkii löytämään työkaluketjun, joka tukee koko dokumentaation elinkaarta. Käytännössä tämä tarkoittaa esimerkiksi sitä, että dokumentaatio voidaan hakea ohjelmallisesti, muuntaa automaattisesti, tallentaa versionhallintaan ja julkaista ilman manuaalista työtä.
+
+Tapaustutkimuksen luonteen mukaisesti tutkimus etenee vaiheittain, ja jokaisessa vaiheessa arvioidaan valittujen työkalujen toimivuutta. Näin tutkimus toimii samalla sekä teknisenä toteutuksena että analyysina siitä, kuinka hyvin valitut ratkaisut vastaavat asetettuihin tavoitteisiin.
+
+Tutkimuksen lähtökohta on käytännön tarve: olemassa olevan dokumentaation muuntaminen Markdown-muotoon ja sen hyödyntäminen modernissa kehitysympäristössä. Tästä näkökulmasta tutkimus voidaan nähdä “työkalujen etsimisenä ja testaamisena”, jossa tavoitteena on rakentaa toimiva ja toistettava prosessi dokumentaation käsittelyyn.
+
+Kokonaisuutena tämä tutkimusmenetelmä yhdistää teoreettisen tarkastelun ja käytännön toteutuksen. Se luo perustan luvussa 5 esiteltävälle toteutukselle, jossa tutkimuskysymyksiin vastataan konkreettisesti vaihe vaiheelta.
+
+## 4.1.1 Menetelmän toteutus
+
 Tämän työn tutkimusmenetelmänä käytetään käytännönläheistä ja soveltavaa lähestymistapaa, jossa teoreettista tarkastelua täydennetään konkreettisella toteutuksella. Menetelmä perustuu tapaustutkimuksen kaltaiseen lähestymistapaan, jossa Markdownin soveltuvuutta arvioidaan todellisessa käyttötilanteessa muuntamalla olemassa olevaa dokumentaatiota uuteen muotoon.
 
 Tutkimuksen käytännön osuus toteutetaan vaiheittain. Ensin valitaan kohteeksi HAMK:n tekstipohjaiset dokumentaatiosivut, joiden sisältö kerätään web scraping -menetelmällä. Tiedonkeruu toteutetaan TypeScript-pohjaisilla työkaluilla, joiden avulla verkkosivujen HTML-rakenne haetaan ja siitä erotellaan oleellinen sisältö. Tämän jälkeen kerätty sisältö muokataan ohjelmallisesti Markdown-muotoon hyödyntäen muunnostyökaluja ja skriptejä.
@@ -524,7 +546,7 @@ Kun dokumentaatio on muunnettu Markdown-muotoon ja tallennettu tiedostorakenteek
 
 Docusauruksen käyttöönotto perustuu siihen, että kaikki tuotettu Markdown-sisältö sijoitetaan projektin `docs`-hakemistoon. Koska aiemmassa vaiheessa muodostettu tiedostorakenne vastaa loogisesti dokumentaation rakennetta, se voidaan siirtää sellaisenaan tähän hakemistoon ilman merkittäviä muutoksia. Näin dokumentaation hierarkia säilyy ja Docusaurus pystyy automaattisesti muodostamaan navigaation tiedostorakenteen perusteella.
 
-Kun tiedostot on siirretty, Docusaurus generoi automaattisesti staattisen sivuston Markdown-tiedostojen perusteella. Jokainen `.md`-tiedosto muunnetaan HTML-sivuksi, ja hakemistorakenne määrittää sivujen välisen navigaation. Lisäksi Docusaurus tarjoaa valmiita ominaisuuksia, kuten sivupalkit (sidebar), hakutoiminnallisuuden sekä versionhallinnan tuen.
+Kun tiedostot on siirretty, Docusaurus generoi automaattisesti staattisen sivuston Markdown-tiedostojen perusteella. Jokainen `.md`-tiedosto muunnetaan HTML-sivuksi, ja hakemistorakenne määrittää sivujen välisen navigaation. Lisäksi Docusaurus tarjoaa valmiita ominaisuuksia, kuten sivupalkit (sidebar) sekä versionhallinnan tuen.
 
 Käyttöönoton yhteydessä havaittiin kuitenkin joitakin alkuperäisestä aineistosta peräisin olevia ongelmia. Osa URL-linkeistä oli rikkinäisiä tai viittasi virheellisiin kohteisiin, minkä vuoksi niitä jouduttiin korjaamaan manuaalisesti. Lisäksi englanninkielisillä sivuilla esiintyi linkkejä suomenkielisiin sivuihin, mikä heikentää dokumentaation johdonmukaisuutta ja käyttäjäkokemusta. Nämä virheet eivät syntyneet muunnosprosessissa, vaan olivat jo osa alkuperäistä verkkosivustoa.
 
@@ -628,6 +650,8 @@ Lisäksi havaittiin, että alkuperäisessä dokumentaatiossa esiintyneet virheet
 
 Kokonaisuutena Markdown-muunnos voidaan arvioida onnistuneeksi, sillä se säilytti dokumentaation oleellisimman sisällön ja rakenteen, vaikka osa visuaalisista ja teknisistä yksityiskohdista jäi pois. Tulokset osoittavat, että Markdown soveltuu hyvin tekstipainotteisen dokumentaation esittämiseen, mutta vaatii lisätoimenpiteitä monimutkaisempien sisältöjen käsittelyssä.
 
+Linkki Markdown-versioon löytyy [tästä](https://kejjjjj.github.io/oppari/docs/).
+
 # 7 Conclusions
 ## 7.1 Markdown-muunnosprosessin arviointi ja kehityskohteiden tunnistaminen
 
@@ -641,6 +665,5 @@ Lisäksi muunnosprosessia voitaisiin kehittää tukemaan paremmin monimutkaisemp
 
 Kokonaisuutena voidaan todeta, että Markdown-muunnosprosessi toimii tehokkaana ratkaisuna dokumentaation modernisointiin, mutta sen laadun ja käytettävyyden parantaminen edellyttää jatkokehitystä erityisesti automaation, validoinnin ja rakenteellisen joustavuuden osalta.
 
-Linkki Markdown-versioon löytyy [tästä](https://kejjjjj.github.io/oppari/docs/).
 
 # 8 Further research?
