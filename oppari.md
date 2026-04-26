@@ -303,7 +303,13 @@ Metatutkimuksen tavoitteena on arvioida kuinka hyvin Markdown-pohjainen kirjoitu
 # 5 Research
 tekstiä tänne?
 ## 5.1 HAMKin julkisten sivujen muuntaminen Markdown-muotoon
-tekstiä tänne?
+
+Tässä luvussa tarkastellaan käytännön toteutusta, jossa HAMKin julkisten verkkosivujen sisältö muunnetaan Markdown-muotoon. Tavoitteena on rakentaa toimiva ja toistettava työnkulku, joka kattaa koko prosessin tiedon keräämisestä sen julkaisuun asti.
+
+Toteutus etenee vaiheittain alkaen kohdesivuston rakenteen ja teknologian tunnistamisesta, jonka jälkeen sisältö kerätään ohjelmallisesti ja muunnetaan Markdown-muotoon. Lopuksi dokumentaatio järjestetään tiedostorakenteeksi ja julkaistaan staattisena sivustona.
+
+Luvun tarkoituksena on kuvata prosessi käytännön tasolla sekä arvioida, kuinka hyvin Markdown soveltuu olemassa olevan dokumentaation käsittelyyn ja uudelleenkäyttöön osana nykyaikaista dokumentaation työnkulkua.
+
 ### 5.1.1 Tutkimuksen suunnittelu ja rajaus
 
 Tutkimuksen suunnittelu perustuu tavoitteeseen rakentaa selkeä ja toistettava työnkulku, jolla olemassa oleva verkkopohjainen dokumentaatio voidaan muuntaa Markdown-muotoon ja julkaista osana nykyaikaista dokumentaatioympäristöä. Suunnittelussa painotetaan erityisesti prosessin vaiheistamista sekä sitä, että jokainen vaihe tukee seuraavaa osaa kokonaisuudessa.
