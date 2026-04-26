@@ -210,12 +210,6 @@ Prosessi perustuu siihen, että ohjelma hakee verkkosivun HTML-sisällön ja jä
 
 Tyypillisesti web scraping koostuu useista vaiheista, kuten verkkosivun hakemisesta, sisällön analysoinnista sekä halutun datan erottelusta ja tallentamisesta. Tiedon jäsentämisessä hyödynnetään usein HTML-rakennetta, esimerkiksi tageja ja luokkia, joiden avulla ohjelma tunnistaa, mitä osia sivusta halutaan kerätä. Näin voidaan poimia vain relevantti sisältö ja jättää muu sivun rakenne huomiotta. @zotero-item-45
 
-### 3.4.2 Sisällön kerääminen ja muuntaminen Markdown-muotoon
-
-Web scrapingin avulla kerätty sisältö voidaan muuntaa Markdown-muotoon, jolloin siitä saadaan helposti luettavaa ja ylläpidettävää dokumentaatiota. Prosessi alkaa yleensä verkkosivun HTML-rakenteen hakemisella, jonka jälkeen sisältö jäsennetään ja suodatetaan siten, että vain oleellinen tieto, kuten otsikot, kappaleet ja linkit, säilytetään. Tämän jälkeen sisältö muunnetaan Markdown-syntaksia vastaavaan muotoon, esimerkiksi HTML-otsikot muutetaan risuaitamerkinnöiksi (#) ja listat vastaaviksi Markdown-listoiksi. @zotero-item-46
-
-Muuntaminen voidaan toteuttaa automaattisesti erilaisten työkalujen ja kirjastojen avulla. Näiden avulla HTML-rakenteesta voidaan muodostaa Markdown-dokumentti ilman, että sisältöä tarvitsee käsitellä manuaalisesti. Tämä nopeuttaa merkittävästi dokumentaation tuottamista erityisesti silloin, kun käsitellään suuria määriä verkkosisältöä tai olemassa olevaa dokumentaatiota halutaan siirtää uuteen formaattiin. @zotero-item-47
-
 ### 3.4.3 Eettiset ja tietoturvaan liittyvät näkökulmat
 
 Web scrapingiin liittyy useita eettisiä ja juridisia näkökulmia, jotka tulee huomioida ennen menetelmän käyttöä. Vaikka automaattinen tiedonkeruu verkkosivuilta on teknisesti mahdollista, sen laillisuus riippuu pitkälti siitä, miten kerättyä tietoa käytetään. Yleisesti ottaen datan kerääminen henkilökohtaiseen käyttöön ja kohtuullisen käytön puitteissa on sallittua, mutta ongelmia voi syntyä, jos sisältöä julkaistaan uudelleen, rikotaan palvelun käyttöehtoja tai käsitellään tekijänoikdeun alaista materiaalia ilman lupaa. @zotero-item-45
@@ -224,7 +218,7 @@ Pelkkien faktojen käerääminen ei välttämättä riko tekijänoikeuksia, mutt
 
 Eettisestä näkökulmasta on tärkeää huomioida myös scrapinging vaikutus kohdejärjestelmiin. Liiallinen tai aggressiivinen tiedonkeruu voi kuormittaa verkkosivua ja heikentää sen toimintaa, mikä voi johtaa palvelun häiriöihin. Vaikka kaikki tällainen toiminta ei välttämättä ole lainvastaista, sitä voidaan pitää epäeettisenä. Tämän vuoksi web scrapingia tulisi toteuttaa vastuullisesti, huomioiden sekä tekniset rajoitteet että palveluntarjoajien ehdot ja oikeudet. @zotero-item-45
 
-## 3.5 Markdown työelämässä
+## 3.5 Markdown-työnkulku työelämässä
 
 Markdown on vakiinnuttanut asemansa osana nykyaikaista työelämää teknisessä dokumentaatiossa ja ohjelmistokehityksessä. Sen yksinkertainen syntaksi ja yhteensopivuus erilaisten työkalujen kanssa tekevät siitä sopivan ratkaisun organisaatioille, joissa dokumentaatiota tuotetaan jatkuvasti ja useiden käyttäjien toimesta. Markdown mahdollistaa dokumentaation integroimisen osaksi kehitysprosesseja, mikä parantaa tiedon ajantasaisuutta. @zotero-item-23
 
@@ -242,7 +236,7 @@ Käyttöönottoon liittyy myös haasteita, kuten muutosvastarinta ja uuden työs
 
 Tässä tutkimuksessa tarkastellaan Markdownin soveltuvuutta teknisen dokumentaation työkaluna erityisesti ohjelmistoprojektien kontekstissa. Tutkimuksen kohteena ei ole pelkästään Markdown kielenä, vaan kokonainen työkaluketju, jossa dokumentaatio tuotetaan, muokataan, hallitaan ja julkaistaan nykyaikaisilla kehitystyökaluilla. Näin ollen tutkimus keskittyy siihen, miten dokumentaatiota voidaan käsitellä osana ohjelmistokehitysprosessia, ei erillisenä kokonaisuutena.
 
-Tutkimus toteutetaan tapaustutkimuksena, jossa hyödynnetään käytännön toteutusta tutkimusmenetelmänä. Tämä tarkoittaa, että tutkimuskysymyksiin ei vastata pelkästään kirjallisuuden perusteella, vaan niitä tarkastellaan konkreettisen toteutuksen kautta. Toteutuksessa etsitään ja arvioidaan työkaluja, joilla dokumentaation muunnos, hallinta ja julkaisu voidaan toteuttaa mahdollisimman tehokkaasti.
+Tutkimus toteutetaan tapaustutkimuksena, jossa hyödynnetään käytännön toteutusta tutkimusmenetelmänä. Tämä tarkoittaa, että tutkimuskysymyksiin ei vastata pelkästään kirjallisuuden perusteella, vaan niitä tarkastellaan konkreettisen toteutuksen kautta. Toteutuksessa etsitään ja arvioidaan työkalua, joilla dokumentaation muunnos, hallinta ja julkaisu voidaan toteuttaa mahdollisimman tehokkaasti.
 
 Tutkimuskysymykset voidaan muotoilla uudelleen käytännönläheisemmin seuraavasti:
 
@@ -258,9 +252,13 @@ Tapaustutkimuksen luonteen mukaisesti tutkimus etenee vaiheittain, ja jokaisessa
 
 Tutkimuksen lähtökohta on käytännön tarve: olemassa olevan dokumentaation muuntaminen Markdown-muotoon ja sen hyödyntäminen modernissa kehitysympäristössä. Tästä näkökulmasta tutkimus voidaan nähdä “työkalujen etsimisenä ja testaamisena”, jossa tavoitteena on rakentaa toimiva ja toistettava prosessi dokumentaation käsittelyyn.
 
-Kokonaisuutena tämä tutkimusmenetelmä yhdistää teoreettisen tarkastelun ja käytännön toteutuksen. Se luo perustan luvussa 5 esiteltävälle toteutukselle, jossa tutkimuskysymyksiin vastataan konkreettisesti vaihe vaiheelta.
+#### 4.1.1 Sisällön kerääminen ja muuntaminen Markdown-muotoon
 
-## 4.1.1 Menetelmän toteutus
+Web scrapingin avulla kerätty sisältö voidaan muuntaa Markdown-muotoon, jolloin siitä saadaan helposti luettavaa ja ylläpidettävää dokumentaatiota. Prosessi alkaa yleensä verkkosivun HTML-rakenteen hakemisella, jonka jälkeen sisältö jäsennetään ja suodatetaan siten, että vain oleellinen tieto, kuten otsikot, kappaleet ja linkit, säilytetään. Tämän jälkeen sisältö muunnetaan Markdown-syntaksia vastaavaan muotoon, esimerkiksi HTML-otsikot muutetaan risuaitamerkinnöiksi (#) ja listat vastaaviksi Markdown-listoiksi. @zotero-item-46
+
+Muuntaminen voidaan toteuttaa automaattisesti erilaisten työkalujen ja kirjastojen avulla. Näiden avulla HTML-rakenteesta voidaan muodostaa Markdown-dokumentti ilman, että sisältöä tarvitsee käsitellä manuaalisesti. Tämä nopeuttaa merkittävästi dokumentaation tuottamista erityisesti silloin, kun käsitellään suuria määriä verkkosisältöä tai olemassa olevaa dokumentaatiota halutaan siirtää uuteen formaattiin. @zotero-item-47
+
+### 4.1.2 Menetelmän toteutus
 
 Tämän työn tutkimusmenetelmänä käytetään käytännönläheistä ja soveltavaa lähestymistapaa, jossa teoreettista tarkastelua täydennetään konkreettisella toteutuksella. Menetelmä perustuu tapaustutkimuksen kaltaiseen lähestymistapaan, jossa Markdownin soveltuvuutta arvioidaan todellisessa käyttötilanteessa muuntamalla olemassa olevaa dokumentaatiota uuteen muotoon.
 
@@ -307,8 +305,19 @@ tekstiä tänne?
 ## 5.1 HAMKin julkisten sivujen muuntaminen Markdown-muotoon
 tekstiä tänne?
 ### 5.1.1 Tutkimuksen suunnittelu ja rajaus
-tekstiä tänne?
+
+Tutkimuksen suunnittelu perustuu tavoitteeseen rakentaa selkeä ja toistettava työnkulku, jolla olemassa oleva verkkopohjainen dokumentaatio voidaan muuntaa Markdown-muotoon ja julkaista osana nykyaikaista dokumentaatioympäristöä. Suunnittelussa painotetaan erityisesti prosessin vaiheistamista sekä sitä, että jokainen vaihe tukee seuraavaa osaa kokonaisuudessa.
+
+Tutkimus rajataan koskemaan HAMKin julkisia, tekstipohjaisia dokumentaatiosivuja, jotka tarjoavat realistisen ja riittävän laajan aineiston menetelmän arviointiin. Rajauksen tavoitteena on keskittyä nimenomaan dokumentaation rakenteeseen ja sisältöön, ei koko verkkosivuston toiminnallisuuteen tai visuaalisiin elementteihin. Tämän vuoksi esimerkiksi dynaamiset komponentit, interaktiiviset elementit sekä sivuston ulkoasuun liittyvät tyylit jätetään tarkastelun ulkopuolelle.
+
+Tutkimuksessa keskitytään dokumentaation työnkulkuun, joka koostuu tiedon keräämisestä, jäsentämisestä, muuntamisesta Markdown-muotoon sekä lopulta julkaisemisesta staattisena sivustona. Näitä vaiheita tarkastellaan kokonaisuutena, jotta voidaan arvioida, kuinka hyvin Markdown soveltuu dokumentaation hallintaan osana ohjelmistokehityksen kaltaista ympäristöä.
+
+Suunnitteluvaiheessa määritellään myös käytettävät teknologiat ja työkalut yleisellä tasolla. Tiedonkeruun oletetaan perustuvan ohjelmalliseen rajapinnan hyödyntämiseen, mikäli sellainen on saatavilla, ja vaihtoehtoisesti HTML-pohjaiseen jäsentämiseen. Muunnosvaiheessa hyödynnetään valmiita kirjastoja, jotka tukevat HTML–Markdown-muunnosta, ja lopullinen dokumentaatio tallennetaan tiedostorakenteeseen, joka mahdollistaa versionhallinnan ja jatkokäsittelyn.
+
+Lisäksi tutkimuksessa huomioidaan työnkulun rajoitteet. Kaikkea alkuperäisen dokumentaation sisältöä ei pyritä säilyttämään täydellisesti, vaan painopiste on tekstisisällön ja rakenteen säilyttämisessä. Erityisesti visuaaliset ratkaisut, kuten kuvien tarkka asettelu, voivat muuttua muunnosprosessissa. Tämä rajaus on tietoinen, sillä tutkimuksen tavoitteena on arvioida Markdownin soveltuvuutta ensisijaisesti teknisen dokumentaation näkökulmasta.
+
 ### 5.1.2 Kohdesivuston teknologian tunnistaminen
+
 Tutkimuksen ensimmäisessä vaiheessa tarkastellaan kohdesivuston rakennetta ja toteutusteknologiaa, jotta tiedonkeruu voidaan toteuttaa systemaattisesti ja tarkoituksenmukaisesti. Koska sivuston toteutustapaa ei ole ennalta tiedossa, sen taustateknologia selvitetään hyödyntämällä useita rinnakkaisia tunnistusmenetelmiä. Näihin kuuluvat HTML-lähdekoodin analysointi, HTTP-otsakkeiden tarkastelu sekä selaimen kehitystyökalujen (DevTools) käyttö. Tavoitteena on tunnistaa mahdollisia viitteitä käytetystä sisällönhallintajärjestelmästä, kuten tiedostopolkuja, skriptejä ja meta-tietoja, jotka voivat viitata esimerkiksi WordPressiin tai muuhun vastaavaan järjestelmään.
 
 Sivuston taustateknologian tunnistaminen toteutetaan useiden teknisten tarkastelumenetelmien avulla, koska sivuston toteutustapa ei ole aluksi tiedossa. Lähdekoodin analysointi toteutetaan avaamalla kohdesivusto selaimessa (https://hamk.fi) ja tarkastelemalla sen HTML-rakennetta joko “Näytä sivun lähdekoodi” -toiminnolla tai selaimen kehitystyökaluilla. @zotero-item-52
