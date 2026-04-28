@@ -252,7 +252,7 @@ Tapaustutkimuksen luonteen mukaisesti tutkimus etenee vaiheittain, ja jokaisessa
 
 Tutkimuksen lähtökohta on käytännön tarve: olemassa olevan dokumentaation muuntaminen Markdown-muotoon ja sen hyödyntäminen modernissa kehitysympäristössä. Tästä näkökulmasta tutkimus voidaan nähdä “työkalujen etsimisenä ja testaamisena”, jossa tavoitteena on rakentaa toimiva ja toistettava prosessi dokumentaation käsittelyyn.
 
-#### 4.1.1 Sisällön kerääminen ja muuntaminen Markdown-muotoon
+### 4.1.1 Sisällön kerääminen ja muuntaminen Markdown-muotoon
 
 Web scrapingin avulla kerätty sisältö voidaan muuntaa Markdown-muotoon, jolloin siitä saadaan helposti luettavaa ja ylläpidettävää dokumentaatiota. Prosessi alkaa yleensä verkkosivun HTML-rakenteen hakemisella, jonka jälkeen sisältö jäsennetään ja suodatetaan siten, että vain oleellinen tieto, kuten otsikot, kappaleet ja linkit, säilytetään. Tämän jälkeen sisältö muunnetaan Markdown-syntaksia vastaavaan muotoon, esimerkiksi HTML-otsikot muutetaan risuaitamerkinnöiksi (#) ja listat vastaaviksi Markdown-listoiksi. @zotero-item-46
 
@@ -270,7 +270,20 @@ Suunnitteluvaiheessa määritellään myös käytettävät teknologiat ja työka
 
 Lisäksi tutkimuksessa huomioidaan työnkulun rajoitteet. Kaikkea alkuperäisen dokumentaation sisältöä ei pyritä säilyttämään täydellisesti, vaan painopiste on tekstisisällön ja rakenteen säilyttämisessä. Erityisesti visuaaliset ratkaisut, kuten kuvien tarkka asettelu, voivat muuttua muunnosprosessissa. Tämä rajaus on tietoinen, sillä tutkimuksen tavoitteena on arvioida Markdownin soveltuvuutta ensisijaisesti teknisen dokumentaation näkökulmasta.
 
-### 4.1.3 Menetelmän toteutus
+
+### 4.1.3 Työkalujen valinta
+
+Työkalut valitaan työn tavoitteiden perusteella. Tavoitteena on rakentaa mahdollisimman automaattinen ja toistettava prosessi, jolla verkkosivujen sisältö haetaan, käsitellään ja muutetaan Markdown-muotoon. Samalla halutaan varmistaa, että kaikki sopii yhteen nykyisten kehityskäytäntöjen kanssa.
+
+Tiedonkeruuseen valitaan TypeScript. Se tuo mukanaan staattisen tyypityksen, mikä tekee koodista selkeämpää ja helpompaa ylläpitää verrattuna tavalliseen JavaScriptiin. TypeScript sopii hyvin myös HTTP-pyyntöjen tekemiseen sekä JSON-datan käsittelyyn - molemmat ovat oleellisia, kun haetaan sisältöä WordPressin REST API:sta @zotero-item-56. Skriptit ajetaan Node.js-ympäristössä, joten ne voi käynnistää suoraan komentoriviltä. @zotero-item-57
+
+HTML:n muuntamiseen Markdowniksi käytetään valmiita kirjastoja ja työkaluja, jotka osaavat käsitellä HTML-rakennetta ja tuottaa siitä toimivaa Markdown-syntaksia. Näiden avulla suurin osa muunnosprosessista automatisoituu, vaikka joissain tapauksissa sisältö vaatii vielä pientä manuaalista viilausta lopputuloksen viimeistelemiseksi.
+
+Dokumentaation versionhallintaan otetaan käyttöön Git. Sen avulla muutoksia voi seurata, eri versioita hallita ja työtä jatkaa myöhemmin ilman ongelmia. Valmis dokumentaatio tallennetaan GitHub-repositorioon, jossa sitä on helppo jakaa, tarkastella ja kehittää yhdessä muiden kanssa.
+
+Itse dokumentaation kirjoittamiseen ja lukemiseen käytetään Visual Studio Codea. Se tarjoaa hyvän tuen Markdownille, live-esikatselun sekä erilaisia laajennuksia, jotka helpottavat työskentelyä. @zotero-item-40
+
+### 4.1.4 Menetelmän toteutus
 
 Tämän työn tutkimusmenetelmänä käytetään käytännönläheistä ja soveltavaa lähestymistapaa, jossa teoreettista tarkastelua täydennetään konkreettisella toteutuksella. Menetelmä perustuu tapaustutkimuksen kaltaiseen lähestymistapaan, jossa Markdownin soveltuvuutta arvioidaan todellisessa käyttötilanteessa muuntamalla olemassa olevaa dokumentaatiota uuteen muotoon.
 
@@ -361,19 +374,7 @@ Kohdesivuston osalta varmistetaan käytännössä, että kyseinen rajapinta on k
 
 Tiedonkeruu toteutetaan siten, että Pages-päätepisteestä haetaan kaikki saatavilla olevat sivut. Koska WordPress-sivut voivat muodostaa hierarkkisen rakenteen, aineisto käsitellään rekursiivisesti siten, että myös alasivut ja niiden suhteet otetaan huomioon. Näin voidaan säilyttää alkuperäinen sivurakenne ja siirtää se edelleen Markdown-muotoiseen dokumentaatioon. @zotero-item-55
 
-### 5.1.3 Työkalujen valinta
-
-Työkalut valitaan työn tavoitteiden perusteella. Tavoitteena on rakentaa mahdollisimman automaattinen ja toistettava prosessi, jolla verkkosivujen sisältö haetaan, käsitellään ja muutetaan Markdown-muotoon. Samalla halutaan varmistaa, että kaikki sopii yhteen nykyisten kehityskäytäntöjen kanssa.
-
-Tiedonkeruuseen valitaan TypeScript. Se tuo mukanaan staattisen tyypityksen, mikä tekee koodista selkeämpää ja helpompaa ylläpitää verrattuna tavalliseen JavaScriptiin. TypeScript sopii hyvin myös HTTP-pyyntöjen tekemiseen sekä JSON-datan käsittelyyn - molemmat ovat oleellisia, kun haetaan sisältöä WordPressin REST API:sta @zotero-item-56. Skriptit ajetaan Node.js-ympäristössä, joten ne voi käynnistää suoraan komentoriviltä. @zotero-item-57
-
-HTML:n muuntamiseen Markdowniksi käytetään valmiita kirjastoja ja työkaluja, jotka osaavat käsitellä HTML-rakennetta ja tuottaa siitä toimivaa Markdown-syntaksia. Näiden avulla suurin osa muunnosprosessista automatisoituu, vaikka joissain tapauksissa sisältö vaatii vielä pientä manuaalista viilausta lopputuloksen viimeistelemiseksi.
-
-Dokumentaation versionhallintaan otetaan käyttöön Git. Sen avulla muutoksia voi seurata, eri versioita hallita ja työtä jatkaa myöhemmin ilman ongelmia. Valmis dokumentaatio tallennetaan GitHub-repositorioon, jossa sitä on helppo jakaa, tarkastella ja kehittää yhdessä muiden kanssa.
-
-Itse dokumentaation kirjoittamiseen ja lukemiseen käytetään Visual Studio Codea. Se tarjoaa hyvän tuen Markdownille, live-esikatselun sekä erilaisia laajennuksia, jotka helpottavat työskentelyä. @zotero-item-40
-
-### 5.1.4 Tietojen kerääminen verkkosivuilta
+### 5.1.3 Tietojen kerääminen verkkosivuilta
 
 Tietojen kerääminen toteutetaan hyödyntämällä WordPressin REST API -rajapintaa ohjelmallisesti TypeScriptin avulla. Toteutuksessa rakennetaan aliohjelma, joka muodostaa HTTP-pyynnön Pages-päätepisteeseen (`/wp-json/wp/v2/pages`) ja hakee sivujen sisällön JSON-muodossa. Pyyntöön liitetään parametreja, kuten sivunumero (page) ja haettavien tulosten määrä (per_page), joiden avulla voidaan hallita hakuprosessia ja käsitellä suuria tietomääriä vaiheittain. @zotero-item-55
 
@@ -398,7 +399,7 @@ palauta kaikki sivut
 
 *Ohjelmakoodi 3.* Tiedonkeruuprosessin peruslogiikka pseudokoodina.
 
-### 5.1.5 HTML-sisällön jäsentäminen ja datan parsiminen
+### 5.1.4 HTML-sisällön jäsentäminen ja datan parsiminen
 
 Kerätyn aineiston jatkokäsittelyssä keskitytään HTML-sisällön jäsentämiseen ja olennaisen datan erotteluun. WordPressin REST API:n kautta haettu sisältö sisältää sivujen varsinaisen sisällön HTML-muodossa, tyypillisesti `content.rendered`-kentässä (@zotero-item-55). Tämän ansiosta HTML-koodiin päästään suoraan käsiksi ilman erillistä sivun lataamista selaimen kautta, mikä helpottaa tiedon käsittelyä ja mahdollistaa täysin ohjelmallisen lähestymistavan.
 
@@ -470,7 +471,7 @@ palauta tulos
 
 *Ohjelmakoodi 9.* Havainnollistaa tuloksen luomista suodatetuista solmuista. 
 
-### 5.1.6 Sisällön muuntaminen Markdown-muotoon
+### 5.1.5 Sisällön muuntaminen Markdown-muotoon
 
 Kun HTML-sisältö on jäsennetty ja suodatettu edellisessä vaiheessa, se muunnetaan Markdown-muotoon jatkokäyttöä varten. Muunnos toteutetaan ohjelmallisesti siten, että jokaisen sivun käsitelty HTML syötetään muunnostyökalulle, joka tuottaa vastaavan Markdown-esityksen. Tämä vaihe mahdollistaa dokumentaation siirtämisen tekstipohjaiseen ja helposti versionhallittavaan muotoon.
 
@@ -531,7 +532,7 @@ Lisäksi muunnosvaihe toimii eräänlaisena normalisointivaiheena, jossa eri siv
 
 Lopputuloksena saadaan Markdown-muotoinen dokumentaatio, joka voidaan tallentaa tiedostoiksi ja siirtää versionhallintaan. Tämä mahdollistaa dokumentaation jatkokäsittelyn, julkaisemisen sekä integroinnin muihin työkaluihin, kuten staattisiin sivustogeneraattoreihin tai dokumentaatioalustoihin.
 
-### 5.1.7 Dokumentaation rakenteen muuntaminen tiedostorakenteeksi
+### 5.1.6 Dokumentaation rakenteen muuntaminen tiedostorakenteeksi
 
 Markdown-muotoon muunnettu sisältö tallennetaan lopuksi tiedostojärjestelmään siten, että se muodostaa loogisen ja navigoitavan dokumentaatiokokonaisuuden. Tässä vaiheessa yksittäiset Markdown-sisällöt yhdistetään tiedostorakenteeksi, joka vastaa mahdollisimman hyvin alkuperäisen verkkosivuston rakennetta.
 
@@ -577,7 +578,7 @@ jokaiselle (key, markdown):
 
 Tämän vaiheen lopputuloksena syntyy selkeä tiedostopohjainen dokumentaatiorakenne, joka vastaa alkuperäisen sivuston loogista rakennetta. Rakennetta voidaan hyödyntää suoraan versionhallinnassa sekä julkaista esimerkiksi staattisena verkkosivustona.
 
-### 5.1.8 Static site generatorin käyttöönotto (Docusaurus)
+### 5.1.7 Static site generatorin käyttöönotto (Docusaurus)
 
 Kun dokumentaatio on muunnettu Markdown-muotoon ja tallennettu tiedostorakenteeksi, seuraava vaihe on sen julkaiseminen staattisena verkkosivustona. Tässä työssä tähän tarkoitukseen valitaan Docusaurus, joka on Node.js-ympäristössä toimiva staattisten sivustojen generaattori ja tukee Markdown-pohjaista dokumentaatiota suoraan. @zotero-item-60
 
@@ -593,7 +594,7 @@ Tämän vaiheen lopputuloksena syntyy toimiva dokumentaatiosivusto, jossa aiemmi
 
 *Kuva 6.* Havainnollistaa valmista Docusaurus-sivustoa.
 
-### 5.1.9 Versionhallintaan siirtäminen (Git)
+### 5.1.8 Versionhallintaan siirtäminen (Git)
 
 Kun dokumentaatio on muunnettu Markdown-muotoon ja järjestetty tiedostorakenteeksi, se siirretään versionhallintaan Gitin avulla. Versionhallinnan tarkoituksena on mahdollistaa muutosten seuranta, hallinta sekä dokumentaation kehittäminen hallitusti ajan kuluessa.
 
@@ -618,7 +619,7 @@ lähetä tiedostot (git push)
 
 Versionhallinnan avulla dokumentaation muutokset tallentuvat selkeästi versiohistoriaan. Tämä mahdollistaa esimerkiksi aiempien versioiden tarkastelun, virheiden korjaamisen sekä muutosten vertailun eri versioiden välillä. Lisäksi Git tukee haarautumista (branching), mikä mahdollistaa uusien ominaisuuksien tai muutosten kehittämisen erillään pääversiosta. Tässä työssä Git toimii sekä teknisenä työkaluna että osana tutkimusmenetelmää, koska se heijastaa nykyaikaisia dokumentaatiokäytäntöjä ohjelmistokehityksessä.
 
-### 5.1.10 Dokumentaation automatisoitu julkaisu (GitHub Actions)
+### 5.1.9 Dokumentaation automatisoitu julkaisu (GitHub Actions)
 
 Versionhallintaan siirtämisen jälkeen dokumentaation julkaisu automatisoidaan hyödyntämällä GitHub Actions -työnkulkuja. Automatisoinnin tavoitteena on poistaa manuaaliset vaiheet dokumentaation generoinnista ja julkaisemisesta sekä varmistaa, että sivusto päivittyy automaattisesti aina, kun lähdekoodiin tehdään muutoksia. @zotero-item-61
 
