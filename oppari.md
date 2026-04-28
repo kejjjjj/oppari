@@ -258,7 +258,19 @@ Web scrapingin avulla kerätty sisältö voidaan muuntaa Markdown-muotoon, jollo
 
 Muuntaminen voidaan toteuttaa automaattisesti erilaisten työkalujen ja kirjastojen avulla. Näiden avulla HTML-rakenteesta voidaan muodostaa Markdown-dokumentti ilman, että sisältöä tarvitsee käsitellä manuaalisesti. Tämä nopeuttaa merkittävästi dokumentaation tuottamista erityisesti silloin, kun käsitellään suuria määriä verkkosisältöä tai olemassa olevaa dokumentaatiota halutaan siirtää uuteen formaattiin. @zotero-item-47
 
-### 4.1.2 Menetelmän toteutus
+### 4.1.2 Tutkimuksen suunnittelu ja rajaus
+
+Tutkimuksen suunnittelu perustuu tavoitteeseen rakentaa selkeä ja toistettava työnkulku, jolla olemassa oleva verkkopohjainen dokumentaatio voidaan muuntaa Markdown-muotoon ja julkaista osana nykyaikaista dokumentaatioympäristöä. Suunnittelussa painotetaan erityisesti prosessin vaiheistamista sekä sitä, että jokainen vaihe tukee seuraavaa osaa kokonaisuudessa.
+
+Tutkimus rajataan koskemaan HAMKin julkisia, tekstipohjaisia dokumentaatiosivuja, jotka tarjoavat realistisen ja riittävän laajan aineiston menetelmän arviointiin. Rajauksen tavoitteena on keskittyä nimenomaan dokumentaation rakenteeseen ja sisältöön, ei koko verkkosivuston toiminnallisuuteen tai visuaalisiin elementteihin. Tämän vuoksi esimerkiksi dynaamiset komponentit, interaktiiviset elementit sekä sivuston ulkoasuun liittyvät tyylit jätetään tarkastelun ulkopuolelle.
+
+Tutkimuksessa keskitytään dokumentaation työnkulkuun, joka koostuu tiedon keräämisestä, jäsentämisestä, muuntamisesta Markdown-muotoon sekä lopulta julkaisemisesta staattisena sivustona. Näitä vaiheita tarkastellaan kokonaisuutena, jotta voidaan arvioida, kuinka hyvin Markdown soveltuu dokumentaation hallintaan osana ohjelmistokehityksen kaltaista ympäristöä.
+
+Suunnitteluvaiheessa määritellään myös käytettävät teknologiat ja työkalut yleisellä tasolla. Tiedonkeruun oletetaan perustuvan ohjelmalliseen rajapinnan hyödyntämiseen, mikäli sellainen on saatavilla, ja vaihtoehtoisesti HTML-pohjaiseen jäsentämiseen. Muunnosvaiheessa hyödynnetään valmiita kirjastoja, jotka tukevat HTML–Markdown-muunnosta, ja lopullinen dokumentaatio tallennetaan tiedostorakenteeseen, joka mahdollistaa versionhallinnan ja jatkokäsittelyn.
+
+Lisäksi tutkimuksessa huomioidaan työnkulun rajoitteet. Kaikkea alkuperäisen dokumentaation sisältöä ei pyritä säilyttämään täydellisesti, vaan painopiste on tekstisisällön ja rakenteen säilyttämisessä. Erityisesti visuaaliset ratkaisut, kuten kuvien tarkka asettelu, voivat muuttua muunnosprosessissa. Tämä rajaus on tietoinen, sillä tutkimuksen tavoitteena on arvioida Markdownin soveltuvuutta ensisijaisesti teknisen dokumentaation näkökulmasta.
+
+### 4.1.3 Menetelmän toteutus
 
 Tämän työn tutkimusmenetelmänä käytetään käytännönläheistä ja soveltavaa lähestymistapaa, jossa teoreettista tarkastelua täydennetään konkreettisella toteutuksella. Menetelmä perustuu tapaustutkimuksen kaltaiseen lähestymistapaan, jossa Markdownin soveltuvuutta arvioidaan todellisessa käyttötilanteessa muuntamalla olemassa olevaa dokumentaatiota uuteen muotoon.
 
@@ -310,19 +322,7 @@ Toteutus etenee vaiheittain alkaen kohdesivuston rakenteen ja teknologian tunnis
 
 Luvun tarkoituksena on kuvata prosessi käytännön tasolla sekä arvioida, kuinka hyvin Markdown soveltuu olemassa olevan dokumentaation käsittelyyn ja uudelleenkäyttöön osana nykyaikaista dokumentaation työnkulkua.
 
-### 5.1.1 Tutkimuksen suunnittelu ja rajaus
-
-Tutkimuksen suunnittelu perustuu tavoitteeseen rakentaa selkeä ja toistettava työnkulku, jolla olemassa oleva verkkopohjainen dokumentaatio voidaan muuntaa Markdown-muotoon ja julkaista osana nykyaikaista dokumentaatioympäristöä. Suunnittelussa painotetaan erityisesti prosessin vaiheistamista sekä sitä, että jokainen vaihe tukee seuraavaa osaa kokonaisuudessa.
-
-Tutkimus rajataan koskemaan HAMKin julkisia, tekstipohjaisia dokumentaatiosivuja, jotka tarjoavat realistisen ja riittävän laajan aineiston menetelmän arviointiin. Rajauksen tavoitteena on keskittyä nimenomaan dokumentaation rakenteeseen ja sisältöön, ei koko verkkosivuston toiminnallisuuteen tai visuaalisiin elementteihin. Tämän vuoksi esimerkiksi dynaamiset komponentit, interaktiiviset elementit sekä sivuston ulkoasuun liittyvät tyylit jätetään tarkastelun ulkopuolelle.
-
-Tutkimuksessa keskitytään dokumentaation työnkulkuun, joka koostuu tiedon keräämisestä, jäsentämisestä, muuntamisesta Markdown-muotoon sekä lopulta julkaisemisesta staattisena sivustona. Näitä vaiheita tarkastellaan kokonaisuutena, jotta voidaan arvioida, kuinka hyvin Markdown soveltuu dokumentaation hallintaan osana ohjelmistokehityksen kaltaista ympäristöä.
-
-Suunnitteluvaiheessa määritellään myös käytettävät teknologiat ja työkalut yleisellä tasolla. Tiedonkeruun oletetaan perustuvan ohjelmalliseen rajapinnan hyödyntämiseen, mikäli sellainen on saatavilla, ja vaihtoehtoisesti HTML-pohjaiseen jäsentämiseen. Muunnosvaiheessa hyödynnetään valmiita kirjastoja, jotka tukevat HTML–Markdown-muunnosta, ja lopullinen dokumentaatio tallennetaan tiedostorakenteeseen, joka mahdollistaa versionhallinnan ja jatkokäsittelyn.
-
-Lisäksi tutkimuksessa huomioidaan työnkulun rajoitteet. Kaikkea alkuperäisen dokumentaation sisältöä ei pyritä säilyttämään täydellisesti, vaan painopiste on tekstisisällön ja rakenteen säilyttämisessä. Erityisesti visuaaliset ratkaisut, kuten kuvien tarkka asettelu, voivat muuttua muunnosprosessissa. Tämä rajaus on tietoinen, sillä tutkimuksen tavoitteena on arvioida Markdownin soveltuvuutta ensisijaisesti teknisen dokumentaation näkökulmasta.
-
-### 5.1.2 Kohdesivuston teknologian tunnistaminen
+### 5.1.1 Kohdesivuston teknologian tunnistaminen
 
 Tutkimuksen ensimmäisessä vaiheessa tarkastellaan kohdesivuston rakennetta ja toteutusteknologiaa, jotta tiedonkeruu voidaan toteuttaa systemaattisesti ja tarkoituksenmukaisesti. Koska sivuston toteutustapaa ei ole ennalta tiedossa, sen taustateknologia selvitetään hyödyntämällä useita rinnakkaisia tunnistusmenetelmiä. Näihin kuuluvat HTML-lähdekoodin analysointi, HTTP-otsakkeiden tarkastelu sekä selaimen kehitystyökalujen (DevTools) käyttö. Tavoitteena on tunnistaa mahdollisia viitteitä käytetystä sisällönhallintajärjestelmästä, kuten tiedostopolkuja, skriptejä ja meta-tietoja, jotka voivat viitata esimerkiksi WordPressiin tai muuhun vastaavaan järjestelmään.
 
@@ -347,7 +347,7 @@ Lähdekoodianalyysin lisäksi hyödynnetään selaimen kehitystyökaluja verkkol
 
 Näiden havaintojen perusteella voidaan päätellä, että kohdesivusto on toteutettu WordPress-sisällönhallintajärjestelmällä, ja käytössä oleva versio on 6.9.4. Tämä tieto ohjaa tutkimuksen seuraavia vaiheita, erityisesti tiedonkeruumenetelmien valintaa.
 
-### 5.1.3 Kohdesivuston teknologian hyödyntäminen
+### 5.1.2 Kohdesivuston teknologian hyödyntäminen
 
 Kun kohdesivuston toteutusteknologiaksi on tunnistettu WordPress, voidaan tiedonkeruussa hyödyntää sen tarjoamia rajapintoja perinteisen HTML-pohjaisen web scrapingin sijaan. WordPress sisältää REST API -rajapinnan, jonka avulla sivuston sisältöä voidaan hakea ohjelmallisesti rakenteisessa muodossa. Tämä mahdollistaa luotettavamman tavan kerätä dokumentaatiota verrattuna pelkkään HTML-rakenteen parsimiseen. @zotero-item-54
 
@@ -361,7 +361,7 @@ Kohdesivuston osalta varmistetaan käytännössä, että kyseinen rajapinta on k
 
 Tiedonkeruu toteutetaan siten, että Pages-päätepisteestä haetaan kaikki saatavilla olevat sivut. Koska WordPress-sivut voivat muodostaa hierarkkisen rakenteen, aineisto käsitellään rekursiivisesti siten, että myös alasivut ja niiden suhteet otetaan huomioon. Näin voidaan säilyttää alkuperäinen sivurakenne ja siirtää se edelleen Markdown-muotoiseen dokumentaatioon. @zotero-item-55
 
-### 5.1.4 Työkalujen valinta
+### 5.1.3 Työkalujen valinta
 
 Työkalut valitaan työn tavoitteiden perusteella. Tavoitteena on rakentaa mahdollisimman automaattinen ja toistettava prosessi, jolla verkkosivujen sisältö haetaan, käsitellään ja muutetaan Markdown-muotoon. Samalla halutaan varmistaa, että kaikki sopii yhteen nykyisten kehityskäytäntöjen kanssa.
 
@@ -373,7 +373,7 @@ Dokumentaation versionhallintaan otetaan käyttöön Git. Sen avulla muutoksia v
 
 Itse dokumentaation kirjoittamiseen ja lukemiseen käytetään Visual Studio Codea. Se tarjoaa hyvän tuen Markdownille, live-esikatselun sekä erilaisia laajennuksia, jotka helpottavat työskentelyä. @zotero-item-40
 
-### 5.1.5 Tietojen kerääminen verkkosivuilta
+### 5.1.4 Tietojen kerääminen verkkosivuilta
 
 Tietojen kerääminen toteutetaan hyödyntämällä WordPressin REST API -rajapintaa ohjelmallisesti TypeScriptin avulla. Toteutuksessa rakennetaan aliohjelma, joka muodostaa HTTP-pyynnön Pages-päätepisteeseen (`/wp-json/wp/v2/pages`) ja hakee sivujen sisällön JSON-muodossa. Pyyntöön liitetään parametreja, kuten sivunumero (page) ja haettavien tulosten määrä (per_page), joiden avulla voidaan hallita hakuprosessia ja käsitellä suuria tietomääriä vaiheittain. @zotero-item-55
 
@@ -398,7 +398,7 @@ palauta kaikki sivut
 
 *Ohjelmakoodi 3.* Tiedonkeruuprosessin peruslogiikka pseudokoodina.
 
-### 5.1.6 HTML-sisällön jäsentäminen ja datan parsiminen
+### 5.1.5 HTML-sisällön jäsentäminen ja datan parsiminen
 
 Kerätyn aineiston jatkokäsittelyssä keskitytään HTML-sisällön jäsentämiseen ja olennaisen datan erotteluun. WordPressin REST API:n kautta haettu sisältö sisältää sivujen varsinaisen sisällön HTML-muodossa, tyypillisesti `content.rendered`-kentässä (@zotero-item-55). Tämän ansiosta HTML-koodiin päästään suoraan käsiksi ilman erillistä sivun lataamista selaimen kautta, mikä helpottaa tiedon käsittelyä ja mahdollistaa täysin ohjelmallisen lähestymistavan.
 
@@ -470,7 +470,7 @@ palauta tulos
 
 *Ohjelmakoodi 9.* Havainnollistaa tuloksen luomista suodatetuista solmuista. 
 
-### 5.1.7 Sisällön muuntaminen Markdown-muotoon
+### 5.1.6 Sisällön muuntaminen Markdown-muotoon
 
 Kun HTML-sisältö on jäsennetty ja suodatettu edellisessä vaiheessa, se muunnetaan Markdown-muotoon jatkokäyttöä varten. Muunnos toteutetaan ohjelmallisesti siten, että jokaisen sivun käsitelty HTML syötetään muunnostyökalulle, joka tuottaa vastaavan Markdown-esityksen. Tämä vaihe mahdollistaa dokumentaation siirtämisen tekstipohjaiseen ja helposti versionhallittavaan muotoon.
 
@@ -531,7 +531,7 @@ Lisäksi muunnosvaihe toimii eräänlaisena normalisointivaiheena, jossa eri siv
 
 Lopputuloksena saadaan Markdown-muotoinen dokumentaatio, joka voidaan tallentaa tiedostoiksi ja siirtää versionhallintaan. Tämä mahdollistaa dokumentaation jatkokäsittelyn, julkaisemisen sekä integroinnin muihin työkaluihin, kuten staattisiin sivustogeneraattoreihin tai dokumentaatioalustoihin.
 
-### 5.1.8 Dokumentaation rakenteen muuntaminen tiedostorakenteeksi
+### 5.1.7 Dokumentaation rakenteen muuntaminen tiedostorakenteeksi
 
 Markdown-muotoon muunnettu sisältö tallennetaan lopuksi tiedostojärjestelmään siten, että se muodostaa loogisen ja navigoitavan dokumentaatiokokonaisuuden. Tässä vaiheessa yksittäiset Markdown-sisällöt yhdistetään tiedostorakenteeksi, joka vastaa mahdollisimman hyvin alkuperäisen verkkosivuston rakennetta.
 
@@ -577,7 +577,7 @@ jokaiselle (key, markdown):
 
 Tämän vaiheen lopputuloksena syntyy selkeä tiedostopohjainen dokumentaatiorakenne, joka vastaa alkuperäisen sivuston loogista rakennetta. Rakennetta voidaan hyödyntää suoraan versionhallinnassa sekä julkaista esimerkiksi staattisena verkkosivustona.
 
-### 5.1.9 Static site generatorin käyttöönotto (Docusaurus)
+### 5.1.8 Static site generatorin käyttöönotto (Docusaurus)
 
 Kun dokumentaatio on muunnettu Markdown-muotoon ja tallennettu tiedostorakenteeksi, seuraava vaihe on sen julkaiseminen staattisena verkkosivustona. Tässä työssä tähän tarkoitukseen valitaan Docusaurus, joka on Node.js-ympäristössä toimiva staattisten sivustojen generaattori ja tukee Markdown-pohjaista dokumentaatiota suoraan. @zotero-item-60
 
