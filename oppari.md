@@ -337,13 +337,29 @@ Yksi työkaluista tässä yhteydessä on Pandoc, joka on laajasti käytetty doku
 
 Työkalujen valinta rajataan siten, että kaikki ratkaisut tukevat suoraa tiedostomuunnosta ilman ohjelmointia. Näin tutkimuksessa voidaan keskittyä itse muunnosprosessin arviointiin: kuinka hyvin rakenne säilyy, miten viittaukset toimivat ja kuinka paljon manuaalista viimeistelyä tarvitaan lopullisessa Word-dokumentissa.
 
-### 4.2.3 Menetelmän toteutus
+### 4.2.3 Markdown-tiedoston valmistelu muunnosta varten
 
-Tutkimusmenetelmään sisältyy myös metatasoinen tarkastelu, jossa arvioidaan Markdown-muotoisen dokumentaation muuntamista HAMK:n viralliseen opinnäytetyömuotoon. Tässä työssä tarkastelun kohteena on Markdown-dokumentin muuntaminen HAMK:n opinnäytetyöpohjan mukaiseen Microsoft Word -muotoon sekä viitteidenhallinnan (Zotero) integrointi osaksi prosessia.
+Ennen varsinaista muunnosvaihetta Markdown-tiedosto valmistellaan siten, että sen rakenne ja sisältö ovat yhteensopivia Word-muotoon tehtävän konversion kanssa. Tavoitteena on varmistaa, että dokumentin looginen rakenne säilyy mahdollisimman hyvin ja että muunnos tuottaa mahdollisimman vähän virheitä tai manuaalista korjaustarvetta.
 
-Muunnosprosessi perustuu työkaluihin, jotka mahdollistavat Markdown-tiedostojen konvertoinnin Word-muotoon (.docx). Tällaiset työkalut, kuten Pandoc, pystyvät säilyttämään dokumentin rakenteen (otsikot, kappaleet, listat) ja muuntamaan sen Word-yhteensopivaan muotoon. Tämän jälkeen dokumentti voidaan sovittaa HAMK:n viralliseen opinnäytetyöpohjaan, jossa huomioidaan esimerkiksi tyylit, otsikkotasot ja sivuasetukset.
+Valmisteluvaiheessa keskeistä on Markdownin rakenteiden johdonmukainen käyttö. Otsikkotasot määritellään selkeästi käyttäen `#`-syntaksia, jolloin ne voidaan muunnosvaiheessa tulkita vastaaviksi otsikkotyyleiksi Word-dokumentissa. Samoin kappaleet, listat ja muut peruselementit kirjoitetaan Markdownin standardien mukaisesti ilman epäyhtenäisiä tai sekamuotoisia rakenteita.
 
-Metatutkimuksen tavoitteena on arvioida kuinka hyvin Markdown-pohjainen kirjoitusprosessi soveltuu opinnäytetyön kaltaiseen formaaliin dokumentointiin. Erityisesti tarkastellaan muunnosprosessin toimivuutta, rakenteen säilymistä sekä viitteidenhallinnan yhteensopivuutta. Tämä näkökulma täydentää varsinaista tutkimusta tuomalla esiin Markdownin käytettävyyden myös akateemisessa kontekstissa.
+Lisäksi tiedostosta poistetaan tai vältetään sellaiset Markdown-laajennukset ja erikoisrakenteet, joita kaikki muunnostyökalut eivät tue. Tällaisia voivat olla esimerkiksi monimutkaiset HTML-upotukset tai työkalukohtaiset syntaksilaajennukset. Näiden sijaan pyritään käyttämään mahdollisimman “puhdasta” Markdownia, joka on yhteensopivaa eri konversiotyökalujen kanssa.
+
+Viittausten ja lähteiden osalta varmistetaan, että ne on kirjoitettu yhtenäisessä muodossa. Tämä voi tarkoittaa esimerkiksi viitteiden merkitsemistä tunnisteilla tai käyttämällä viitteidenhallintatyökalun tuottamaa Markdown-yhteensopivaa formaattia. Tavoitteena on, että viitteet voidaan käsitellä oikein myös muunnosvaiheessa.
+
+Käytännössä valmisteluvaiheessa voidaan myös jakaa laaja dokumentti loogisiin osiin tai varmistaa, että tiedoston rakenne vastaa opinnäytetyön lukujakoa. Tämä helpottaa sekä muunnosta että myöhempää tarkastelua Word-ympäristössä.
+
+### 4.2.4 Menetelmän toteutus
+
+Tässä osuudessa kuvataan Markdown-muotoisen tekstin muuntaminen opinnäytetyövaatimusten mukaiseen Word-muotoon (.docx). Prosessin tavoitteena on mahdollistaa koko opinnäytetyön kirjoittaminen Markdown-muodossa siten, että lopullinen dokumentti voidaan tuottaa mahdollisimman automaattisesti ilman laajaa manuaalista muokkausta.
+
+Muunnosprosessi perustuu lineaariseen työvaiheeseen, jossa Markdown-tiedosto toimii ensisijaisena lähdemateriaalina. Tämä tiedosto sisältää koko työn rakenteen, mukaan lukien otsikot, kappaleet, listat sekä viittaukset. Tämän jälkeen sisältö muunnetaan Word-muotoon käyttäen valmista konversiotyökalua, joka säilyttää mahdollisimman hyvin alkuperäisen rakenteen.
+
+Periaatteena on, että Markdown toimii “yhden lähteen” (single source of truth) ratkaisuna, josta voidaan tuottaa lopullinen dokumentti. Tämä vähentää tarvetta ylläpitää useita eri versioita samasta sisällöstä ja mahdollistaa muutosten tekemisen suoraan yhteen paikkaan.
+
+Muunnosvaiheessa hyödynnetään valmiita työkaluja, jotka tukevat Markdownin konvertointia Word-muotoon ilman ohjelmointia. Näiden työkalujen avulla dokumentin rakenne, kuten otsikkotasot ja kappalejaot, säilyvät pääosin ennallaan, vaikka osa muotoilusta vaatiikin jälkikäsittelyä.
+
+Prosessin lopussa syntynyttä Word-dokumenttia verrataan opinnäytetyömallipohjaan. Tarvittaessa tehdään pieniä manuaalisia korjauksia esimerkiksi muotoiluun liittyen, mutta tavoitteena on, että suurin osa työstä on automatisoitu.
 
 # 5 Research
 tekstiä tänne?
@@ -698,13 +714,11 @@ Automatisoitu työnkulku yhdistää koko prosessin yhdeksi jatkuvaksi putkeksi, 
 ## 5.2 Markdownin muuntaminen opinnäytetyömuotoon
 tekstiä tänne?
 
-### 5.2.1 Muunnosprosessin yleiskuvaus
-### 5.2.2 Markdown-tiedoston valmistelu muunnosta varten
-### 5.2.3 Markdown → DOCX -muunnos Pandocilla
-### 5.2.4 Viittausten ja lähteiden käsittely (Zotero)
-### 5.2.5 Muotoilun sovittaminen opinnäytetyöpohjaan
-### 5.2.6 Muunnoksen tulosten arviointi
-### 5.2.7 Havaitut haasteet ja manuaaliset korjaukset
+### 5.2.1 Markdown -> DOCX -muunnos Pandocilla
+### 5.2.2 Viittausten ja lähteiden käsittely (Zotero)
+### 5.2.3 Muotoilun sovittaminen opinnäytetyöpohjaan
+### 5.2.4 Muunnoksen tulosten arviointi
+### 5.2.5 Havaitut haasteet ja manuaaliset korjaukset
 
 # 6 Results
 ## 6.1 Markdown-muunnoksen tulokset
