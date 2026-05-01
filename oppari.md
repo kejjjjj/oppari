@@ -5,6 +5,8 @@
 [4]: https://github.com/kejjjjj/oppari/blob/main/hamk_wordpress_api_rajapinta.png?raw=true
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/using_the_w3c_dom_level_1_core-doctree.jpg
 [6]: https://github.com/kejjjjj/oppari/blob/main/docusaurus.png?raw=true
+[7]: https://github.com/kejjjjj/oppari/blob/main/muunnos1.png?raw=true
+[8]: https://github.com/kejjjjj/oppari/blob/main/muunnos2.png?raw=true
 
 # Abstrakti
 tekstiä tänne
@@ -728,7 +730,7 @@ Tämä peruskomento riittää tuottamaan toimivan Word-dokumentin, jossa Markdow
 
 *Kuva 7.* Havainnollistaa ensimmäistä muunnosta.
 
-![alt text](image.png)
+![kuva7][7]
 
 Käytännön kokeilussa kuitenkin huomataan nopeasti, että pelkkä perusmuunnos ei riitä opinnäytetyövaatimuksiin. Tämän vuoksi muunnosta täydennetään lisäparametreilla, joilla hallitaan esimerkiksi dokumentin rakennetta ja ominaisuuksia.
 
@@ -738,35 +740,41 @@ pandoc oppari.md -o oppari.docx --toc
 
 *Ohjelmakoodi 17.* Havainnollistaa Pandoc-muunnosta sisällysluettelon kanssa.
 
-*Kuva 7.* Havainnollistaa muunnosta sisällysluettelon kanssa.
+*Kuva 8.* Havainnollistaa muunnosta sisällysluettelon kanssa.
 
-![alt text](image.png)
+![kuva8][8]
 
 ### 5.2.2 Viittausten ja lähteiden käsittely (Zotero)
 
-Viittausten hallinta on osa opinnäytetyötä, ja sen toimivuus on kriittinen arvioitaessa Markdown-pohjaisen kirjoittamisen soveltuvuutta. Tässä tutkimuksessa viitteiden hallintaan käytetään Zoteroa, joka mahdollistaa lähteiden tallentamisen ja viennin eri formaatteihin.
+Viittausten hallinta on osa opinnäytetyötä, ja sen toimivuus on ratkaisevaa arvioitaessa Markdown-pohjaisen kirjoittamisen soveltuvuutta akateemiseen käyttöön. Tässä tutkimuksessa viitteiden hallintaan hyödynnetään Zoteroa, joka toimii erillisenä viitteidenhallintatyökaluna ja mahdollistaa lähteiden keräämisen, organisoinnin sekä viennin eri formaatteihin.
 
-Käytännössä viitteet tuotetaan Zoteron avulla ja viedään `.bib`-muotoiseen tiedostoon, jota Pandoc pystyy hyödyntämään. Markdown-tiedostossa viittaukset merkitään viiteavaimilla.
-
+Käytännössä viitteet hallitaan Zoterossa ja viedään BibTeX-muotoiseen (`.bib`) tiedostoon, jota Pandoc pystyy hyödyntämään muunnosvaiheessa. Jokaiselle lähteelle muodostuu yksilöllinen viiteavain, jota käytetään Markdown-tekstissä viittaamiseen.
 
 ```
 Tämä on esimerkkiviite @{zotero-item-22}.
 ```
 
-*Ohjelmakoodi 18.* Havainnollistaa Zoteron esimerkkiviitettä.
+*Ohjelmakoodi 18.* Havainnollistaa Markdown-muotoista viittausta viiteavaimen avulla.
 
-Kun muunnos suoritetaan Pandocilla, viitteet käsitellään automaattisesti ja niistä muodostetaan sekä tekstiviitteet että lähdeluettelo.
+Muunnosvaiheessa Pandoc käsittelee nämä viitteet automaattisesti. Tämä edellyttää, että muunnoskomennossa määritellään sekä viitetiedosto että viittausten käsittelyyn tarvittavat asetukset.
 
 ```
-pandoc oppari.md -o oppari.docx --toc --citeproc --bibliography=references.bib
+pandoc oppari.md -o oppari.docx --toc --citeproc --bibliography=references.bib --csl=apa.csl
 ```
 
-*Ohjelmakoodi 19.* Havainnollistaa Pandoc-muunnosta lähteiden kanssa
+*Ohjelmakoodi 19.* Havainnollistaa Pandoc-muunnosta viitteiden kanssa.
 
-Käytännön kokeilussa havaitaan, että viitteiden perustoiminnallisuus toimii hyvin: lähteet listautuvat automaattisesti dokumentin loppuun ja viitteet linkittyvät oikein. Tämä mahdollistaa sen, että koko lähdehallinta voidaan tehdä Markdown-ympäristössä ilman Wordiin sidottuja työkaluja.
+Käytännön toteutuksessa havaitaan, että viitteiden perustoiminnallisuus toimii hyvin. Pandoc muodostaa automaattisesti tekstiviitteet sekä lähdeluettelon dokumentin loppuun, ja viitteet linkittyvät oikein viitetiedostoon. Tämä mahdollistaa sen, että lähdehallinta voidaan toteuttaa kokonaisuudessaan Markdown-ympäristössä ilman suoraa riippuvuutta Wordin omista viittaustyökaluista.
 
+*Kuva 9.* Havainnollistaa muunnosta lähdeviitteiden kanssa.
 
+![kuva9](image.png)
 
+Prosessin aikana tunnistetaan kuitenkin myös merkittäviä rajoitteita. Yksi havainto liittyy Word-ympäristön Zotero-integraatioon: koska Pandoc muuntaa viitteet lopulliseen tekstimuotoon, ne eivät enää säily “dynaamisina” viitteinä Wordissa. Tämä tarkoittaa, että Wordin Zotero-lisäosa ei tunnista viitteitä eikä mahdollista niiden automaattista muokkaamista muunnoksen jälkeen.
+
+Lisäksi havaitaan, että liitteisiin (esimerkiksi opinnäytetyön lopussa oleviin erillisiin osioihin) sisältyvät viitteet voivat muuntua pelkäksi tekstiksi ilman toiminnallista yhteyttä Zoteroon. Tämä rajoittaa erityisesti tilanteita, joissa liitteissä halutaan käyttää samaa viitteidenhallintaa kuin varsinaisessa tekstissä.
+
+Näistä rajoitteista huolimatta menetelmä toimii hyvin tilanteissa, joissa viitteiden lopullinen muoto ei enää vaadi muokkausta Word-ympäristössä. Käytännössä tämä tarkoittaa, että viitteet tulisi viimeistellä Markdown-vaiheessa ennen muunnosta.
 
 ### 5.2.3 Muotoilun sovittaminen opinnäytetyöpohjaan
 ### 5.2.4 Muunnoksen tulosten arviointi
