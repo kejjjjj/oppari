@@ -715,7 +715,59 @@ Automatisoitu työnkulku yhdistää koko prosessin yhdeksi jatkuvaksi putkeksi, 
 tekstiä tänne?
 
 ### 5.2.1 Markdown -> DOCX -muunnos Pandocilla
+
+Muunnosprosessi toteutetaan käytännössä käyttämällä Pandoc-työkalua, jonka avulla Markdown-muotoinen teksti muunnetaan suoraan Word-dokumentiksi. Prosessi alkaa siitä, että koko opinnäytetyön sisältö on kirjoitettu yhteen tai useampaan .md-tiedostoon loogisesti jäsenneltynä. Tämän jälkeen muunnos voidaan suorittaa yhdellä komentorivikomennolla.
+
+```
+pandoc oppari.md -o output.docx
+```
+
+*Ohjelmakoodi 17.* Havainnollistaa yksinkertaista Pandoc-esimerkkiä.
+
+Tämä peruskomento riittää tuottamaan toimivan Word-dokumentin, jossa Markdownin perusrakenteet on muunnettu vastaaviin Word-elementteihin. Käytännössä havaitaan, että otsikkotasot siirtyvät hyvin (esim. # -> Heading 1), kappalejako säilyy ja listat toimivat odotetusti.
+
+*Kuva 7.* Havainnollistaa ensimmäistä muunnosta.
+
+![alt text](image.png)
+
+Käytännön kokeilussa kuitenkin huomataan nopeasti, että pelkkä perusmuunnos ei riitä opinnäytetyövaatimuksiin. Tämän vuoksi muunnosta täydennetään lisäparametreilla, joilla hallitaan esimerkiksi dokumentin rakennetta ja ominaisuuksia.
+
+```
+pandoc oppari.md -o oppari.docx --toc
+```
+
+*Ohjelmakoodi 17.* Havainnollistaa Pandoc-muunnosta sisällysluettelon kanssa.
+
+*Kuva 7.* Havainnollistaa muunnosta sisällysluettelon kanssa.
+
+![alt text](image.png)
+
 ### 5.2.2 Viittausten ja lähteiden käsittely (Zotero)
+
+Viittausten hallinta on osa opinnäytetyötä, ja sen toimivuus on kriittinen arvioitaessa Markdown-pohjaisen kirjoittamisen soveltuvuutta. Tässä tutkimuksessa viitteiden hallintaan käytetään Zoteroa, joka mahdollistaa lähteiden tallentamisen ja viennin eri formaatteihin.
+
+Käytännössä viitteet tuotetaan Zoteron avulla ja viedään `.bib`-muotoiseen tiedostoon, jota Pandoc pystyy hyödyntämään. Markdown-tiedostossa viittaukset merkitään viiteavaimilla.
+
+
+```
+Tämä on esimerkkiviite @{zotero-item-22}.
+```
+
+*Ohjelmakoodi 18.* Havainnollistaa Zoteron esimerkkiviitettä.
+
+Kun muunnos suoritetaan Pandocilla, viitteet käsitellään automaattisesti ja niistä muodostetaan sekä tekstiviitteet että lähdeluettelo.
+
+```
+pandoc oppari.md -o oppari.docx --toc --citeproc --bibliography=references.bib
+```
+
+*Ohjelmakoodi 19.* Havainnollistaa Pandoc-muunnosta lähteiden kanssa
+
+Käytännön kokeilussa havaitaan, että viitteiden perustoiminnallisuus toimii hyvin: lähteet listautuvat automaattisesti dokumentin loppuun ja viitteet linkittyvät oikein. Tämä mahdollistaa sen, että koko lähdehallinta voidaan tehdä Markdown-ympäristössä ilman Wordiin sidottuja työkaluja.
+
+
+
+
 ### 5.2.3 Muotoilun sovittaminen opinnäytetyöpohjaan
 ### 5.2.4 Muunnoksen tulosten arviointi
 ### 5.2.5 Havaitut haasteet ja manuaaliset korjaukset
