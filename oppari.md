@@ -7,6 +7,7 @@
 [6]: https://github.com/kejjjjj/oppari/blob/main/docusaurus.png?raw=true
 [7]: https://github.com/kejjjjj/oppari/blob/main/muunnos1.png?raw=true
 [8]: https://github.com/kejjjjj/oppari/blob/main/muunnos2.png?raw=true
+[9]: https://github.com/kejjjjj/oppari/blob/main/image.png?raw=true
 
 # Abstrakti
 tekstiä tänne
@@ -91,7 +92,7 @@ Hyvään dokumentaatioon kuuluu esimerkkien hyödyntäminen, sillä konkreettise
 
 *Kuva 1.* Konkreettinen esimerkki abstraktista käsitteestä
 
-Ajantasaisuus on tärkeää, sillä vanhentunut dokumentaatio voi olla jopa haitallisempaa kuin sen puuttuminen. Tämän vuoksi dokumentaation ylläpito ja päivittäminen tulisi olla jatkuva prosessi osana kehitystyötä. Dokumentaation tulisi myös olla heposti ylläpidettävissä ja sijoitettu lähelle itse järjestelmää tai koodia, jotta sen päivittäminen olisi luonteva osa muuta työskentelyä. @zotero-item-17
+Ajantasaisuus on tärkeää, sillä vanhentunut dokumentaatio voi olla jopa haitallisempaa kuin sen puuttuminen. Tämän vuoksi dokumentaation ylläpito ja päivittäminen tulisi olla jatkuva prosessi osana kehitystyötä. Dokumentaation tulisi myös olla helposti ylläpidettävissä ja sijoitettu lähelle itse järjestelmää tai koodia, jotta sen päivittäminen olisi luonteva osa muuta työskentelyä. @zotero-item-17
 
 ## 2.2 Dokumentaatiomenetelmät ja niiden kehitys
 
@@ -115,7 +116,7 @@ HTML:n rinnalla voidaan käyttää tyylitiedostoja (CSS) ja skriptejä (Javascri
 
 Markdown on kevyt merkintäkieli, jonka tarkoituksena on mahdollistaa helposti kirjoitettavan tekstin tuottaminen yksinkertaisella tavalla. Sen idea on erottaa sisällön rakenne ja ulkoasu toisistaan siten, että teksti säilyy selkeänä myös ilman erillistä muotoilua. Markdown kehitettiin tavaksi kirjoittaa dokumentaatiota ilman HTML-kielen osaamista. Markdownia käytetään erityisesti teknisessä dokumentaatiossa, ohjelmistokehityksessä sekä verkkosisällön tuottamisessa sen helpon oppimiskynnyksen takia. @zotero-item-21
 
-Markdownin syntaksi koostuu yksinkertaisista merkeistä, kuten risuaidoista (#) otsikoiden merkitsemisessä, tähdistä (*) tai alaviivoista (_) korostuksissa sekä listoissa. Tämän ansiosta dokumentaatio voidaan kirjoittaa pelkkänä tekstinä ilman erillisiä muotoilutyökaluja, ja se on helposti luettavisa myös raakamuodossa. Markdown-tiedostot ovat kevyitä ja yhteensopivia useiden eri järjestelmien kanssa, mikä tekee niistä järkevän vaihtoehdon versionhallinnassa. @zotero-item-23
+Markdownin syntaksi koostuu yksinkertaisista merkeistä, kuten risuaidoista (#) otsikoiden merkitsemisessä, tähdistä (*) tai alaviivoista (_) korostuksissa sekä listoissa. Tämän ansiosta dokumentaatio voidaan kirjoittaa pelkkänä tekstinä ilman erillisiä muotoilutyökaluja, ja se on helposti luettavissa myös raakamuodossa. Markdown-tiedostot ovat kevyitä ja yhteensopivia useiden eri järjestelmien kanssa, mikä tekee niistä järkevän vaihtoehdon versionhallinnassa. @zotero-item-23
 
 Markdownin etu on sen muunneltavuus. Sama sisältö voidaan muuntaa automaattisesti esimerkiksi HTML-, PDF- tai muihin formaatteihin erilaisten formatointityökalujen avulla. Tämän ansiosta sisältö voidaan uudelleenkäyttää eri ympäristöissä ilman, että sitä tarvitsee kirjoittaa uudelleen. Markdown toimii siltana yksinkertaisen tekstin ja monipuolisten julkaisumuotojen välillä, mikä tekee siitä työkalun nykyaikaisessa dokumentaatiotyössä. @zotero-item-22
 
@@ -131,7 +132,7 @@ Markdownin tueksi kehitettiin myös työkaluja, kuten ohjelma, joka muuntaa merk
 
 Markdownin perussyntaksi perustuu yksinkertaisiin ja helposti muistettaviin merkintätapohin, joiden avulla tekstiä voidaan jäsentää ilman monimutkaisia komentoja. Otsikot merkitään risuaidoilla (#), jolloin otsikkotaso määräytyy käytettyjen merkkien lukumäärän mukaan. Tekstin **korostamiseen** käytetään esimerkiksiä tähtiä (\*) tai alaviivoja (\_), joilla voidaan ilmaista _kursivointi_ tai **lihavointi**. Listat voidaan toteuttaa joko järjestämättöminä viivojen (-) tai tähtien (*) avulla tai järjestettyinä numeroiden avulla. @zotero-item-25
 
-Markdown mahdollistaa myös linkkien ja kuvien lisäämisen selkeällä syntaksilla, jossa linkkiteksti ja osoite eroitetaan toisistaan hakasulkeiden [] ja sulkujen avulla (). Koodin esittämiseen voidaan käyttää yksittäisi tai kolmoistakaperäisiä heittomerkkejä (\`), mikä tekeee siitä erityisen hyödyllisen ohjelmistokehityksessä. Näiden rakenteiden ansiosta Markdown soveltuu hyvin tekniseen dokuemntointiin. @zotero-item-25
+Markdown mahdollistaa myös linkkien ja kuvien lisäämisen selkeällä syntaksilla, jossa linkkiteksti ja osoite eroitetaan toisistaan hakasulkeiden [] ja sulkujen avulla (). Koodin esittämiseen voidaan käyttää yksittäisi tai kolmoistakaperäisiä heittomerkkejä (\`), mikä tekeee siitä erityisen hyödyllisen ohjelmistokehityksessä. Näiden rakenteiden ansiosta Markdown soveltuu hyvin tekniseen dokumentointiin. @zotero-item-25
 
 ![Markdown esimerkki][2]
 
@@ -149,7 +150,7 @@ Lisäksi monet Markdown-laajennukset tukevat automaattista linkkien tunnistamist
 
 Vaikka Markdown on kevyt ja helppokäyttöinen, siihen liittyy myös rajoituksia, jotka voivat vaikuttaa sen soveltuvuuteen tietyissä käyttötapauksissa. Yksi haaste on sen rajallinen ilmaisuvoima verrattuna esimerkiksi puhtaaseen HTML-koodiin. Markdownin perussyntaksi ei tue kaikki monimutkaisia rakenteita tai visuaalisia elementtejä, minkä vuoksi käyttäjät joutuvat välillä turvautumaan HTML-koodiin tai käyttäämään virityksiä saadaakseen haluamansa lopputuloksen. @zotero-item-28
 
-Rajoituksia liittyy myös eri Markdown-versioiden välisiin eroihin. Koska Markdownista on olemassa useita laajennuksia ja toteutuksia, kuten GitHub Flavored Markdown, kaikki ominaisuudet eivät ole yhteensopivia eri alustuojen välillä. Tämä saattaa aiheuttaa ongelmia dokumentaation siirrettävyydessä ja yhtenäisyydessä, jos sama sisältö ei toimi odotetusti eri ympäristöissä. @zotero-item-27
+Rajoituksia liittyy myös eri Markdown-versioiden välisiin eroihin. Koska Markdownista on olemassa useita laajennuksia ja toteutuksia, kuten GitHub Flavored Markdown, kaikki ominaisuudet eivät ole yhteensopivia eri alustojen välillä. Tämä saattaa aiheuttaa ongelmia dokumentaation siirrettävyydessä ja yhtenäisyydessä, jos sama sisältö ei toimi odotetusti eri ympäristöissä. @zotero-item-27
 
 Markdown ei tarjoa itsessään valmiita ratkaisuja visuaaliseen ulkoasuun tai käyttöliittymään, vaan lopullinen esitysmuoto riippuu käytetystä alustasta tai muunnostyökalusta. Tämä saattaa johtaa tilanteisiin, joissa sama dokumentti näyttää erilaiselta eri ympäristöissä. Näistä rajoituksista huolimatta Markdown on edelleen tehokas työkalu, kun sen käyttöä tuetaan sopivilla työkaluilla. @zotero-item-30
 
@@ -174,7 +175,7 @@ Markdownin kaltaiset kevyet merkintäkielet edistävät tätä toimintaa, sillä
 
 ### 3.2.2 Dokumentaatiomenetelmien vertailu
 
-Dokumentaatiomenetelmien vertailu auttaa ymmärtämään eri lähestymistapojen vahvuuksia ja heikkouksia sekä valitsemaan tarkoitkseen sopivimman ratkaisun. Perinteiset tekstinkäsittelyohjelmat ovat helppokäyttöisiä ja soveltuvat hyvin yksinkertaiseen dokumentointiin, mutta niiden heikkoutena on rajallinen tuki versionhallinnalle ja yhteistyölle. Dokumentit ovat usein erillisiä tiedostoja, mikä voi johtaa useisiin rinnakkaisiin versioihin ja vaikeuttaa ajantaisaisen tiedon hallintaa. @zotero-item-19
+Dokumentaatiomenetelmien vertailu auttaa ymmärtämään eri lähestymistapojen vahvuuksia ja heikkouksia sekä valitsemaan tarkoitukseen sopivimman ratkaisun. Perinteiset tekstinkäsittelyohjelmat ovat helppokäyttöisiä ja soveltuvat hyvin yksinkertaiseen dokumentointiin, mutta niiden heikkoutena on rajallinen tuki versionhallinnalle ja yhteistyölle. Dokumentit ovat usein erillisiä tiedostoja, mikä voi johtaa useisiin rinnakkaisiin versioihin ja vaikeuttaa ajantaisaisen tiedon hallintaa. @zotero-item-19
 
 HTML-pohjainen dokumentointi mahdollistaa laajojen, verkossa julkaistavien dokumentaatiokokonaisuuksien rakentamisen. Sen etuna on hyvä rakenteellisuus ja laajat muokkausmahdollisuudet, mutta samalla se vaatii enemmän teknistä osaamista, mikä voi hidastaa dokumentaation tuottamista erityisesti ei-teknisille käyttäjille. @zotero-item-20
 
@@ -234,197 +235,103 @@ Käyttöönottoon liittyy myös haasteita, kuten muutosvastarinta ja uuden työs
 
 # 4 Research method
 
-## 4.1 Käytännön toteutukseen perustuva tapaustutkimusmenetelmä
+## 4.1 Tutkimusstrategia: tapaustutkimus
 
-Tässä tutkimuksessa tarkastellaan Markdownin soveltuvuutta teknisen dokumentaation työkaluna erityisesti ohjelmistoprojektien kontekstissa. Tutkimuksen kohteena ei ole pelkästään Markdown kielenä, vaan kokonainen työkaluketju, jossa dokumentaatio tuotetaan, muokataan, hallitaan ja julkaistaan nykyaikaisilla kehitystyökaluilla. Näin ollen tutkimus keskittyy siihen, miten dokumentaatiota voidaan käsitellä osana ohjelmistokehitysprosessia, ei erillisenä kokonaisuutena.
+Tässä opinnäytetyössä tutkimusstrategiana käytetään tapaustutkimusta. Tapaustutkimus soveltuu tilanteisiin, joissa tarkastelun kohteena on ilmiö sen luonnollisessa ympäristössä ja tavoitteena on tuottaa syvällistä ymmärrystä yksittäisestä tapauksesta. Tässä työssä tarkastelun kohteena on Markdownin soveltuvuus teknisen dokumentaation tuottamiseen ja hallintaan osana ohjelmistokehityksen kaltaista työskentely-ympäristöä.
 
-Tutkimus toteutetaan tapaustutkimuksena, jossa hyödynnetään käytännön toteutusta tutkimusmenetelmänä. Tämä tarkoittaa, että tutkimuskysymyksiin ei vastata pelkästään kirjallisuuden perusteella, vaan niitä tarkastellaan konkreettisen toteutuksen kautta. Toteutuksessa etsitään ja arvioidaan työkalua, joilla dokumentaation muunnos, hallinta ja julkaisu voidaan toteuttaa mahdollisimman tehokkaasti.
+Tutkimuksen tavoitteena ei ole tuottaa tilastollisesti yleistettävää tietoa, vaan arvioida käytännön toteutuksen kautta, miten Markdown ja siihen liittyvät työkalut tukevat dokumentaation koko elinkaarta. Tapaustutkimus mahdollistaa tämän, koska se yhdistää teoreettisen tarkastelun ja käytännön toteutuksen samaan tutkimusprosessiin.
 
-Tutkimuskysymykset voidaan muotoilla uudelleen käytännönläheisemmin seuraavasti:
+Tutkimus kohdistuu rajattuun tapaukseen, jossa olemassa olevaa verkkopohjaista dokumentaatiota muunnetaan Markdown-muotoon ja integroidaan osaksi nykyaikaista dokumentaation työnkulkua. Tapausta tarkastellaan kokonaisuutena, joka sisältää dokumentaation keräämisen, käsittelyn, muuntamisen, versionhallinnan sekä julkaisemisen.
 
-1. Miten olemassa oleva dokumentaatio voidaan muuntaa Markdown-muotoon?
-2. Mitä työkaluja tähän prosessiin tarvitaan?
-3. Miten Markdown integroidaan osaksi versionhallintaa ja julkaisua?
+Tapaustutkimuksen luonteeseen kuuluu, että tutkimuskysymyksiin vastataan ensisijaisesti “miten”-näkökulmasta. Tässä työssä tarkastellaan erityisesti sitä, miten dokumentaation muunnosprosessi voidaan toteuttaa ohjelmallisesti ja millaisia etuja tai haasteita tähän liittyy. Näin ollen tutkimuksen keskiössä ovat käytettävät menetelmät, työkalut sekä niiden muodostama kokonaisuus.
 
-Näiden kysymysten avulla tutkimus keskittyy “miten” eikä pelkästään “miksi” -näkökulmaan. Tarkastelun kohteena ovat erityisesti työkalut ja menetelmät, kuten web scraping -ratkaisut, HTML:n jäsentämiseen käytettävät kirjastot, Markdown-muunnostyökalut sekä staattisten sivustojen generaattorit.
+Tutkimus toteutetaan käytännönläheisenä ja soveltavana prosessina, jossa rakennetaan toimiva työnkulku dokumentaation käsittelyyn. Prosessi etenee vaiheittain, ja jokaisessa vaiheessa arvioidaan valittujen ratkaisujen toimivuutta suhteessa tutkimuksen tavoitteisiin. Tämän lähestymistavan avulla voidaan tunnistaa sekä menetelmän vahvuuksia että rajoitteita.
 
-Tutkimuksessa oletetaan, että dokumentaation kehittämisessä keskeinen haaste ei ole pelkästään sisällön tuottaminen, vaan sen hallinta, ylläpito ja julkaisu. Tämän vuoksi tutkimus pyrkii löytämään työkaluketjun, joka tukee koko dokumentaation elinkaarta. Käytännössä tämä tarkoittaa esimerkiksi sitä, että dokumentaatio voidaan hakea ohjelmallisesti, muuntaa automaattisesti, tallentaa versionhallintaan ja julkaista ilman manuaalista työtä.
+## 4.2 Aineisto ja rajaus
 
-Tapaustutkimuksen luonteen mukaisesti tutkimus etenee vaiheittain, ja jokaisessa vaiheessa arvioidaan valittujen työkalujen toimivuutta. Näin tutkimus toimii samalla sekä teknisenä toteutuksena että analyysina siitä, kuinka hyvin valitut ratkaisut vastaavat asetettuihin tavoitteisiin.
+Opinnäytetyön aineistona käytettiin Hämeen Ammattikorkeakoulun (HAMK) julkisia verkkosivuja (`https://www.hamk.fi`). Aineisto koostui sivuston tekstipohjaisista dokumentaatiosivuista, jotka oli toteutettu WordPress-sisällönhallintajärjestelmällä. Sivuston sisältö haettiin ohjelmallisesti WordPressin REST API -rajapinnan kautta, joka mahdollisti sivujen otsikoiden, sisällön (HTML-muodossa) sekä rakenteellisten tietojen (kuten parent-sivut) systemaattisen keräämisen JSON-muodossa.
 
-Tutkimuksen lähtökohta on käytännön tarve: olemassa olevan dokumentaation muuntaminen Markdown-muotoon ja sen hyödyntäminen modernissa kehitysympäristössä. Tästä näkökulmasta tutkimus voidaan nähdä “työkalujen etsimisenä ja testaamisena”, jossa tavoitteena on rakentaa toimiva ja toistettava prosessi dokumentaation käsittelyyn.
+Tutkimuksessa tehtiin useita tietoisia rajauksia. Aineisto rajattiin koskemaan ensisijaisesti tekstipohjaisia dokumentaatiosivuja, jolloin painopiste oli otsikoissa, kappaleissa, listoissa ja linkeissä. Visuaalisia elementtejä, interaktiivisia osioita, lomakkeita sekä dynaamisesti generoitua sisältöä ei pyritty säilyttämään alkuperäisessä muodossaan. Lisäksi tarkastelu keskittyi pääasiassa suomenkielisiin sivuihin, vaikka englanninkieliset versiot huomioitiin linkkien ja rakenteen osalta. Etusivua ja puhtaita tiedotus- tai uutissivuja ei otettu kattavasti mukaan.
 
-### 4.1.1 Sisällön kerääminen ja muuntaminen Markdown-muotoon
+Tavoitteena ei ollut luoda täydellistä kopiota koko verkkosivustosta, vaan tuottaa ylläpidettävä ja versionhallintaan soveltuva dokumentaatiokokonaisuus. Tämän vuoksi monimutkaiset HTML-rakenteet, upotetut mediat ja erityiset WordPress-lohkot yksinkertaistettiin tai jätettiin tarpeen mukaan pois Markdown-muunnoksen yhteydessä. Rajaukset tehtiin tarkoituksenmukaisesti siten, että työssä voitiin keskittyä olennaiseen eli Markdownin soveltuvuuden arviointiin teknisen dokumentaation tuottamisessa ja ylläpidossa.
 
-Web scrapingin avulla kerätty sisältö voidaan muuntaa Markdown-muotoon, jolloin siitä saadaan helposti luettavaa ja ylläpidettävää dokumentaatiota. Prosessi alkaa yleensä verkkosivun HTML-rakenteen hakemisella, jonka jälkeen sisältö jäsennetään ja suodatetaan siten, että vain oleellinen tieto, kuten otsikot, kappaleet ja linkit, säilytetään. Tämän jälkeen sisältö muunnetaan Markdown-syntaksia vastaavaan muotoon, esimerkiksi HTML-otsikot muutetaan risuaitamerkinnöiksi (#) ja listat vastaaviksi Markdown-listoiksi. @zotero-item-46
+Aineiston keruu toteutettiin vastuullisesti käyttäen vain julkisesti saatavilla olevaa materiaalia. Tiedonkeruussa huomioitiin palvelimen kuormitus rate limiting -menetelmällä sekä duplikaattien estolla.
 
-Muuntaminen voidaan toteuttaa automaattisesti erilaisten työkalujen ja kirjastojen avulla. Näiden avulla HTML-rakenteesta voidaan muodostaa Markdown-dokumentti ilman, että sisältöä tarvitsee käsitellä manuaalisesti. Tämä nopeuttaa merkittävästi dokumentaation tuottamista erityisesti silloin, kun käsitellään suuria määriä verkkosisältöä tai olemassa olevaa dokumentaatiota halutaan siirtää uuteen formaattiin. @zotero-item-47
+## 4.3 Menetelmät ja työkalut
 
-### 4.1.2 Tutkimuksen suunnittelu ja rajaus
+Tutkimuksessa hyödynnettiin useita nykyaikaisia menetelmiä ja työkaluja, jotka mahdollistivat dokumentaation keräämisen, muuntamisen, hallinnan ja julkaisemisen automatisoidusti. Menetelmien ja työkalujen valinnat perustuivat tavoitteeseen rakentaa toistettava ja versionhallintaa tukeva työnkulku.
 
-Tutkimuksen suunnittelu perustuu tavoitteeseen rakentaa selkeä ja toistettava työnkulku, jolla olemassa oleva verkkopohjainen dokumentaatio voidaan muuntaa Markdown-muotoon ja julkaista osana nykyaikaista dokumentaatioympäristöä. Suunnittelussa painotetaan erityisesti prosessin vaiheistamista sekä sitä, että jokainen vaihe tukee seuraavaa osaa kokonaisuudessa.
+Tiedonkeruussa hyödynnettiin WordPress REST API -rajapintaa perinteisen web scrapingin sijaan. Tämä valinta tehtiin, koska rajapinta mahdollisti sisällön hakemisen suoraan rakenteisessa JSON-muodossa, mikä vähensi HTML-jäsentämisen tarvetta ja paransi tiedon luotettavuutta. Keräys toteutettiin TypeScript-kielellä Node.js-ympäristössä. TypeScript valittiin staattisen tyypityksen ansiosta, joka parantaa koodin ylläpidettävyyttä ja virheiden havaitsemista.
 
-Tutkimus rajataan koskemaan HAMKin julkisia, tekstipohjaisia dokumentaatiosivuja, jotka tarjoavat realistisen ja riittävän laajan aineiston menetelmän arviointiin. Rajauksen tavoitteena on keskittyä nimenomaan dokumentaation rakenteeseen ja sisältöön, ei koko verkkosivuston toiminnallisuuteen tai visuaalisiin elementteihin. Tämän vuoksi esimerkiksi dynaamiset komponentit, interaktiiviset elementit sekä sivuston ulkoasuun liittyvät tyylit jätetään tarkastelun ulkopuolelle.
+HTML-sisällön muuntamiseen Markdown-muotoon käytettiin Turndown-kirjastoa. Kirjasto valittiin sen kyvyn vuoksi muuntaa yleisimmät HTML-elementit (otsikot, kappaleet, listat ja linkit) puhtaaksi Markdown-syntaksiksi. Muunnoksen jälkeen sisältö tallennettiin tiedostorakenteeseen, joka vastasi alkuperäisen sivuston loogista hierarkiaa.
 
-Tutkimuksessa keskitytään dokumentaation työnkulkuun, joka koostuu tiedon keräämisestä, jäsentämisestä, muuntamisesta Markdown-muotoon sekä lopulta julkaisemisesta staattisena sivustona. Näitä vaiheita tarkastellaan kokonaisuutena, jotta voidaan arvioida, kuinka hyvin Markdown soveltuu dokumentaation hallintaan osana ohjelmistokehityksen kaltaista ympäristöä.
+Dokumentaation versionhallintaan ja yhteistyöhön otettiin käyttöön Git sekä GitHub-repositorio. Staattisen dokumentaatiokokonaisuuden generointiin ja julkaisemiseen käytettiin Docusaurus-staattisten sivustojen generaattoria. Docusaurus valittiin, koska se tukee Markdown-tiedostoja suoraan, tarjoaa automaattisen sivupalkin ja navigaation sekä integroituu hyvin GitHub Actions -automaatioon.
 
-Suunnitteluvaiheessa määritellään myös käytettävät teknologiat ja työkalut yleisellä tasolla. Tiedonkeruun oletetaan perustuvan ohjelmalliseen rajapinnan hyödyntämiseen, mikäli sellainen on saatavilla, ja vaihtoehtoisesti HTML-pohjaiseen jäsentämiseen. Muunnosvaiheessa hyödynnetään valmiita kirjastoja, jotka tukevat HTML–Markdown-muunnosta, ja lopullinen dokumentaatio tallennetaan tiedostorakenteeseen, joka mahdollistaa versionhallinnan ja jatkokäsittelyn.
+Opinnäytetyömuotoon muuntamista varten hyödynnettiin Pandoc-dokumenttikonvertteria yhdessä Zotero-viitteidenhallintatyökalun kanssa. Pandoc mahdollisti Markdown-muotoisen sisällön muuntamisen Word-dokumentiksi (.docx) säilyttäen rakenteen (otsikkotasot, listat ja sisällysluettelo). Zoteroa käytettiin lähteiden hallintaan ja BibTeX-tiedostojen tuottamiseen.
 
-Lisäksi tutkimuksessa huomioidaan työnkulun rajoitteet. Kaikkea alkuperäisen dokumentaation sisältöä ei pyritä säilyttämään täydellisesti, vaan painopiste on tekstisisällön ja rakenteen säilyttämisessä. Erityisesti visuaaliset ratkaisut, kuten kuvien tarkka asettelu, voivat muuttua muunnosprosessissa. Tämä rajaus on tietoinen, sillä tutkimuksen tavoitteena on arvioida Markdownin soveltuvuutta ensisijaisesti teknisen dokumentaation näkökulmasta.
+Työkalukokonaisuus muodostaa yhtenäisen, automatisoidun putken, joka ulottuu tiedonkeruusta aina dokumentaation julkaisemiseen saakka. Kaikki keskeiset vaiheet on integroitu versionhallintaan ja jatkuvan integraation (CI/CD) periaatteiden mukaisesti GitHub Actions -työnkulkujen avulla.
 
+## 4.4 Toteutusprosessi
 
-### 4.1.3 Työkalujen valinta
+Tutkimuksen käytännön toteutus rakentui systemaattiselle työnkululle, jossa web scraping -menetelmää ja automaattista muunnosta hyödynnettiin olemassa olevan dokumentaation siirtämisessä Markdown-muotoon.
 
-Työkalut valitaan työn tavoitteiden perusteella. Tavoitteena on rakentaa mahdollisimman automaattinen ja toistettava prosessi, jolla verkkosivujen sisältö haetaan, käsitellään ja muutetaan Markdown-muotoon. Samalla halutaan varmistaa, että kaikki sopii yhteen nykyisten kehityskäytäntöjen kanssa.
+Web scrapingin avulla kerätty sisältö muunnettiin Markdown-muotoon, jolloin siitä saatiin helposti luettavaa, muokattavaa ja versionhallintaan soveltuvaa dokumentaatiota. Prosessi alkoi verkkosivun HTML-rakenteen hakemisella, minkä jälkeen sisältö jäsennettiin ja suodatettiin siten, että vain oleelliset elementit kuten otsikot, kappaleet, linkit ja listat säilytettiin. HTML-otsikot muutettiin Markdownin risuaitamerkinnöiksi ja muut rakenteet vastaaviksi Markdown-elementeiksi. Muuntaminen toteutettiin automaattisesti valmiiden kirjastojen avulla, mikä mahdollisti suurten sisältömäärien käsittelyn ilman raskasta manuaalista työtä.
 
-Tiedonkeruuseen valitaan TypeScript. Se tuo mukanaan staattisen tyypityksen, mikä tekee koodista selkeämpää ja helpompaa ylläpitää verrattuna tavalliseen JavaScriptiin. TypeScript sopii hyvin myös HTTP-pyyntöjen tekemiseen sekä JSON-datan käsittelyyn - molemmat ovat oleellisia, kun haetaan sisältöä WordPressin REST API:sta @zotero-item-56. Skriptit ajetaan Node.js-ympäristössä, joten ne voi käynnistää suoraan komentoriviltä. @zotero-item-57
+Prosessi alkoi kohdesivuston teknologian tunnistamisella. HAMK:n sivuston toteutusteknologia varmistettiin analysoimalla sivun lähdekoodia ja HTTP-liikennettä, minkä perusteella todettiin sivuston käyttävän WordPress 6.9.4 -julkaisujärjestelmää. Tämän jälkeen siirryttiin tiedonkeruuvaiheeseen, jossa WordPressin REST API -rajapintaa (`/wp-json/wp/v2/pages`) hyödynnettiin sivujen hakemiseen sivutetusti (pagination). Keräys toteutettiin TypeScriptillä, ja prosessissa huomioitiin duplikaattien esto sekä palvelimen kuormituksen minimointi.
 
-HTML:n muuntamiseen Markdowniksi käytetään valmiita kirjastoja ja työkaluja, jotka osaavat käsitellä HTML-rakennetta ja tuottaa siitä toimivaa Markdown-syntaksia. Näiden avulla suurin osa muunnosprosessista automatisoituu, vaikka joissain tapauksissa sisältö vaatii vielä pientä manuaalista viilausta lopputuloksen viimeistelemiseksi.
+Seuraavassa vaiheessa kerätty HTML-sisältö jäsennettiin ja suodatettiin. Epäolennaiset elementit, kuten navigaatio, breadcrumbit, metatiedot ja visuaaliset koristeet poistettiin. Jäljelle jäänyt sisältö muunnettiin Markdown-muotoon Turndown-kirjaston avulla. Muunnoksen jälkeen sisäiset linkit päivitettiin vastaamaan uutta dokumentaatiokokonaisuutta.
 
-Dokumentaation versionhallintaan otetaan käyttöön Git. Sen avulla muutoksia voi seurata, eri versioita hallita ja työtä jatkaa myöhemmin ilman ongelmia. Valmis dokumentaatio tallennetaan GitHub-repositorioon, jossa sitä on helppo jakaa, tarkastella ja kehittää yhdessä muiden kanssa.
+Markdown-tiedostot tallennettiin loogiseen hakemistorakenteeseen, joka säilytti alkuperäisen sivuston hierarkian. Tämän jälkeen dokumentaatio siirrettiin Docusaurus-projektiin, jossa se generoitiin staattiseksi verkkosivustoksi. Lopuksi koko projekti siirrettiin versionhallintaan Gitillä ja julkaistiin automaattisesti GitHub Pages -palveluun GitHub Actions -työnkulun avulla. Automaatio sisältää koko prosessin tiedonkeruusta sivuston generointiin ja julkaisuun.
 
-Itse dokumentaation kirjoittamiseen ja lukemiseen käytetään Visual Studio Codea. Se tarjoaa hyvän tuen Markdownille, live-esikatselun sekä erilaisia laajennuksia, jotka helpottavat työskentelyä. @zotero-item-40
+Erillisenä metatutkimuksena toteutettiin Markdown-muotoisen sisällön muuntaminen opinnäytetyön Word-muotoon. Tämä tehtiin Pandoc-työkalulla hyödyntäen HAMKin opinnäytetyöpohjaa referenssidokumenttina sekä Zoteroa viitteiden hallintaan.
 
-### 4.1.4 Menetelmän toteutus
+Toteutusprosessi suunniteltiin siten, että se on toistettava ja automaattinen, mahdollistaen dokumentaation helpon päivittämisen tulevaisuudessa.
 
-Tämän työn tutkimusmenetelmänä käytetään käytännönläheistä ja soveltavaa lähestymistapaa, jossa teoreettista tarkastelua täydennetään konkreettisella toteutuksella. Menetelmä perustuu tapaustutkimuksen kaltaiseen lähestymistapaan, jossa Markdownin soveltuvuutta arvioidaan todellisessa käyttötilanteessa muuntamalla olemassa olevaa dokumentaatiota uuteen muotoon.
+## 4.5 Luotettavuus, eettisyys ja rajoitteet
 
-Tutkimuksen käytännön osuus toteutetaan vaiheittain. Ensin valitaan kohteeksi HAMK:n tekstipohjaiset dokumentaatiosivut, joiden sisältö kerätään web scraping -menetelmällä. Tiedonkeruu toteutetaan TypeScript-pohjaisilla työkaluilla, joiden avulla verkkosivujen HTML-rakenne haetaan ja siitä erotellaan oleellinen sisältö. Tämän jälkeen kerätty sisältö muokataan ohjelmallisesti Markdown-muotoon hyödyntäen muunnostyökaluja ja skriptejä.
+Tämän opinnäytetyön luotettavuutta pyrittiin parantamaan useilla keinoilla. Tiedonkeruu toteutettiin suoraan WordPressin REST API -rajapinnasta manuaalisen kopioinnin sijaan, mikä vähensi inhimillisten virheiden mahdollisuutta. Duplikaattien esto, sivutus ja rate limiting varmistivat, että aineisto kerättiin kattavasti mutta palvelinta kuormittamatta. Muunnosprosessin jälkeen sisältöä tarkastettiin manuaalisesti otoksella, ja sisäiset linkit korjattiin systemaattisesti.
 
-Muokattu dokumentaatio tallennetaan versionhallintaan Gitin avulla ja julkaistaan GitHub-repositoriossa. Tämä mahdollistaa dokumentaation hallinnan, muutosten seurannan sekä yhteistyön simuloinnin käytännön tasolla. Versionhallinnan käyttö on osa tutkimusmenetelmää, sillä se vastaa nykyaikaisia dokumentaatiokäytäntöjä.
+Tutkimuksen eettisyys huomioitiin koko prosessin ajan. Kaikki aineisto kerättiin vain julkisesti saatavilla olevilta sivuilta ilman kirjautumista. Tiedonkeruussa noudatettiin hyviä käytäntöjä välttämällä aggressiivista scrapingia. Sisällön uudelleenkäyttö tehtiin tutkimuksellisiin ja kehittämistarkoituksiin, ja alkuperäisen lähteen maininta säilytettiin dokumentaatiossa.
 
-Lisäksi dokumentaation esittämisessä hyödynnetään staattisten sivustojen generaattoria, tässä tapauksessa Docusaurusta @zotero-item-60. Markdown-muotoinen sisältö siirretään Docusauruksen docs-hakemistoon, jonka perusteella työkalu generoi automaattisesti staattisen HTML-pohjaisen dokumentaatiosivuston. Tämä mahdollistaa dokumentaation julkaisemisen selkeässä ja käyttäjäystävällisessä muodossa sekä integroinnin osaksi automatisoitua julkaisuprosessia.
+Tutkimukseen liittyi kuitenkin myös tiettyjä rajoitteita. HTML-muotoisen sisällön muuntaminen Markdowniksi ei aina säilyttänyt kaikkia visuaalisia elementtejä tai monimutkaisia rakenteita alkuperäisessä muodossaan, minkä seurauksena osa sisällöstä yksinkertaistui. Lisäksi alkuperäisen sivuston sisäiset linkit sekä kieliversioiden epäjohdonmukaisuudet siirtyivät osittain uuteen dokumentaatioon. Lisäksi tutkimus perustui yhteen tapaukseen (HAMKin julkiset sivut), minkä vuoksi tulosten suoraa yleistettävyyttä muihin organisaatioihin tai sivustoihin tulee arvioida varauksella.
 
-Menetelmän tavoitteena on arvioida Markdownin soveltuvuutta dokumentaation tuottamiseen ja ylläpitoon käytännön toteutuksen kautta. Tutkimuksessa tarkastellaan erityisesti prosessin toimivuutta, työkalujen käytettävyyttä sekä lopputuloksen laatua suhteessa alkuperäiseen dokumentaatioon.
-
-## 4.2 Metatutkimus: Markdownin muuntaminen opinnäytetyömuotoon
-
-Tässä osuudessa tarkastellaan erillisenä metatutkimuksena, miten Markdown-muotoinen sisältö voidaan muuntaa opinnäytetyövaatimusten mukaiseen muotoon. Kyse ei ole pelkästään teknisestä konversiosta, vaan myös siitä, miten Markdown soveltuu akateemiseen kirjoittamiseen, jossa on tarkat vaatimukset esimerkiksi rakenteen, viittausten ja muotoilun osalta.
-
-Tutkimuksen kohteena on siis Markdownin ja perinteisen HAMKin opinnäytetyömuodon (Word-pohjaisen mallipohjan) välinen yhteensopivuus. Tavoitteena on selvittää, millä tavoin Markdownilla tuotettu sisältö voidaan muuntaa vaadittuun formaattiin ilman merkittävää manuaalista työtä.
-
-Tutkimuskysymykset voidaan muotoilla käytännönläheisesti seuraavasti:
-
-1. Miten Markdown-muotoinen teksti muunnetaan Word-muotoon?
-2. Mitä työkaluja muunnokseen voidaan käyttää?
-3. Miten viittaukset ja lähteet säilyvät muunnoksessa?
-
-Metatutkimuksessa tarkastellaan erityisesti muunnostyökaluja, kuten dokumenttikonverttereita, jotka tukevat Markdown -> DOCX -muunnosta. Näiden työkalujen avulla pyritään säilyttämään dokumentin rakenne, kuten otsikkotasot, kappalejaot ja listat, mahdollisimman tarkasti alkuperäistä vastaavina.
-
-Erityistä huomiota kiinnitetään lähteiden hallintaan. Markdown-ympäristössä viittauksia voidaan hallita esimerkiksi erillisten viitetiedostojen avulla, mutta opinnäytetyössä viittausten tulee noudattaa tiettyä formaattia. Tässä yhteydessä tarkastellaan, miten viitteidenhallintatyökalut voidaan integroida osaksi muunnosprosessia siten, että lähdeluettelo ja tekstiviitteet säilyvät oikein muotoiltuina.
-
-Tutkimuksessa huomioidaan myös muotoiluun liittyvät haasteet. Vaikka Markdown tarjoaa selkeän rakenteen tekstille, se ei suoraan kata kaikkia opinnäytetyömallipohjan vaatimuksia, kuten tarkkoja sivuasetuksia, fontteja tai otsikkotyylejä. Näin ollen osa muotoilusta saattaa vaatia jälkikäsittelyä Word-ympäristössä.
-
-Tämä metatutkimus täydentää varsinaista tapaustutkimusta tarkastelemalla Markdownin käyttöä eri kontekstissa. Siinä missä varsinainen tutkimus keskittyy tekniseen dokumentaatioon ja sen julkaisuun, metatutkimus arvioi Markdownin soveltuvuutta akateemiseen kirjoittamiseen ja raportointiin.
-
-Kokonaisuutena metatutkimus toimii “toisena näkökulmana” Markdownin käyttöön. Se ei keskity dokumentaation tuotantoon ohjelmistokehityksessä, vaan siihen, miten samaa sisältöä voidaan hyödyntää muodollisemmassa ja standardoidummassa ympäristössä, kuten opinnäytetyössä.
-
-### 4.2.1 Tutkimuksen suunnittelu ja rajaus
-
-Metatutkimuksen suunnittelu perustuu tarpeeseen arvioida Markdownin soveltuvuutta akateemisen tekstin tuottamiseen erityisesti tilanteessa, jossa lopullinen dokumentti tulee esittää Word-pohjaisessa opinnäytetyömallissa. Tutkimus lähtee liikkeelle oletuksesta, että Markdown toimii ensisijaisena kirjoitusmuotona, ja sen pohjalta tuotetaan lopullinen opinnäytetyödokumentti.
-
-Tutkimuksen toteutus rajataan siten, että tarkastelun kohteena on koko muunnosprosessi Markdownista Word-muotoon. Tämä sisältää tekstisisällön, rakenteen sekä viitteiden käsittelyn, mutta ei keskity yksityiskohtaisesti esimerkiksi visuaalisen taiton hienosäätöön. Näin tutkimus pysyy teknisessä ja menetelmällisessä näkökulmassa, eikä laajene liikaa typografisiin yksityiskohtiin.
-
-Tutkimuksessa tarkastellaan erityisesti kolmea keskeistä osa-aluetta: tekstirakenteen säilymistä, viitteiden hallintaa sekä työkalujen toimivuutta. Rakenteen osalta arvioidaan, kuinka hyvin Markdownin otsikkotasot, kappaleet ja listat siirtyvät Word-dokumenttiin. Viitteiden osalta keskitytään siihen, miten lähteet voidaan integroida mukaan siten, että ne vastaavat opinnäytetyövaatimuksia. Työkalujen osalta vertaillaan käytännössä käytettäviä ratkaisuja ja niiden soveltuvuutta tähän tarkoitukseen.
-
-Rajauksen ulkopuolelle jätetään esimerkiksi täysin manuaalinen muokkaus Word-ympäristössä, koska tutkimuksen tavoitteena on nimenomaan automaation mahdollisuuksien arviointi. Lisäksi tutkimus keskittyy yhteen opinnäytetyöpohjaan (HAMK), eikä pyri yleistämään kaikkien korkeakoulujen vaatimuksiin, vaikka tulokset voivat olla osittain sovellettavissa myös laajemmin.
-
-### 4.2.2 Työkalujen valinta
-
-Tässä tutkimuksessa työkalujen valinta rajataan tarkoituksellisesti mahdollisimman yksinkertaiseksi. Tarkastelun kohteena on ainoastaan Markdown-muotoisen tekstin muuntaminen Word-muotoon (.md -> .docx), eikä prosessiin sisälly muita vaiheita, kuten web scrapingia, ohjelmallista käsittelyä tai staattisen sivuston generointia. Lisäksi lähtökohtana on, että muunnos voidaan toteuttaa ilman omaa ohjelmointia.
-
-Työkalujen valinnassa oleellisena kriteerinä on helppokäyttöisyys sekä valmiiden ratkaisujen hyödyntäminen. Tämän vuoksi tarkastelussa keskitytään valmiisiin dokumenttikonversiotyökaluihin, jotka tukevat Markdownin muuntamista suoraan Word-muotoon. Tällaiset työkalut mahdollistavat muunnoksen yhdellä komennolla tai graafisen käyttöliittymän kautta ilman, että käyttäjän tarvitsee kirjoittaa omaa koodia.
-
-Yksi työkaluista tässä yhteydessä on Pandoc, joka on laajasti käytetty dokumenttimuunnin ja tukee suoraan Markdown- ja DOCX-formaatteja. Pandocin avulla käyttäjä voi muuntaa Markdown-tiedoston Word-dokumentiksi säilyttäen rakenteen, kuten otsikot, kappaleet ja listat. Lisäksi Pandoc tukee viitteidenhallintaa ja mahdollistaa erillisten tyylimallien käytön, mikä on tärkeää opinnäytetyömuotoilun kannalta. @zotero-item-39
-
-Työkalujen valinta rajataan siten, että kaikki ratkaisut tukevat suoraa tiedostomuunnosta ilman ohjelmointia. Näin tutkimuksessa voidaan keskittyä itse muunnosprosessin arviointiin: kuinka hyvin rakenne säilyy, miten viittaukset toimivat ja kuinka paljon manuaalista viimeistelyä tarvitaan lopullisessa Word-dokumentissa.
-
-### 4.2.3 Markdown-tiedoston valmistelu muunnosta varten
-
-Ennen varsinaista muunnosvaihetta Markdown-tiedosto valmistellaan siten, että sen rakenne ja sisältö ovat yhteensopivia Word-muotoon tehtävän konversion kanssa. Tavoitteena on varmistaa, että dokumentin looginen rakenne säilyy mahdollisimman hyvin ja että muunnos tuottaa mahdollisimman vähän virheitä tai manuaalista korjaustarvetta.
-
-Valmisteluvaiheessa keskeistä on Markdownin rakenteiden johdonmukainen käyttö. Otsikkotasot määritellään selkeästi käyttäen `#`-syntaksia, jolloin ne voidaan muunnosvaiheessa tulkita vastaaviksi otsikkotyyleiksi Word-dokumentissa. Samoin kappaleet, listat ja muut peruselementit kirjoitetaan Markdownin standardien mukaisesti ilman epäyhtenäisiä tai sekamuotoisia rakenteita.
-
-Lisäksi tiedostosta poistetaan tai vältetään sellaiset Markdown-laajennukset ja erikoisrakenteet, joita kaikki muunnostyökalut eivät tue. Tällaisia voivat olla esimerkiksi monimutkaiset HTML-upotukset tai työkalukohtaiset syntaksilaajennukset. Näiden sijaan pyritään käyttämään mahdollisimman “puhdasta” Markdownia, joka on yhteensopivaa eri konversiotyökalujen kanssa.
-
-Viittausten ja lähteiden osalta varmistetaan, että ne on kirjoitettu yhtenäisessä muodossa. Tämä voi tarkoittaa esimerkiksi viitteiden merkitsemistä tunnisteilla tai käyttämällä viitteidenhallintatyökalun tuottamaa Markdown-yhteensopivaa formaattia. Tavoitteena on, että viitteet voidaan käsitellä oikein myös muunnosvaiheessa.
-
-Käytännössä valmisteluvaiheessa voidaan myös jakaa laaja dokumentti loogisiin osiin tai varmistaa, että tiedoston rakenne vastaa opinnäytetyön lukujakoa. Tämä helpottaa sekä muunnosta että myöhempää tarkastelua Word-ympäristössä.
-
-### 4.2.4 Menetelmän toteutus
-
-Tässä osuudessa kuvataan Markdown-muotoisen tekstin muuntaminen opinnäytetyövaatimusten mukaiseen Word-muotoon (.docx). Prosessin tavoitteena on mahdollistaa koko opinnäytetyön kirjoittaminen Markdown-muodossa siten, että lopullinen dokumentti voidaan tuottaa mahdollisimman automaattisesti ilman laajaa manuaalista muokkausta.
-
-Muunnosprosessi perustuu lineaariseen työvaiheeseen, jossa Markdown-tiedosto toimii ensisijaisena lähdemateriaalina. Tämä tiedosto sisältää koko työn rakenteen, mukaan lukien otsikot, kappaleet, listat sekä viittaukset. Tämän jälkeen sisältö muunnetaan Word-muotoon käyttäen valmista konversiotyökalua, joka säilyttää mahdollisimman hyvin alkuperäisen rakenteen.
-
-Periaatteena on, että Markdown toimii “yhden lähteen” (single source of truth) ratkaisuna, josta voidaan tuottaa lopullinen dokumentti. Tämä vähentää tarvetta ylläpitää useita eri versioita samasta sisällöstä ja mahdollistaa muutosten tekemisen suoraan yhteen paikkaan.
-
-Muunnosvaiheessa hyödynnetään valmiita työkaluja, jotka tukevat Markdownin konvertointia Word-muotoon ilman ohjelmointia. Näiden työkalujen avulla dokumentin rakenne, kuten otsikkotasot ja kappalejaot, säilyvät pääosin ennallaan, vaikka osa muotoilusta vaatiikin jälkikäsittelyä.
-
-Prosessin lopussa syntynyttä Word-dokumenttia verrataan opinnäytetyömallipohjaan. Tarvittaessa tehdään pieniä manuaalisia korjauksia esimerkiksi muotoiluun liittyen, mutta tavoitteena on, että suurin osa työstä on automatisoitu.
+Metatutkimuksen osalta Pandoc-muunnos ei kyennyt täysin automatisoimaan HAMKin opinnäytetyöpohjan kaikkia muotoiluvaatimuksia, kuten ylätunnisteiden ja sivunumerointiratkaisujen käsittelyä, joten lopullinen Word-dokumentti vaati manuaalista viimeistelyä. 
 
 # 5 Research
-tekstiä tänne?
-## 5.1 HAMKin julkisten sivujen muuntaminen Markdown-muotoon
+## 5.1 Kohdesivuston teknologian tunnistaminen
 
-Tässä luvussa tarkastellaan käytännön toteutusta, jossa HAMKin julkisten verkkosivujen sisältö muunnetaan Markdown-muotoon. Tavoitteena on rakentaa toimiva ja toistettava työnkulku, joka kattaa koko prosessin tiedon keräämisestä sen julkaisuun asti.
+Ensimmäisenä konkreettisena toimenpiteenä tutkimuksessa selvitettiin kohdesivuston teknistä toteutusta. Tavoitteena oli ymmärtää, millä alustalla HAMK:n julkinen sivusto https://www.hamk.fi on rakennettu, jotta tiedonkeruu voitaisiin toteuttaa mahdollisimman tehokkaasti ja luotettavasti.
 
-Toteutus etenee vaiheittain alkaen kohdesivuston rakenteen ja teknologian tunnistamisesta, jonka jälkeen sisältö kerätään ohjelmallisesti ja muunnetaan Markdown-muotoon. Lopuksi dokumentaatio järjestetään tiedostorakenteeksi ja julkaistaan staattisena sivustona.
+Tunnistustyö tehtiin manuaalisesti useita eri menetelmiä yhdistäen. Avattiin sivusto selaimessa ja tarkasteltiin sen lähdekoodia sekä "Näytä sivun lähdekoodi" -toiminnolla että selaimen kehitystyökaluilla (DevTools). Erityistä huomiota kiinnitettiin rakenteisiin, jotka viittaavat tiettyyn sisällönhallintajärjestelmään. Lisäksi Network-välilehdeltä seurattiin, mistä lähteistä sivusto lataa tyylitiedostoja, skriptejä ja muita resursseja.
 
-Luvun tarkoituksena on kuvata prosessi käytännön tasolla sekä arvioida, kuinka hyvin Markdown soveltuu olemassa olevan dokumentaation käsittelyyn ja uudelleenkäyttöön osana nykyaikaista dokumentaation työnkulkua.
+Analyysin tuloksena havaittiin useita selviä viitteitä WordPress-järjestelmään. Lähdekoodista löytyi muun muassa `wp-content`- ja `wp-includes`-hakemistoihin viittaavia polkuja sekä WordPress-versiota suoraan ilmaiseva metatag:
 
-### 5.1.1 Kohdesivuston teknologian tunnistaminen
-
-Tutkimuksen ensimmäisessä vaiheessa tarkastellaan kohdesivuston rakennetta ja toteutusteknologiaa, jotta tiedonkeruu voidaan toteuttaa systemaattisesti ja tarkoituksenmukaisesti. Koska sivuston toteutustapaa ei ole ennalta tiedossa, sen taustateknologia selvitetään hyödyntämällä useita rinnakkaisia tunnistusmenetelmiä. Näihin kuuluvat HTML-lähdekoodin analysointi, HTTP-otsakkeiden tarkastelu sekä selaimen kehitystyökalujen (DevTools) käyttö. Tavoitteena on tunnistaa mahdollisia viitteitä käytetystä sisällönhallintajärjestelmästä, kuten tiedostopolkuja, skriptejä ja meta-tietoja, jotka voivat viitata esimerkiksi WordPressiin tai muuhun vastaavaan järjestelmään.
-
-Sivuston taustateknologian tunnistaminen toteutetaan useiden teknisten tarkastelumenetelmien avulla, koska sivuston toteutustapa ei ole aluksi tiedossa. Lähdekoodin analysointi toteutetaan avaamalla kohdesivusto selaimessa (https://hamk.fi) ja tarkastelemalla sen HTML-rakennetta joko “Näytä sivun lähdekoodi” -toiminnolla tai selaimen kehitystyökaluilla. @zotero-item-52
-
-Yleisin sisällönhallintajärjestelmä on Wordpress, joten lähdekoodista etsimme ensin sille tyypillisiä rakenteita, kuten viittauksia `wp-content`- ja `wp-includes`-hakemistoihin, jotka näkyvät esimerkiksi linkkeinä CSS- ja JavaScript-tiedostoihin. Lisäksi tarkastelemme, sisältääkö koodi meta-tagin kuten `<meta name="generator" content="WordPress">`, joka suoraan kertoo käytetystä julkaisujärjestelmästä. @zotero-item-51
-
-Käytännössä kun lähdekoodia selaa, niin sieltä löytyy monia eri vihjeitä, jotka vihjaavat Wordpressin olemassaoloon.
 
 ```html
-Rivi 66: <meta property="og:image" content="https://www.hamk.fi/wp-content/uploads/2023/11/HAMK_2023_CarlBergman_4G4A7614web.jpg" />
-Rivi 316: <link rel='stylesheet' id='wp-components-css' href='https://www.hamk.fi/wp-includes/css/dist/components/style.min.css?ver=6.9.4' type='text/css' media='all' />
-Rivi 367: <meta name="generator" content="WordPress 6.9.4" />
+<meta name="generator" content="WordPress 6.9.4" />
+<link rel='stylesheet' id='wp-components-css' href='https://www.hamk.fi/wp-includes/css/dist/components/style.min.css?ver=6.9.4' />
 ```
 *Ohjelmakoodi 1.* Havainnollistaa WordPress-julkaisujärjestelmään viittaavista rakenteista HTML-lähdekoodissa.
 
-Lähdekoodianalyysin lisäksi hyödynnetään selaimen kehitystyökaluja verkkoliikenteen tarkasteluun. Network-välilehden kautta voidaan analysoida sivun lataamia resursseja ja havaita, mistä lähteistä sisältöä haetaan. Tarkastelun perusteella havaitaan, että sivusto hyödyntää `wp-content`-hakemistoa resurssien lataamiseen, mikä tukee oletusta WordPress-pohjaisesta toteutuksesta. @zotero-item-53
+Myös sivuston tyylitiedostot ja skriptit latautuivat tyypillisistä WordPress-polkuista. Network-välilehden avulla voitiin lisäksi vahvistaa, että sivusto hakee sisältöä ja resursseja WordPressin omista hakemistoista. Näiden havaintojen perusteella voitiin luotettavasti päätellä, että kohdesivusto on toteutettu WordPress 6.9.4 -julkaisujärjestelmällä.
 
-![Wordpress network tab][3]
+Tämä teknologian kartoitus osoittautui erittäin tärkeäksi vaiheeksi, sillä se mahdollisti siirtymisen manuaalisesta web scrapingista suoraan WordPressin tarjoaman REST API -rajapinnan käyttöön. Ilman tätä tunnistustyötä tiedonkeruu olisi ollut huomattavasti työläämpää ja virhealtista.
 
-*Kuva 3.* Paljastaa, että sivut hakevat tietoa aiemmin mainitusta "wp-content" nimisestä sijainnista, joka viittaa Wordpress-järjestelmään. 
+## 5.2 Kohdesivuston teknologian hyödyntäminen
 
-Näiden havaintojen perusteella voidaan päätellä, että kohdesivusto on toteutettu WordPress-sisällönhallintajärjestelmällä, ja käytössä oleva versio on 6.9.4. Tämä tieto ohjaa tutkimuksen seuraavia vaiheita, erityisesti tiedonkeruumenetelmien valintaa.
+Kun sivuston toteutusteknologiaksi varmistui WordPress, voitiin tiedonkeruussa siirtyä perinteisestä HTML-scrapingista tehokkaampaan vaihtoehtoon. Hyödynnettiin WordPressin sisäänrakennettua REST API -rajapintaa, joka mahdollistaa sivuston sisällön hakemisen suoraan rakenteisessa JSON-muodossa.
 
-### 5.1.2 Kohdesivuston teknologian hyödyntäminen
+Käytännössä hyödynnettiin erityisesti `/wp-json/wp/v2/pages`-päätepistettä, joka palauttaa sivujen tiedot sisältäen otsikon, slugin, HTML-muotoisen sisällön (`content.rendered`), vanhemman sivun tiedot (`parent`) sekä muita metatietoja. Rajapinnan saatavuus testattiin tekemällä suora HTTP-pyyntö osoitteeseen: https://www.hamk.fi/wp-json/wp/v2/pages
 
-Kun kohdesivuston toteutusteknologiaksi on tunnistettu WordPress, voidaan tiedonkeruussa hyödyntää sen tarjoamia rajapintoja perinteisen HTML-pohjaisen web scrapingin sijaan. WordPress sisältää REST API -rajapinnan, jonka avulla sivuston sisältöä voidaan hakea ohjelmallisesti rakenteisessa muodossa. Tämä mahdollistaa luotettavamman tavan kerätä dokumentaatiota verrattuna pelkkään HTML-rakenteen parsimiseen. @zotero-item-54
+Testi vahvisti, että HAMK:n sivusto sallii REST API -rajapinnan käytön julkisesti, mikä avasi mahdollisuuden automatisoidulle ja luotettavalle tiedonkeruulle.
 
-Tässä tutkimuksessa hyödynnetään erityisesti WordPressin Pages-päätepistettä, jonka kautta voidaan hakea sivuston sivusisältö JSON-muodossa. Pages-päätepiste palauttaa kullekin sivulle tiedot, kuten otsikon, sisällön, tunnisteen (ID), julkaisutilan sekä mahdolliset viittaukset yläsivuihin (parent). Näiden tietojen avulla voidaan muodostaa kokonaiskuva sivuston rakenteesta ja sisällöstä ilman, että HTML-koodia tarvitsee erikseen jäsentää. @zotero-item-55
+Tämän rajapinnan käyttö tarjosi merkittäviä etuja verrattuna perinteiseen web scrapingiin: sisältö saatiin puhtaana ilman tarvetta jäsentää koko sivun HTML-rakennetta, ja hierarkkiset tiedot (sivujen vanhemmuus) säilyivät luonnollisesti. Näin pystyttiin paremmin säilyttämään alkuperäinen sivuston rakenne myös Markdown-muotoon siirrettäessä.
 
-Kohdesivuston osalta varmistetaan käytännössä, että kyseinen rajapinta on käytettävissä. Tämä voidaan todeta tekemällä HTTP-pyyntö osoitteeseen https://www.hamk.fi/wp-json/wp/v2/pages, joka palauttaa sivuston sivuja JSON-muodossa. Vastauksen perusteella voidaan todeta, että HAMK:n sivusto tukee WordPressin REST API -rajapintaa, mikä mahdollistaa sen hyödyntämisen tiedonkeruussa.
+## 5.3 Tietojen kerääminen verkkosivuilta
 
-![Wordpress rajapinta][4]
+Tiedonkeruu toteutettiin TypeScript-kielellä Node.js-ympäristössä. Kehitin skriptin, joka hakee sivut WordPress REST API:sta sivutetusti (pagination). Koska sivuja oli satoja, haku toteutettiin iteratiivisesti: ensimmäinen pyyntö haettiin parametreilla `page=1` ja `per_page=100`, minkä jälkeen vastauksen otsakkeista (`X-WP-Total` ja `X-WP-TotalPages`) luettiin, montako sivua on vielä haettavana.
 
-*Kuva 4.* Paljastaa, että https://www.hamk.fi sallii Wordpress REST API -rajapinnan käytön.
-
-Tiedonkeruu toteutetaan siten, että Pages-päätepisteestä haetaan kaikki saatavilla olevat sivut. Koska WordPress-sivut voivat muodostaa hierarkkisen rakenteen, aineisto käsitellään rekursiivisesti siten, että myös alasivut ja niiden suhteet otetaan huomioon. Näin voidaan säilyttää alkuperäinen sivurakenne ja siirtää se edelleen Markdown-muotoiseen dokumentaatioon. @zotero-item-55
-
-### 5.1.3 Tietojen kerääminen verkkosivuilta
-
-Tietojen kerääminen toteutetaan hyödyntämällä WordPressin REST API -rajapintaa ohjelmallisesti TypeScriptin avulla. Toteutuksessa rakennetaan aliohjelma, joka muodostaa HTTP-pyynnön Pages-päätepisteeseen (`/wp-json/wp/v2/pages`) ja hakee sivujen sisällön JSON-muodossa. Pyyntöön liitetään parametreja, kuten sivunumero (page) ja haettavien tulosten määrä (per_page), joiden avulla voidaan hallita hakuprosessia ja käsitellä suuria tietomääriä vaiheittain. @zotero-item-55
-
-```
-https://www.hamk.fi/wp-json/wp/v2/Pages?page=1&per_page=10
-```
-
-*Ohjelmakoodi 2.* Havainnollistaa hakuprosessin yhtenä osoitteena.
-
-Keräysprosessi on toteutettu sivutettuna (pagination), mikä tarkoittaa, että sisältö haetaan useassa osassa yksittäisten pyyntöjen sijaan. Jokaisen pyynnön jälkeen tarkastellaan vastausotsakkeita (`X-WP-Total` ja `X-WP-TotalPages`), joiden avulla saadaan tieto kokonaissivumäärästä sekä siitä, kuinka monta sivua on vielä käsittelemättä @zotero-item-58. Tämän perusteella ohjelma jatkaa pyyntöjen tekemistä, kunnes kaikki sivut on haettu.
-
-Tiedonkeruussa huomioidaan myös duplikaattien välttäminen tallentamalla jo käsitellyt sivut tietorakenteeseen, jossa ne yksilöidään esimerkiksi URL-osoitteen perusteella. Lisäksi pyyntöjen väliin lisätään viive, jotta palvelimen kuormitus pysyy kohtuullisena.
+Jokaisen haetun sivun jälkeen tarkistettiin, oliko sivu jo käsitelty, jotta vältettiin duplikaatit. Pyyntöjen väliin lisättiin pieni viive, jotta palvelimen kuormitus pysyi kohtuullisena. Kerätty data tallennettiin väliaikaiseen tietorakenteeseen, jossa avaimena käytettiin sivun URL-polun perusteella muodostettua yksilöivää tunnistetta.
 
 ```
 hae sivu (page = 1)
@@ -435,353 +342,122 @@ toista niin kauan kuin sivuja on jäljellä:
 palauta kaikki sivut
 ```
 
-*Ohjelmakoodi 3.* Tiedonkeruuprosessin peruslogiikka pseudokoodina.
+*Ohjelmakoodi 2.* Tiedonkeruuprosessin peruslogiikka pseudokoodina.
 
-### 5.1.4 HTML-sisällön jäsentäminen ja datan parsiminen
+Tämän vaiheen lopputuloksena saatiin kattava JSON-aineisto kaikista haetuista sivuista, sisältäen sekä metatiedot että varsinaisen HTML-sisällön kentässä `content.rendered`. Keräysprosessi oli täysin automaattinen ja toistettavissa, mikä oli keskeinen tavoite koko työnkululle.
 
-Kerätyn aineiston jatkokäsittelyssä keskitytään HTML-sisällön jäsentämiseen ja olennaisen datan erotteluun. WordPressin REST API:n kautta haettu sisältö sisältää sivujen varsinaisen sisällön HTML-muodossa, tyypillisesti `content.rendered`-kentässä (@zotero-item-55). Tämän ansiosta HTML-koodiin päästään suoraan käsiksi ilman erillistä sivun lataamista selaimen kautta, mikä helpottaa tiedon käsittelyä ja mahdollistaa täysin ohjelmallisen lähestymistavan.
+## 5.4 HTML-sisällön jäsentäminen ja datan parsiminen
 
-```
-syöte = page.content.rendered
-```
+Kun sivut oli haettu REST API:n kautta, siirryttiin kerätyn HTML-sisällön käsittelyyn. Jokaisen sivun content.rendered-kentässä oleva HTML-materiaali jäsennettiin DOM-puuksi, jotta siitä voitiin poimia ja suodattaa oleellinen sisältö.
 
-*Ohjelmakoodi 4.* Luo "syöte" nimisen muuttujan, jonka arvoksi asetetaan sivun HTML-rakenne.
+Prosessissa poistettiin ensin dokumentaation kannalta epäolennaiset osat, kuten navigointielementit, breadcrumb-polut, sivupalkit, metatiedot, SVG-kuvat sekä muu visuaalinen "kohina". Tämän jälkeen keskityttiin säilyttämään keskeiset rakenteelliset elementit: otsikot (`<h1>–<h6>`), kappaleet (`<p>`), listat (`<ul>`, `<ol>`, `<li>`), hyperlinkit (`<a>`) sekä taulukot mahdollisuuksien mukaan.
 
-Jokaisen haetun sivun HTML-sisältö käydään systemaattisesti läpi analysoimalla sen rakenne. Tavoitteena on tunnistaa ja poimia dokumentaation kannalta oleelliset elementit, kuten otsikot, kappaleet, linkit ja kuvat. Jäsentäminen toteutetaan ohjelmallisesti siten, että HTML-koodista tunnistetaan eri elementtejä vastaavat tagit, kuten otsikkotasot (`<h1>-<h6>`), kappaleet (`<p>`), hyperlinkit (`<a>`) sekä kuvat (`<img>`).
+Suodatus toteutettiin systemaattisesti sallittujen HTML-tagejen avulla, jolloin lopputuloksena oli puhdistettu HTML-rakenne, joka oli valmis muunnettavaksi Markdown-muotoon. Tämä vaihe oli kriittinen, sillä se vaikutti suoraan lopullisen dokumentaation luettavuuteen ja ylläpidettävyyteen. Liiallinen puhdistus olisi kadottanut sisältöä, kun taas liian löyhä suodatus olisi jättänyt paljon turhaa koodia Markdown-tiedostoihin.
 
-Näiden elementtien sisältö ja attribuutit, kuten linkkien URL-osoitteet tai kuvien lähdepolut, erotellaan jatkokäsittelyä varten. Prosessin tavoitteena on muuntaa HTML-muotoinen sisältö jäsennellyksi tietorakenteeksi, jota voidaan hyödyntää myöhemmässä vaiheessa Markdown-muotoon konvertoinnissa. Samalla pyritään säilyttämään alkuperäinen dokumenttirakenne mahdollisimman tarkasti.
+## 5.5 Sisällön muuntaminen Markdown-muotoon
 
-Ensimmäisessä vaiheessa HTML jäsennetään DOM-puuksi, jonka jälkeen sisältöalue käsitellään yhtenä kokonaisuutena. Tässä tutkimuksessa oletetaan, että varsinainen sisältö sijaitsee juurielementissä, mutta rakenteen vaihtelun vuoksi käytetään lähestymistapaa, jossa koko DOM-puu toimii lähtöpisteenä.
+Puhdistetun HTML-sisällön jälkeen siirryttiin varsinaiseen muunnosvaiheeseen. Jokainen suodatettu HTML-kokonaisuus muunnettiin Markdown-muotoon käyttämällä Turndown-kirjastoa TypeScript-ympäristössä.
 
-```html
-<html lang="en">
-  <head>
-    <title>My Document</title>
-  </head>
-  <body>
-    <h1>Header</h1>
-    <p>Paragraph</p>
-  </body>
-</html>
-```
+Kirjasto muunsi automaattisesti HTML-elementit vastaaviksi Markdown-rakenteiksi: otsikot (`<h1>`-`<h6>`) muuttuivat risuaitamerkinnöiksi, kappaleet säilyivät luonnollisena tekstinä, listat muuttuivat Markdown-listoiksi ja hyperlinkit säilyttivät linkkitekstin sekä osoitteen.
 
-*Ohjelmakoodi 5.* Havainnollistaa DOM-rakennetta koodimuodossa.
+Muunnoksen etuna oli se, että Markdown säilytti dokumentin rakenteen kevyessä ja helposti luettavassa muodossa. HTML-otsikot muunnettiin Markdown-otsikoiksi (#, ##), kappaleet säilyivät tekstinä ja listat muuttuivat Markdown-listoiksi. Lisäksi muunnosvaihe toimi eräänlaisena normalisointivaiheena, jossa eri sivuilta kerätty sisältö yhtenäistyi samaan formaattiin. Tämä helpotti dokumentaation jatkokäsittelyä, versionhallintaa sekä julkaisemista eri alustoilla.
 
-![DOM-tree][5]
+Tämän vaiheen jälkeen jokaisesta sivusta oli olemassa oma Markdown-versio, joka oli sekä ihmisluettava että helposti versionhallittavissa. Muunnos toimi myös normalisointivaiheena, sillä eri lähteistä tuleva sisältö yhtenäistyi samaan Markdown-syntaksiin. Lopputuloksena saatiin Markdown-muotoinen dokumentaatio, joka voitiin tallentaa tiedostoiksi ja siirtää versionhallintaan.
 
-*Kuva 5.* Havainnollistaa ylläolevaa HTML-koodia kuvana @zotero-item-59.
+## 5.6 Dokumentaation rakenteen muuntaminen tiedostorakenteeksi
 
-```
-sisältöJuuri = jäsennäHTML(syöte)
-```
+Markdown-muotoon muunnettu sisältö tallennettiin lopuksi tiedostojärjestelmään siten, että se muodosti loogisen ja navigoitavan dokumentaatiokokonaisuuden. Tässä vaiheessa yksittäiset Markdown-sisällöt yhdistettiin tiedostorakenteeksi, joka vastasi mahdollisimman hyvin alkuperäisen verkkosivuston rakennetta.
 
-*Ohjelmakoodi 6.* Havainnollistaa DOM-puun jäsentämistä
+Prosessi alkoi muodostamalla jokaiselle sivulle yksilöllinen tunniste, joka perustui sivun URL-osoitteen polkuosaan. Alku- ja loppuviivat poistettiin, ja tyhjä polku nimettiin oletuksena `_index`. Tämän jälkeen jokaisen sivun Markdown-sisältö tallennettiin tietorakenteeseen, jossa avaimena toimi muodostettu tunniste.
 
-Seuraavaksi sisältöä siistitään poistamalla dokumentaation kannalta epäolennaiset elementit. Tällaisia ovat esimerkiksi navigaatioon ja visuaalisiin tehosteisiin liittyvät elementit, kuten breadcrumb-polut, SVG-grafiikka, kuvat sekä metatiedot. Tämän vaiheen tarkoituksena on vähentää kohinaa ja varmistaa, että lopullinen data sisältää vain dokumentaation kannalta relevantin sisällön.
+Yksi oleellisimmista vaiheista oli sisäisten linkkien päivittäminen. Alkuperäiset linkit viittasivat HAMKin sivustoon, joten ne korvattiin uusilla osoitteilla, jotka vastaavat uutta dokumentaatiokokonaisuutta (esimerkiksi GitHub Pages -ympäristössä). Linkkien päivitys tehtiin etsimällä Markdown-sisällöstä kaikki alkuperäiseen osoitteeseen viittaavat URL:t ja korvaamalla ne tarvittaessa.
 
-```
-poista sisältöJuuresta:
-    breadcrumbit
-    svg-elementit
-    kuvat
-    metatiedot
-```
+Lopuksi muodostettiin varsinainen tiedostorakenne. Mahdollinen vanha output-kansio poistettiin ensin, minkä jälkeen jokainen Markdown-tiedosto kirjoitettiin levylle oikeaan hakemistopolkuun. Tiedostonimet normalisoitiin poistamalla erikoismerkit, ja tarvittavat hakemistot luotiin automaattisesti. Tämän vaiheen lopputuloksena syntyi selkeä, hierarkkinen tiedostopohjainen dokumentaatiorakenne, joka vastasi alkuperäisen sivuston loogista rakennetta ja oli valmis versionhallintaan sekä julkaisemiseen.
 
-*Ohjelmakoodi 7.* Havainnollistaa epäollenaisten elementtien poistamista DOM-puusta. 
+## 5.7 Static site generatorin käyttöönotto (Docusaurus)
 
-Tämän jälkeen DOM-puusta suodatetaan vain Markdown-muunnoksen kannalta olennaiset HTML-elementit, kuten otsikot, kappaleet, listat ja rivinvaihdot. Näin muodostetaan rajattu ja hallittu rakenne, joka voidaan muuntaa edelleen tekstipohjaiseen muotoon.
+Kun dokumentaatio oli muunnettu Markdown-muotoon ja tallennettu oikeaan tiedostorakenteeseen, seuraava vaihe oli sen julkaiseminen staattisena verkkosivustona. Tähän tarkoitukseen valittiin Docusaurus, joka on Node.js-pohjainen staattisten sivustojen generaattori ja sopii erinomaisesti Markdown-pohjaiselle dokumentaatiolle. @zotero-item-60
 
-```
-sallitutTagit = [otsikot, kappale, lista, li, rivinvaihto]
-suodatetutSolmut = hae sisältöJuuresta vain sallitutTagit
-```
+Docusauruksen käyttöönotto oli suoraviivaista: kaikki tuotetut Markdown-tiedostot siirrettiin projektin `docs`-hakemistoon. Koska aiemmin luotu tiedostorakenne vastasi dokumentaation loogista hierarkiaa, Docusaurus pystyi automaattisesti muodostamaan navigoinnin ja sivupalkin tiedostorakenteen perusteella.
 
-*Ohjelmakoodi 8.* Avulla suodatetaan pois turhat tagit. 
-
-Prosessin lopuksi jäljelle jääneet elementit serialisoidaan yhtenäiseksi HTML-rakenteeksi, joka toimii välivaiheena Markdown-muunnoksessa. Serialisointi säilyttää dokumentin rakenteen, mutta poistaa ylimääräiset elementit ja normalisoi sisällön käsittelyä varten.
-
-```
-tulos = ""
-jokaiselle solmulle suodatetuissaSolmuissa:
-    tulos += muunnaHTML(solmu)
-palauta tulos
-```
-
-*Ohjelmakoodi 9.* Havainnollistaa tuloksen luomista suodatetuista solmuista. 
-
-### 5.1.5 Sisällön muuntaminen Markdown-muotoon
-
-Kun HTML-sisältö on jäsennetty ja suodatettu edellisessä vaiheessa, se muunnetaan Markdown-muotoon jatkokäyttöä varten. Muunnos toteutetaan ohjelmallisesti siten, että jokaisen sivun käsitelty HTML syötetään muunnostyökalulle, joka tuottaa vastaavan Markdown-esityksen. Tämä vaihe mahdollistaa dokumentaation siirtämisen tekstipohjaiseen ja helposti versionhallittavaan muotoon.
-
-```
-funktio muunnaMarkdowniksi(html):
-    luo turndown-olio
-    palauta turndown.muunna(html)
-
-markdown = muunnaMarkdowniksi(tulos)
-```
-
-*Ohjelmakoodi 10.* Havainnollistaa tuloksen muuntamista markdown-muotoon.
-
-Markdown-muunnos toteutetaan käyttämällä valmista kirjastoa, joka osaa muuntaa HTML-rakenteet vastaaviksi Markdown-rakenteiksi. Tässä työssä hyödynnetään Turndown-kirjastoa, joka on TypeScript-ympäristössä yleisesti käytetty työkalu HTML / Markdown -muunnokseen. Kirjasto käsittelee automaattisesti yleisimmät HTML-elementit, kuten otsikot, kappaleet, listat ja linkit, ja muuntaa ne Markdown-syntaksia vastaavaan muotoon. @zotero-item-47
-
-```html
-<h1>Turndown Demo</h1>
-
-<p>This demonstrates <a href="https://github.com/mixmark-io/turndown">turndown</a> - an HTML to Markdown converter in JavaScript.</p>
-
-<h2>Usage</h2>
-
-<pre><code class="language-js">var turndownService = new TurndownService()
-console.log(turndownService.turndown('&lt;h1&gt;Hello world&lt;/h1&gt;'))</code></pre>
-
-<p>It aims to be <a href="http://commonmark.org/">CommonMark</a>
- compliant, and includes options to style the output. These options include:</p>
-
-<ul>
-  <li>headingStyle (setext or atx)</li>
-</ul>
-```
-
-*Ohjelmakoodi 11.* Esimerkki muunnettavasta HTML-koodista.
-
-```markdown
-Turndown Demo
-=============
-
-This demonstrates [turndown](https://github.com/mixmark-io/turndown) - an HTML to Markdown converter in JavaScript.
-
-Usage
------
-
-    var turndownService = new TurndownService()
-    console.log(turndownService.turndown('<h1>Hello world</h1>'))
-
-It aims to be [CommonMark](http://commonmark.org/) compliant, and includes options to style the output. These options include:
-
-*   headingStyle (setext or atx)
-```
-
-*Ohjelmakoodi 12.* Havainnollistaa muunnettua koodia.
-
-Muunnoksen etuna on se, että Markdown säilyttää dokumentin rakenteen kevyessä ja helposti luettavassa muodossa. Esimerkiksi HTML-otsikot muunnetaan Markdown-otsikoiksi (#, ##), kappaleet säilyvät tekstinä ja listat muuttuvat Markdown-listoiksi. Näin alkuperäinen sisältö pysyy ymmärrettävänä, mutta sen esitysmuoto yksinkertaistuu merkittävästi.
-
-Lisäksi muunnosvaihe toimii eräänlaisena normalisointivaiheena, jossa eri sivuilta kerätty sisältö yhtenäistyy samaan formaattiin. Tämä helpottaa dokumentaation jatkokäsittelyä, versionhallintaa sekä julkaisemista eri alustoilla. Markdown-muotoinen sisältö voidaan esimerkiksi tallentaa suoraan GitHub-repositorioon tai muuntaa edelleen muihin formaatteihin, kuten HTML- tai PDF-muotoon.
-
-Lopputuloksena saadaan Markdown-muotoinen dokumentaatio, joka voidaan tallentaa tiedostoiksi ja siirtää versionhallintaan. Tämä mahdollistaa dokumentaation jatkokäsittelyn, julkaisemisen sekä integroinnin muihin työkaluihin, kuten staattisiin sivustogeneraattoreihin tai dokumentaatioalustoihin.
-
-### 5.1.6 Dokumentaation rakenteen muuntaminen tiedostorakenteeksi
-
-Markdown-muotoon muunnettu sisältö tallennetaan lopuksi tiedostojärjestelmään siten, että se muodostaa loogisen ja navigoitavan dokumentaatiokokonaisuuden. Tässä vaiheessa yksittäiset Markdown-sisällöt yhdistetään tiedostorakenteeksi, joka vastaa mahdollisimman hyvin alkuperäisen verkkosivuston rakennetta.
-
-Prosessi alkaa muodostamalla jokaiselle sivulle yksilöllinen tunniste (key), joka perustuu sivun URL-osoitteeseen. URL:n polkuosasta poistetaan alku- ja loppuviivat, jolloin saadaan tiedostonimiä vastaava rakenne. Mikäli polku on tyhjä, käytetään oletuksena nimeä _index_, mikä vastaa tyypillistä verkkosivujen etusivurakennetta.
-
-```
-jokaiselle sivulle:
-    urlPolku = hae URL:n polkuosa
-    key = poista alun ja lopun kauttaviivat
-    jos key on tyhjä:
-        key = "index"
-```
-
-*Ohjelmakoodi 13.* Havainnollistaa tiedostonimen luontia.
-
-Seuraavaksi jokaisen sivun HTML muunnetaan Markdown-muotoon ja tallennetaan tietorakenteeseen, jossa avaimena toimii edellä muodostettu key. Tämä mahdollistaa sisällön käsittelyn ennen varsinaista tallennusta, esimerkiksi linkkien päivittämisen.
-
-Yksi oleellinen vaihe on sisäisten linkkien päivittäminen. Koska alkuperäiset linkit viittaavat lähdesivustoon, ne muunnetaan osoittamaan uuteen kohteeseen (esimerkiksi GitHub Pages -ympäristöön). Tämä tehdään etsimällä Markdown-sisällöstä kaikki alkuperäiseen osoitteeseen viittaavat URL-osoitteet ja korvaamalla ne vastaavilla uusilla osoitteilla, mikäli kohdesivu löytyy kerätystä aineistosta.
-
-```
-jokaiselle (key, markdown):
-    etsi kaikki linkit jotka viittaavat alkuperäiseen sivustoon
-    jos linkin kohde löytyy kerätystä datasta:
-        korvaa linkki uudella URL-osoitteella
-    tallenna päivitetty markdown
-```
-
-*Ohjelmakoodi 14.* Havainnollistaa URL-osoitteiden muuntamista.
-
-Lopuksi muodostetaan varsinainen tiedostorakenne ja kirjoitetaan Markdown-tiedostot levylle. Ennen tallennusta mahdollinen vanha hakemisto poistetaan, jotta vältetään vanhentuneen datan jääminen järjestelmään. Tiedostonimet normalisoidaan poistamalla mahdolliset erikoismerkit, ja tarvittavat hakemistot luodaan automaattisesti.
-
-```
-jos output-kansio on olemassa:
-    poista kansio
-
-jokaiselle (key, markdown):
-    tiedostonimi = key + ".md"
-    varmista että hakemisto on olemassa
-    kirjoita tiedosto levylle
-```
-
-*Ohjelmakoodi 15.* Havainnollistaa kansioiden ja tiedostojen luomista.
-
-Tämän vaiheen lopputuloksena syntyy selkeä tiedostopohjainen dokumentaatiorakenne, joka vastaa alkuperäisen sivuston loogista rakennetta. Rakennetta voidaan hyödyntää suoraan versionhallinnassa sekä julkaista esimerkiksi staattisena verkkosivustona.
-
-### 5.1.7 Static site generatorin käyttöönotto (Docusaurus)
-
-Kun dokumentaatio on muunnettu Markdown-muotoon ja tallennettu tiedostorakenteeksi, seuraava vaihe on sen julkaiseminen staattisena verkkosivustona. Tässä työssä tähän tarkoitukseen valitaan Docusaurus, joka on Node.js-ympäristössä toimiva staattisten sivustojen generaattori ja tukee Markdown-pohjaista dokumentaatiota suoraan. @zotero-item-60
-
-Docusauruksen käyttöönotto perustuu siihen, että kaikki tuotettu Markdown-sisältö sijoitetaan projektin `docs`-hakemistoon. Koska aiemmassa vaiheessa muodostettu tiedostorakenne vastaa loogisesti dokumentaation rakennetta, se voidaan siirtää sellaisenaan tähän hakemistoon ilman merkittäviä muutoksia. Näin dokumentaation hierarkia säilyy ja Docusaurus pystyy automaattisesti muodostamaan navigaation tiedostorakenteen perusteella.
-
-Kun tiedostot on siirretty, Docusaurus generoi automaattisesti staattisen sivuston Markdown-tiedostojen perusteella. Jokainen `.md`-tiedosto muunnetaan HTML-sivuksi, ja hakemistorakenne määrittää sivujen välisen navigaation. Lisäksi Docusaurus tarjoaa valmiita ominaisuuksia, kuten sivupalkit (sidebar) sekä versionhallinnan tuen.
-
-Käyttöönoton yhteydessä havaittiin kuitenkin joitakin alkuperäisestä aineistosta peräisin olevia ongelmia. Osa URL-linkeistä oli rikkinäisiä tai viittasi virheellisiin kohteisiin, minkä vuoksi niitä jouduttiin korjaamaan manuaalisesti. Lisäksi englanninkielisillä sivuilla esiintyi linkkejä suomenkielisiin sivuihin, mikä heikentää dokumentaation johdonmukaisuutta ja käyttäjäkokemusta. Nämä virheet eivät syntyneet muunnosprosessissa, vaan olivat jo osa alkuperäistä verkkosivustoa.
-
-Tämän vaiheen lopputuloksena syntyy toimiva dokumentaatiosivusto, jossa aiemmin kerätty ja muunnettu sisältö on esitettävissä selkeässä ja käyttäjäystävällisessä muodossa.
-
-![Docusaurus][6]
+Docusaurus generoi Markdown-tiedostoista staattiset HTML-sivut, tarjoten samalla moderneja ominaisuuksia kuten versionhallintatuen, hakutoiminnon ja responsiivisen ulkoasun. Käyttöönoton yhteydessä havaittiin kuitenkin joitakin alkuperäisestä aineistosta peräisin olevia ongelmia. Osa linkeistä oli rikkinäisiä tai viittasi virheellisiin kohteisiin, ja englanninkielisillä sivuilla oli linkkejä suomenkielisiin sivuihin. Nämä ongelmat korjattiin manuaalisesti ennen lopullista julkaisua.
 
 *Kuva 6.* Havainnollistaa valmista Docusaurus-sivustoa.
 
-### 5.1.8 Versionhallintaan siirtäminen (Git)
+![Docusaurus][6]
 
-Kun dokumentaatio on muunnettu Markdown-muotoon ja järjestetty tiedostorakenteeksi, se siirretään versionhallintaan Gitin avulla. Versionhallinnan tarkoituksena on mahdollistaa muutosten seuranta, hallinta sekä dokumentaation kehittäminen hallitusti ajan kuluessa.
+Lopputuloksena saatiin toimiva, selkeä ja käyttäjäystävällinen dokumentaatiosivusto, jossa muunnettu sisältö oli esitettävissä ammattimaisessa muodossa.
 
-Ensimmäisessä vaiheessa projektille alustetaan Git-repositorio, jonka jälkeen kaikki tuotetut tiedostot lisätään versionhallintaan. Tämä sisältää sekä Markdown-dokumentaation että mahdolliset konfiguraatiotiedostot, kuten Docusauruksen asetukset.
+## 5.8 Versionhallintaan siirtäminen (Git)
 
-```
-alusta git-repositorio
-lisää kaikki tiedostot (git add .)
-tee ensimmäinen commit (git commit)
-```
+Kun dokumentaatio oli muunnettu Markdown-muotoon ja järjestetty sopivaan tiedostorakenteeseen, se siirrettiin versionhallintaan. Projektille alustettiin uusi Git-repositorio, minkä jälkeen kaikki tuotetut tiedostot lisättiin versionhallintaan. Tehtiin ensimmäinen commit ja repositorio yhdistettiin GitHubin etärepositorioon, jonka jälkeen muutokset siirrettiin etäpalvelimelle.
 
-*Ohjelmakoodi 15.* Havainnollistaa Git-repositorion alustamista.
+GitHub-repositorio mahdollisti dokumentaation helpon jakamisen, tarkastelun ja jatkokehityksen. Versionhallinnan avulla pystyttiin seuraamaan kaikki tehdyt muutokset, vertailemaan eri versioita keskenään sekä palauttamaan tarvittaessa aiempia versioita. Git toimi tässä työssä sekä käytännön työkaluna että osana tutkimusmenetelmää, sillä se edustaa nykyaikaista tapaa hallita dokumentaatiota samalla tavalla kuin ohjelmistokehityksessä yleensä.
 
-Tämän jälkeen projekti voidaan yhdistää etärepositorioon, kuten GitHubiin, mikä mahdollistaa dokumentaation jakamisen ja julkaisemisen verkossa. Etärepositorion avulla dokumentaatio voidaan myös integroida muihin työkaluihin, kuten jatkuvan integraation ja toimituksen (CI/CD) prosesseihin.
+## 5.9 Dokumentaation automatisoitu julkaisu (GitHub Actions)
 
-```
-yhdistä etärepositorioon
-lähetä tiedostot (git push)
-```
+Versionhallintaan siirtämisen jälkeen dokumentaation julkaisu automatisoitiin hyödyntämällä GitHub Actions -työnkulkuja. Tavoitteena oli poistaa manuaaliset vaiheet tiedonkeruusta julkaisemiseen ja varmistaa, että sivusto päivittyy automaattisesti aina kun muutoksia pushataan repositorioon.
 
-*Ohjelmakoodi 15.* Havainnollistaa yhdistämistä etärepositorioon.
+Työnkulku käynnistyy automaattisesti, kun `main`-haaraan tehdään push tai kun määritettyihin hakemistoihin tulee muutoksia. Ensimmäisessä vaiheessa haetaan repositorio, asetetaan Node.js-ympäristö ja asennetaan scraper-työkalun riippuvuudet. Sen jälkeen suoritetaan scraper, joka kerää ajantasaisen sisällön WordPressistä ja muuntaa sen Markdown-muotoon.
 
-Versionhallinnan avulla dokumentaation muutokset tallentuvat selkeästi versiohistoriaan. Tämä mahdollistaa esimerkiksi aiempien versioiden tarkastelun, virheiden korjaamisen sekä muutosten vertailun eri versioiden välillä. Lisäksi Git tukee haarautumista (branching), mikä mahdollistaa uusien ominaisuuksien tai muutosten kehittämisen erillään pääversiosta. Tässä työssä Git toimii sekä teknisenä työkaluna että osana tutkimusmenetelmää, koska se heijastaa nykyaikaisia dokumentaatiokäytäntöjä ohjelmistokehityksessä.
+Kun dokumentaatio on generoitu, se siirretään Docusaurus-projektin `docs`-hakemistoon. Tämän jälkeen asennetaan Docusauruksen riippuvuudet ja rakennetaan staattinen sivusto. Lopuksi valmis sivusto deployataan automaattisesti GitHub Pages -palveluun. Koko prosessi yhdistää tiedonkeruun, muuntamisen, sivuston generoinnin ja julkaisun yhdeksi jatkuvaksi putkeksi ilman manuaalista väliintuloa.
 
-### 5.1.9 Dokumentaation automatisoitu julkaisu (GitHub Actions)
+## 5.10 Markdownin muuntaminen opinnäytetyömuotoon (metatutkimus)
 
-Versionhallintaan siirtämisen jälkeen dokumentaation julkaisu automatisoidaan hyödyntämällä GitHub Actions -työnkulkuja. Automatisoinnin tavoitteena on poistaa manuaaliset vaiheet dokumentaation generoinnista ja julkaisemisesta sekä varmistaa, että sivusto päivittyy automaattisesti aina, kun lähdekoodiin tehdään muutoksia. @zotero-item-61
+Erillisenä metatutkimuksena tarkasteltiin, miten Markdown-muotoinen sisältö voidaan muuntaa HAMKin opinnäytetyövaatimusten mukaiseen Word-muotoon. Tämä osa oli tärkeä, sillä se testasi Markdownin soveltuvuutta myös akateemiseen kirjoittamiseen ja muodolliseen raportointiin.
 
-Työnkulku käynnistyy automaattisesti, kun repositorion `main`-haaraan tehdään päivityksiä tai kun määritettyihin hakemistoihin tulee muutoksia. Tämä mahdollistaa sen, että dokumentaation päivitysprosessi on sidottu suoraan versionhallintaan.
+Muunnosprosessi toteutettiin Pandoc-dokumenttikonvertterilla. Koko opinnäytetyön sisältö kirjoitettiin Markdown-tiedostoon, minkä jälkeen se muunnettiin yhdellä komentorivikomennolla Word-dokumentiksi (.docx). Pandocia käytettiin yhdessä `--reference-doc`-parametrin kanssa, joka sovelsi muunnoksessa HAMKin virallista opinnäytetyöpohjaa.
 
-```yml
-on:
-  push:
-    branches:
-      - main 
-    paths:
-      - 'toteutus/**'
-      - '.github/workflows/deploy.yml'
-```
+Viittausten hallintaan hyödynnettiin Zoteroa. Lähteet vietiin BibTeX-muotoon, ja Markdown-tekstissä viitattiin lähteisiin avaimilla. Pandoc käsitteli viitteet automaattisesti `--citeproc`-komennon avulla ja muodosti sekä tekstiviitteet että lähdeluettelon.
 
-*Ohjelmakoodi 15.* Havainnollistaa workflown aktivoitumista.
+Käytännön kokeilussa havaittiin, että rakenne (otsikot, kappaleet, listat) siirtyi pääosin hyvin, mutta opinnäytetyöpohjan tarkat muotoiluvaatimukset (kuten ylätunnisteet, sivunumerointi ja otsikoiden automaattinen numerointi) eivät täysin säilyneet. Tämän vuoksi lopullinen Word-dokumentti vaati vielä manuaalista viimeistelyä.
 
-Ensimmäisessä vaiheessa työnkulku hakee projektin lähdekoodin ja asettaa käyttöön tarvittavan Node.js-ympäristön. Tämän jälkeen suoritetaan scraper-työkalun riippuvuuksien asennus, käännös sekä varsinainen suoritus, jonka tuloksena syntyy ajantasainen Markdown-dokumentaatio.
+### 5.10.1 Muunnos Pandocilla
+
+Markdown-muotoisen opinnäytetyön muuntaminen Word-dokumentiksi toteutettiin Pandoc-työkalulla. Prosessi oli teknisesti yksinkertainen: koko työ kirjoitettiin yhteen tai useampaan Markdown-tiedostoon, minkä jälkeen muunnos suoritettiin komentoriviltä yhdellä tai useammalla komennolla.
+
+*Ohjelmakoodi 1.* Havainnollistaa Pandocin peruskomentoa Markdownin muuntamiseksi Word-muotoon.
 
 ```
-hae repositorio
-asenna node-ympäristö
-
-asenna scraper-riippuvuudet
-rakenna scraper
-suorita scraper
+pandoc oppari.md -o oppari.docx
 ```
 
-*Ohjelmakoodi 16.* Havainnollistaa työnkulun ensimmäistä vaihetta.
+Tämä komento tuotti toimivan Word-dokumentin, jossa otsikkotasot, kappaleet ja listat siirtyivät pääosin oikein. Jotta tulos vastaisi paremmin HAMKin opinnäytetyöpohjan vaatimuksia, komentoa laajennettiin seuraavasti:
 
-Kun dokumentaatio on generoitu, se siirretään automaattisesti Docusaurus-projektin `docs`-hakemistoon. Tämä vaihe yhdistää datankeruun ja dokumentaation esityskerrokseen, mahdollistaen päivitysprosessin.
-
-Seuraavaksi asennetaan Docusauruksen riippuvuudet ja rakennetaan staattinen sivusto. Rakennusvaiheessa Markdown-tiedostot muunnetaan HTML-sivuiksi, ja lopputuloksena syntyy valmis julkaistava sivusto.
-
-Lopuksi rakennettu sivusto siirretään GitHub Pages -palveluun, jossa se julkaistaan automaattisesti. Tämä mahdollistaa dokumentaation jatkuvan saatavuuden verkossa ilman erillisiä julkaisutoimenpiteitä.
-
-```yml
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-*Ohjelmakoodi 16.* Havainnollistaa sivuston julkaisemista Github Pages -palveluun.
-
-Automatisoitu työnkulku yhdistää koko prosessin yhdeksi jatkuvaksi putkeksi, jossa tiedonkeruu, muokkaus ja julkaisu tapahtuvat ilman manuaalista väliintuloa. Tämä vastaa nykyaikaisia DevOps-käytäntöjä ja tekee dokumentaation ylläpidosta tehokkaampaa.
-
-## 5.2 Markdownin muuntaminen opinnäytetyömuotoon
-tekstiä tänne?
-
-### 5.2.1 Markdown -> DOCX -muunnos Pandocilla
-
-Muunnosprosessi toteutetaan käytännössä käyttämällä Pandoc-työkalua, jonka avulla Markdown-muotoinen teksti muunnetaan suoraan Word-dokumentiksi. Prosessi alkaa siitä, että koko opinnäytetyön sisältö on kirjoitettu yhteen tai useampaan .md-tiedostoon loogisesti jäsenneltynä. Tämän jälkeen muunnos voidaan suorittaa yhdellä komentorivikomennolla.
+*Ohjelmakoodi 2.* Havainnollistaa Pandoc-muunnosta sisällysluettelolla ja mallipohjalla.
 
 ```
-pandoc oppari.md -o output.docx
+pandoc oppari.md -o oppari.docx
 ```
 
-*Ohjelmakoodi 17.* Havainnollistaa yksinkertaista Pandoc-esimerkkiä.
+Käytännön kokeilujen perusteella Pandoc hoiti rakenteellisen muunnoksen varsin hyvin. Kuitenkin tietyt Wordin muotoiluominaisuudet, kuten osioiden erilaiset ylätunnisteet, sivunumerointi ja otsikoiden automaattinen numerointi, eivät siirtyneet täysin ongelmitta. Tämän vuoksi lopullinen dokumentti vaati vielä manuaalista viimeistelyä Word-ympäristössä.
 
-Tämä peruskomento riittää tuottamaan toimivan Word-dokumentin, jossa Markdownin perusrakenteet on muunnettu vastaaviin Word-elementteihin. Käytännössä havaitaan, että otsikkotasot siirtyvät hyvin (esim. # -> Heading 1), kappalejako säilyy ja listat toimivat odotetusti.
+### 5.10.2 Viittausten ja lähteiden käsittely Zoterolla
 
-*Kuva 7.* Havainnollistaa ensimmäistä muunnosta.
+Viittausten ja lähteiden hallinta oli olennainen osa metatutkimusta. Lähteiden keräämiseen, organisointiin ja hallintaan käytettiin Zotero-viitteidenhallintatyökalua. Zoterosta lähteet vietiin BibTeX-muotoon (`.bib`-tiedosto), jota Pandoc pystyy hyödyntämään muunnosvaiheessa.
 
-![kuva7][7]
-
-Käytännön kokeilussa kuitenkin huomataan nopeasti, että pelkkä perusmuunnos ei riitä opinnäytetyövaatimuksiin. Tämän vuoksi muunnosta täydennetään lisäparametreilla, joilla hallitaan esimerkiksi dokumentin rakennetta ja ominaisuuksia.
-
-```
-pandoc oppari.md -o oppari.docx --toc
-```
-
-*Ohjelmakoodi 17.* Havainnollistaa Pandoc-muunnosta sisällysluettelon kanssa.
-
-*Kuva 8.* Havainnollistaa muunnosta sisällysluettelon kanssa.
-
-![kuva8][8]
-
-### 5.2.2 Viittausten ja lähteiden käsittely (Zotero)
-
-Viittausten hallinta on osa opinnäytetyötä, ja sen toimivuus on ratkaisevaa arvioitaessa Markdown-pohjaisen kirjoittamisen soveltuvuutta akateemiseen käyttöön. Tässä tutkimuksessa viitteiden hallintaan hyödynnetään Zoteroa, joka toimii erillisenä viitteidenhallintatyökaluna ja mahdollistaa lähteiden keräämisen, organisoinnin sekä viennin eri formaatteihin.
-
-Käytännössä viitteet hallitaan Zoterossa ja viedään BibTeX-muotoiseen (`.bib`) tiedostoon, jota Pandoc pystyy hyödyntämään muunnosvaiheessa. Jokaiselle lähteelle muodostuu yksilöllinen viiteavain, jota käytetään Markdown-tekstissä viittaamiseen.
+*Ohjelmakoodi 18.* Havainnollistaa Markdown-muotoista viittausta viiteavaimen avulla.
 
 ```
 Tämä on esimerkkiviite @{zotero-item-22}.
 ```
 
-*Ohjelmakoodi 18.* Havainnollistaa Markdown-muotoista viittausta viiteavaimen avulla.
-
 Muunnosvaiheessa Pandoc käsittelee nämä viitteet automaattisesti. Tämä edellyttää, että muunnoskomennossa määritellään sekä viitetiedosto että viittausten käsittelyyn tarvittavat asetukset.
+
+*Ohjelmakoodi 19.* Havainnollistaa Pandoc-muunnosta viitteiden kanssa.
 
 ```
 pandoc oppari.md -o oppari.docx --toc --citeproc --bibliography=references.bib --csl=apa.csl
 ```
 
-*Ohjelmakoodi 19.* Havainnollistaa Pandoc-muunnosta viitteiden kanssa.
-
-Käytännön toteutuksessa havaitaan, että viitteiden perustoiminnallisuus toimii hyvin. Pandoc muodostaa automaattisesti tekstiviitteet sekä lähdeluettelon dokumentin loppuun, ja viitteet linkittyvät oikein viitetiedostoon. Tämä mahdollistaa sen, että lähdehallinta voidaan toteuttaa kokonaisuudessaan Markdown-ympäristössä ilman suoraa riippuvuutta Wordin omista viittaustyökaluista.
-
-*Kuva 9.* Havainnollistaa muunnosta lähdeviitteiden kanssa.
-
-![kuva9](image.png)
-
-Prosessin aikana tunnistetaan kuitenkin myös merkittäviä rajoitteita. Yksi havainto liittyy Word-ympäristön Zotero-integraatioon: koska Pandoc muuntaa viitteet lopulliseen tekstimuotoon, ne eivät enää säily “dynaamisina” viitteinä Wordissa. Tämä tarkoittaa, että Wordin Zotero-lisäosa ei tunnista viitteitä eikä mahdollista niiden automaattista muokkaamista muunnoksen jälkeen.
-
-Lisäksi havaitaan, että liitteisiin (esimerkiksi opinnäytetyön lopussa oleviin erillisiin osioihin) sisältyvät viitteet voivat muuntua pelkäksi tekstiksi ilman toiminnallista yhteyttä Zoteroon. Tämä rajoittaa erityisesti tilanteita, joissa liitteissä halutaan käyttää samaa viitteidenhallintaa kuin varsinaisessa tekstissä.
-
-Näistä rajoitteista huolimatta menetelmä toimii hyvin tilanteissa, joissa viitteiden lopullinen muoto ei enää vaadi muokkausta Word-ympäristössä. Käytännössä tämä tarkoittaa, että viitteet tulisi viimeistellä Markdown-vaiheessa ennen muunnosta.
+Pandoc muodosti automaattisesti sekä tekstiviitteet että lähdeluettelon dokumentin loppuun. Menetelmä toimi teknisesti hyvin ja mahdollisti viitteiden hallinnan kokonaan Markdown-ympäristössä. Käytännössä havaittiin kuitenkin, että muunnoksen jälkeen viitteet muuttuivat staattisiksi, eikä Wordin Zotero-lisäosaa voinut enää käyttää niiden muokkaamiseen. Tämän vuoksi kaikki viittaukset tuli viimeistellä jo Markdown-vaiheessa ennen lopullista muunnosta.
 
 ### 5.2.3 Muotoilun sovittaminen opinnäytetyöpohjaan
-### 5.2.4 Muunnoksen tulosten arviointi
-### 5.2.5 Havaitut haasteet ja manuaaliset korjaukset
+
+tekstiä tänne
 
 # 6 Results
-## 6.1 Markdown-muunnoksen tulokset
+## 6.1 Hamkin julkisten sivujen Markdown-muunnoksen tulokset
 
 Markdown-muunnoksen tuloksena alkuperäinen WordPress-pohjainen dokumentaatio saatiin siirrettyä onnistuneesti tekstipohjaiseen ja rakenteellisesti selkeään muotoon. Suurin osa sivujen sisällöstä, kuten otsikot, kappaleet ja listat, säilyi hyvin muunnosprosessin läpi, ja lopputulos vastasi sisällöllisesti alkuperäistä dokumentaatiota.
 
@@ -794,6 +470,20 @@ Lisäksi havaittiin, että alkuperäisessä dokumentaatiossa esiintyneet virheet
 Kokonaisuutena Markdown-muunnos voidaan arvioida onnistuneeksi, sillä se säilytti dokumentaation oleellisimman sisällön ja rakenteen, vaikka osa visuaalisista ja teknisistä yksityiskohdista jäi pois. Tulokset osoittavat, että Markdown soveltuu hyvin tekstipainotteisen dokumentaation esittämiseen, mutta vaatii lisätoimenpiteitä monimutkaisempien sisältöjen käsittelyssä.
 
 Linkki Markdown-versioon löytyy [tästä](https://kejjjjj.github.io/oppari/docs/).
+
+## 6.2 Metatutkimuksen tulokset
+
+Metatutkimuksen tavoitteena oli arvioida, kuinka hyvin Markdown-muotoinen sisältö voidaan muuntaa HAMKin opinnäytetyövaatimusten mukaiseen Word-muotoon ilman ohjelmointia ja mahdollisimman automatisoidusti. Tulokset osoittavat, että muunnos on teknisesti toteutettavissa ja osittain tehokas, mutta siihen liittyy merkittäviä rajoitteita erityisesti muotoilun ja viitteiden hallinnan osalta.
+
+Muunnos Markdownista DOCX-muotoon Pandocin avulla toimii rakenteellisella tasolla hyvin. Dokumentin otsikkorakenne, kappalejako ja listat säilyvät pääosin oikein, ja sisältö siirtyy loogisesti Word-dokumenttiin. Tämä vahvistaa, että Markdown soveltuu hyvin tekstipohjaisen sisällön tuottamiseen myös akateemisessa kontekstissa. Lisäksi muunnosprosessi on nopea ja helposti toistettavissa, mikä tukee iteratiivista työskentelytapaa.
+
+Viitteiden käsittely Zoteron ja Pandocin yhdistelmällä toimii perustasolla luotettavasti. Lähteet voidaan hallita erillisesti ja tuoda osaksi dokumenttia automaattisesti, jolloin lähdeluettelo muodostuu ilman manuaalista työtä. Tämä vähentää virheiden mahdollisuutta ja tehostaa kirjoitusprosessia. Kuitenkin merkittävä rajoite on se, että viitteet muuttuvat muunnosvaiheessa staattisiksi. Tämän seurauksena Wordin Zotero-integraatiota ei voida enää hyödyntää muunnoksen jälkeen, mikä rajoittaa viitteiden jatkomuokkausta.
+
+Suurimmat haasteet liittyvät dokumentin muotoiluun ja yhteensopivuuteen opinnäytetyöpohjan kanssa. Vaikka Pandoc mahdollistaa Word-mallipohjan käytön, muunnos ei säilytä kaikkia mallipohjan rakenteellisia ominaisuuksia oikein. Erityisesti havaittiin, että ylätunnisteiden rakenne ei siirry oikein: ensimmäisen sivun alatunniste kopioituu virheellisesti kaikille sivuille. Lisäksi otsikoiden automaattinen numerointi Wordissa aiheuttaa ristiriidan Markdownissa määritellyn rakenteen kanssa, mikä johtaa virheelliseen numerointiin.
+
+Näiden ongelmien vuoksi lopullinen dokumentti vaatii manuaalista viimeistelyä Word-ympäristössä. Korjauksia tarvitaan erityisesti sivuasetuksiin, alatunnisteisiin sekä otsikoiden numerointiin. Tämä heikentää automaation etuja ja osoittaa, että täysin automatisoitu työnkulku ei ole tämän tutkimuksen perusteella realistinen opinnäytetyökontekstissa.
+
+Kokonaisuutena metatutkimuksen tulokset osoittavat, että Markdown soveltuu hyvin sisällön tuottamiseen ja rakenteen hallintaan, mutta sen käyttö opinnäytetyömuodossa edellyttää kompromisseja. Automaatio toimii tehokkaasti sisällön ja rakenteen tasolla, mutta visuaalinen muotoilu ja dokumentin viimeistely jäävät edelleen osittain manuaalisiksi. Tämä korostaa hybridimallia, jossa Markdownia käytetään kirjoittamiseen ja Wordia lopulliseen viimeistelyyn.
 
 # 7 Conclusions
 ## 7.1 Markdown-muunnosprosessin arviointi ja kehityskohteiden tunnistaminen
@@ -808,5 +498,16 @@ Lisäksi muunnosprosessia voitaisiin kehittää tukemaan paremmin monimutkaisemp
 
 Kokonaisuutena voidaan todeta, että Markdown-muunnosprosessi toimii tehokkaana ratkaisuna dokumentaation modernisointiin, mutta sen laadun ja käytettävyyden parantaminen edellyttää jatkokehitystä erityisesti automaation, validoinnin ja rakenteellisen joustavuuden osalta.
 
+## 7.2 Markdownin soveltuvuus opinnäytetyön tuottamiseen
+
+Tämän tutkimuksen perusteella Markdown soveltuu opinnäytetyön tuottamiseen erityisesti sisällön kirjoittamisen ja rakenteen hallinnan näkökulmasta. Sen yksinkertainen syntaksi ohjaa kirjoittamaan selkeästi jäsenneltyä tekstiä, jossa otsikkotasot, kappaleet ja listat muodostavat loogisen kokonaisuuden.
+
+Tutkimuksessa havaittiin kuitenkin, että Markdown ei yksin riitä opinnäytetyön lopulliseen tuottamiseen. Suurimmat haasteet liittyvät muunnosvaiheeseen ja erityisesti Word-muotoilun vaatimuksiin. Vaikka Markdownista voidaan tuottaa DOCX-dokumentti automaattisesti, kaikki opinnäytetyöpohjan vaatimukset eivät siirry oikein. Esimerkiksi ylätunnisteiden rakenteet ja otsikoiden numerointi aiheuttavat ongelmia, jotka vaativat manuaalista korjausta.
+
+Myös viitteiden hallinnassa ilmenee rajoitteita. Vaikka viitteet voidaan tuottaa Markdown-ympäristössä ja sisällyttää dokumenttiin muunnosvaiheessa, ne muuttuvat staattisiksi, eikä niitä voida enää hallita dynaamisesti Wordissa. Tämä rajoittaa erityisesti viimeistelyvaiheen joustavuutta.
+
+Näiden havaintojen perusteella Markdown soveltuu parhaiten opinnäytetyön kirjoitusvaiheeseen, mutta ei täysin korvaa Wordia lopullisena työkaluna. Käytännössä toimivin ratkaisu on hybridimalli, jossa Markdownia käytetään sisällön tuottamiseen ja Wordia dokumentin viimeistelyyn.
+
+Kokonaisuutena voidaan todeta, että Markdown on varteenotettava vaihtoehto opinnäytetyön kirjoittamiseen, mutta sen käyttö edellyttää ymmärrystä muunnosprosessin rajoitteista ja valmiutta tehdä lopulliset muokkaukset Word-ympäristössä.
 
 # 8 Further research?
