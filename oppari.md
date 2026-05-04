@@ -245,7 +245,7 @@ Tutkimus kohdistuu rajattuun tapaukseen, jossa olemassa olevaa verkkopohjaista d
 
 Tapaustutkimuksen luonteeseen kuuluu, että tutkimuskysymyksiin vastataan ensisijaisesti “miten”-näkökulmasta. Tässä työssä tarkastellaan erityisesti sitä, miten dokumentaation muunnosprosessi voidaan toteuttaa ohjelmallisesti ja millaisia etuja tai haasteita tähän liittyy. Näin ollen tutkimuksen keskiössä ovat käytettävät menetelmät, työkalut sekä niiden muodostama kokonaisuus.
 
-Tutkimus toteutetaan käytännönläheisenä ja soveltavana prosessina, jossa rakennetaan toimiva työnkulku dokumentaation käsittelyyn. Prosessi etenee vaiheittain, ja jokaisessa vaiheessa arvioidaan valittujen ratkaisujen toimivuutta suhteessa tutkimuksen tavoitteisiin. Tämän lähestymistavan avulla voidaan tunnistaa sekä menetelmän vahvuuksia että rajoitteita.
+Tutkimus toteutetaan käytännönläheisenä ja soveltavana prosessina, jossa rakennetaan työnkulku dokumentaation käsittelyyn. Prosessi etenee vaiheittain, ja jokaisessa vaiheessa arvioidaan valittujen ratkaisujen toimivuutta suhteessa tutkimuksen tavoitteisiin. Tämän lähestymistavan avulla voidaan tunnistaa sekä menetelmän vahvuuksia että rajoitteita.
 
 ## 4.2 Aineisto ja rajaus
 
@@ -271,7 +271,21 @@ Opinnäytetyömuotoon muuntamista varten hyödynnettiin Pandoc-dokumenttikonvert
 
 Työkalukokonaisuus muodostaa yhtenäisen, automatisoidun putken, joka ulottuu tiedonkeruusta aina dokumentaation julkaisemiseen saakka. Kaikki keskeiset vaiheet on integroitu versionhallintaan ja jatkuvan integraation (CI/CD) periaatteiden mukaisesti GitHub Actions -työnkulkujen avulla.
 
-## 4.4 Toteutusprosessi
+## 4.4 Arviointikriteerit
+
+Opinnäytetyön käytännön toteutuksen ja tulosten arvioimiseksi määriteltiin neljä arviointikriteeriä. Näitä kriteerejä käytettiin sekä prosessin että lopputuloksen systemaattiseen tarkasteluun. Arviointikriteerit valittiin siten, että ne heijastavat sekä teknisen dokumentaation että opinnäytetyön kirjoittamisen keskeisiä laatuvaatimuksia nykyaikaisessa työympäristössä.
+
+Ylläpidettävyys kuvaa sitä, kuinka helposti dokumentaatiota voidaan päivittää, muokata ja kehittää ajan kuluessa. Hyvin ylläpidettävä dokumentaatio on loogisesti jaettu osiin, käyttää yhdenmukaista rakennetta ja on helposti versionhallittavissa. Tässä työssä ylläpidettävyyttä arvioitiin erityisesti sen perusteella, miten helposti sisältöä voi muuttaa ilman, että muutokset aiheuttavat virheitä muualla dokumentaatiossa.
+
+Luettavuus arvioi sekä raakatekstin että lopullisen esitysmuodon helppolukuisuutta. Markdown-muotoisen tekstin tulisi olla selkeää myös ilman muotoilua, ja generoidun sivuston tulisi olla käyttäjäystävällinen ja visuaalisesti miellyttävä. Luettavuutta tarkasteltiin sekä teknisestä että sisällöllisestä näkökulmasta.
+
+Siirrettävyys tarkoittaa dokumentaation kykyä toimia eri alustoilla ja ympäristöissä ilman merkittäviä muutoksia. Hyvä siirrettävyys mahdollistaa sisällön muuntamisen esimerkiksi Word-dokumentiksi, PDF:ksi tai toisenlaisen julkaisujärjestelmän käyttöön. Tätä kriteeriä korostettiin erityisesti metatutkimuksessa, jossa testattiin Markdownin yhteensopivuutta HAMKin opinnäytetyöpohjan kanssa.
+
+Automaation taso kuvaa sitä, kuinka suuri osa dokumentaation keräämisestä, muuntamisesta, julkaisemisesta ja ylläpidosta voidaan hoitaa automaattisesti. Korkea automaation taso vähentää manuaalista työtä ja parantaa dokumentaation ajantasaisuutta. Tässä työssä automaatiota arvioitiin koko työnkulun osalta aina sisällön keräämisestä GitHub Actions -pohjaiseen julkaisuun asti.
+
+Näiden kriteerien avulla työn tuloksia voidaan arvioida monipuolisesti sekä laadullisesti että käytännön hyötyjen näkökulmasta. Arviointikriteerit toimivat myös jatkokehityksen perustana, kun Markdown-pohjaista dokumentaatiota mahdollisesti otetaan laajempaan käyttöön organisaatiossa.
+
+## 4.5 Toteutusprosessi
 
 Tutkimuksen käytännön toteutus rakentui systemaattiselle työnkululle, jossa web scraping -menetelmää ja automaattista muunnosta hyödynnettiin olemassa olevan dokumentaation siirtämisessä Markdown-muotoon.
 
@@ -454,60 +468,155 @@ Pandoc muodosti automaattisesti sekä tekstiviitteet että lähdeluettelon dokum
 
 ### 5.2.3 Muotoilun sovittaminen opinnäytetyöpohjaan
 
-tekstiä tänne
+Vaikka Pandoc hoiti rakenteellisen muunnoksen (otsikot, kappaleet, listat) pääosin onnistuneesti, opinnäytetyön lopullinen ulkoasu vaatii tarkkaa sovittamista HAMKin viralliseen Word-mallipohjaan. Tässä vaiheessa hyödynnettiin Pandocin `--reference-doc`-parametria, jonka avulla muunnoksessa käytettiin valmista HAMKin opinnäytetyöpohjaa tyylimallina.
+
+*Ohjelmakoodi 5.* Pandoc-muunnos HAMKin mallipohjaa käyttäen
+```
+pandoc oppari.md -o oppari.docx --toc --reference-doc=hamk_pohja.docx
+```
+
+Käytännön kokeilussa havaittiin useita haasteita. Ensinnäkin Pandoc ei säilyttänyt oikein Wordin osioiden (sections) erilaisia ylätunnisteita ja alatunnisteita. Esimerkiksi ensimmäisen sivun erilainen alatunniste kopioitui kaikille sivuille, mikä rikkoi opinnäytetyöpohjan vaatimukset. Lisäksi otsikoiden automaattinen numerointi Wordissa aktivoitui muunnoksen yhteydessä, vaikka Markdown-tiedostossa rakenne oli jo valmiiksi numeroitu. Tämä aiheutti epäjohdonmukaisuuksia otsikkotasoissa.
+
+Muita ongelmia olivat mm. rivivälien, marginaalien ja fonttien tarkka sovittaminen sekä taulukoiden ja kuvien sijoittelu. Vaikka suuri osa sisällöstä siirtyi oikein, lopullinen Word-dokumentti vaati aina manuaalista viimeistelyä.
 
 # 6 Results
-## 6.1 Hamkin julkisten sivujen Markdown-muunnoksen tulokset
 
-Markdown-muunnoksen tuloksena alkuperäinen WordPress-pohjainen dokumentaatio saatiin siirrettyä onnistuneesti tekstipohjaiseen ja rakenteellisesti selkeään muotoon. Suurin osa sivujen sisällöstä, kuten otsikot, kappaleet ja listat, säilyi hyvin muunnosprosessin läpi, ja lopputulos vastasi sisällöllisesti alkuperäistä dokumentaatiota.
+Tässä luvussa analysoidaan opinnäytetyössä toteutetun Markdown-pohjaisen dokumentaatiotyönkulun tuloksia. Analyysi kytkeytyy suoraan tutkimusmetodologiaan ja luvussa 4.4 määriteltyihin arviointikriteereihin. Tarkastelu perustuu käytännön toteutukseen, syntyneeseen dokumentaatiokokonaisuuteen sekä metatutkimuksena toteutettuun Markdown–Word-muunnokseen.
 
-Muunnosprosessin ansiosta dokumentaatio muuttui helpommin luettavaksi ja muokattavaksi. Markdownin yksinkertainen syntaksi teki rakenteesta selkeän, ja tiedostopohjainen esitystapa mahdollisti sisällön tarkastelun ilman erillisiä työkaluja. Tämä paransi erityisesti dokumentaation ylläpidettävyyttä ja soveltuvuutta versionhallintaan.
+Analyysi toteutetaan laadullisena tapaustutkimuksena. Tavoitteena ei ole tilastollinen yleistettävyys, vaan syvällisen ja kontekstisidonnaisen ymmärryksen tuottaminen yhdestä konkreettisesta dokumentaatiototeutuksesta. Arvioinnin kohteena on tässä työssä rakennettu Markdown-työnkulku, joka kattaa dokumentaation keräämisen, muuntamisen, versionhallinnan, julkaisemisen sekä sisällön hyödyntämisen eri formaateissa.
 
-Kaikki sisältö ei kuitenkaan siirtynyt täysin ongelmitta. Erityisesti monimutkaisemmat HTML-rakenteet, kuten upotetut elementit, kuvat ja visuaaliset komponentit, eivät aina muuntuneet täydellisesti Markdown-muotoon. Osa näistä elementeistä jouduttiin poistamaan tai yksinkertaistamaan, mikä vaikutti dokumentaation visuaaliseen ilmeeseen.
+Analyysi etenee neljän arviointikriteerin mukaisesti. Näitä ovat ylläpidettävyys, luettavuus, siirrettävyys ja automaation taso. Rakenne noudattaa suoraan tutkimusmenetelmässä määriteltyä kriteeristöä, mikä varmistaa analyysin metodologisen johdonmukaisuuden.
 
-Lisäksi havaittiin, että alkuperäisessä dokumentaatiossa esiintyneet virheet, kuten rikkinäiset linkit ja epäjohdonmukaiset kieliversiot, siirtyivät myös Markdown-muotoiseen versioon. Tämä korostaa sitä, että muunnosprosessi säilyttää sisällön sellaisenaan, eikä automaattisesti korjaa lähdemateriaalin puutteita.
+## 6.1 Analyysin lähtökohdat
 
-Kokonaisuutena Markdown-muunnos voidaan arvioida onnistuneeksi, sillä se säilytti dokumentaation oleellisimman sisällön ja rakenteen, vaikka osa visuaalisista ja teknisistä yksityiskohdista jäi pois. Tulokset osoittavat, että Markdown soveltuu hyvin tekstipainotteisen dokumentaation esittämiseen, mutta vaatii lisätoimenpiteitä monimutkaisempien sisältöjen käsittelyssä.
+Analyysin kohteena on Markdown-pohjainen dokumentaatiokokonaisuus sekä sitä tukeva tekninen työnkulku. Tarkastelu kohdistuu sekä dokumentaation sisältöön että sitä tuottaneeseen prosessiin. Sisällöllisestä näkökulmasta arvioidaan Markdown-muotoisen dokumentaation rakennetta, muokattavuutta ja luettavuutta sekä raakatekstinä että julkaistussa muodossa. Prosessin osalta analyysi kattaa koko toteutetun työnkulun WordPressin REST API -rajapinnan hyödyntämisestä Markdown-muunnokseen, versionhallintaan, staattisen sivuston generointiin ja Pandocin avulla tehtyyn Word-muunnokseen.
 
-Linkki Markdown-versioon löytyy [tästä](https://kejjjjj.github.io/oppari/docs/).
+Arviointi perustuu luvussa 4.4 määriteltyihin kriteereihin, jotka ohjaavat analyysiä systemaattisesti. Kriteerit sitovat analyysin suoraan tutkimusmenetelmään ja varmistavat, että tulokset ovat johdonmukaisia suhteessa asetettuihin tavoitteisiin. Näin analyysi muodostaa selkeän jatkumon tapaustutkimukselle, jossa käytännön toteutusta tarkastellaan laadullisesti.
 
-## 6.2 Metatutkimuksen tulokset
+## 6.2 Ylläpidettävyys
 
-Metatutkimuksen tavoitteena oli arvioida, kuinka hyvin Markdown-muotoinen sisältö voidaan muuntaa HAMKin opinnäytetyövaatimusten mukaiseen Word-muotoon ilman ohjelmointia ja mahdollisimman automatisoidusti. Tulokset osoittavat, että muunnos on teknisesti toteutettavissa ja osittain tehokas, mutta siihen liittyy merkittäviä rajoitteita erityisesti muotoilun ja viitteiden hallinnan osalta.
+### 6.2.1 Rakenteellinen ylläpidettävyys
 
-Muunnos Markdownista DOCX-muotoon Pandocin avulla toimii rakenteellisella tasolla hyvin. Dokumentin otsikkorakenne, kappalejako ja listat säilyvät pääosin oikein, ja sisältö siirtyy loogisesti Word-dokumenttiin. Tämä vahvistaa, että Markdown soveltuu hyvin tekstipohjaisen sisällön tuottamiseen myös akateemisessa kontekstissa. Lisäksi muunnosprosessi on nopea ja helposti toistettavissa, mikä tukee iteratiivista työskentelytapaa.
+Markdownin käyttö osoittautui rakenteellisesti ylläpidettäväksi ratkaisuksi. Dokumentaatio oli jaettu yksittäisiin Markdown-tiedostoihin, jotka oli sijoitettu loogiseen ja hierarkkiseen kansiorakenteeseen alkuperäisen sivuston rakennetta mukaillen. Tällainen tiedostopohjainen rakenne mahdollisti sen, että yksittäisiä sivuja voitiin muokata, poistaa tai lisätä ilman, että muutokset vaikuttivat koko dokumentaatiokokonaisuuteen. Tämä paransi dokumentaation hallittavuutta erityisesti laajassa ja monisivuisessa kokonaisuudessa.
 
-Viitteiden käsittely Zoteron ja Pandocin yhdistelmällä toimii perustasolla luotettavasti. Lähteet voidaan hallita erillisesti ja tuoda osaksi dokumenttia automaattisesti, jolloin lähdeluettelo muodostuu ilman manuaalista työtä. Tämä vähentää virheiden mahdollisuutta ja tehostaa kirjoitusprosessia. Kuitenkin merkittävä rajoite on se, että viitteet muuttuvat muunnosvaiheessa staattisiksi. Tämän seurauksena Wordin Zotero-integraatiota ei voida enää hyödyntää muunnoksen jälkeen, mikä rajoittaa viitteiden jatkomuokkausta.
+Sivukohtainen muokattavuus osoittautui selkeäksi eduksi verrattuna monoliittisiin dokumentteihin, joissa yksittäinen muutos edellyttää usein koko asiakirjan avaamista ja läpikäyntiä. Lisäksi alkuperäisen hierarkian säilyminen helpotti sekä tiedostorakenteessa navigointia että julkaistun dokumentaation hahmottamista Docusaurus-ympäristössä.
 
-Suurimmat haasteet liittyvät dokumentin muotoiluun ja yhteensopivuuteen opinnäytetyöpohjan kanssa. Vaikka Pandoc mahdollistaa Word-mallipohjan käytön, muunnos ei säilytä kaikkia mallipohjan rakenteellisia ominaisuuksia oikein. Erityisesti havaittiin, että ylätunnisteiden rakenne ei siirry oikein: ensimmäisen sivun alatunniste kopioituu virheellisesti kaikille sivuille. Lisäksi otsikoiden automaattinen numerointi Wordissa aiheuttaa ristiriidan Markdownissa määritellyn rakenteen kanssa, mikä johtaa virheelliseen numerointiin.
+### 6.2.2 Versionhallinnan vaikutus
 
-Näiden ongelmien vuoksi lopullinen dokumentti vaatii manuaalista viimeistelyä Word-ympäristössä. Korjauksia tarvitaan erityisesti sivuasetuksiin, alatunnisteisiin sekä otsikoiden numerointiin. Tämä heikentää automaation etuja ja osoittaa, että täysin automatisoitu työnkulku ei ole tämän tutkimuksen perusteella realistinen opinnäytetyökontekstissa.
+Versionhallinnan integrointi dokumentaatioon oli keskeinen ylläpidettävyyttä parantava tekijä. Gitin käyttö mahdollisti dokumentaation muutosten yksityiskohtaisen seurannan, eri versioiden vertailun sekä aiempiin tiloihin palaamisen tarvittaessa. Tämä vähensi riskiä pysyvistä virheistä ja paransi dokumentaation luotettavuutta.
 
-Kokonaisuutena metatutkimuksen tulokset osoittavat, että Markdown soveltuu hyvin sisällön tuottamiseen ja rakenteen hallintaan, mutta sen käyttö opinnäytetyömuodossa edellyttää kompromisseja. Automaatio toimii tehokkaasti sisällön ja rakenteen tasolla, mutta visuaalinen muotoilu ja dokumentin viimeistely jäävät edelleen osittain manuaalisiksi. Tämä korostaa hybridimallia, jossa Markdownia käytetään kirjoittamiseen ja Wordia lopulliseen viimeistelyyn.
+Markdownin tekstipohjainen muoto soveltui erinomaisesti versionhallintaan, sillä muutokset olivat helposti havaittavissa diff-näkymissä ilman, että taustalla oleva rakenne tai muotoilu vaikeutti vertailua. Tämä tuki Docs-as-Code-ajattelua, jossa dokumentaatiota käsitellään samalla tavoin kuin ohjelmakoodia osana kehitysprosessia.
 
-# 7 Conclusions
-## 7.1 Markdown-muunnosprosessin arviointi ja kehityskohteiden tunnistaminen
+### 6.2.3 Haasteet
 
-Tässä työssä toteutettu Markdown-muunnosprosessi osoittaa, että WordPress-pohjainen dokumentaatio voidaan siirtää tekstipohjaiseen ja versionhallintaa tukevaan muotoon. Prosessi kattaa koko ketjun tiedonkeruusta julkaisuun, ja sen vahvuus on automatisoitavuus. Web scraping, HTML-jäsentäminen, Markdown-muunnos sekä staattisen sivuston generointi muodostavat yhdessä yhtenäisen ja toistettavan työprosessin.
+Ylläpidettävyyden näkökulmasta tunnistettiin kuitenkin myös rajoitteita. Osa sisäisistä linkeistä rikkoutui muunnosvaiheessa, mikä vaati manuaalista korjausta. Lisäksi dokumentaation rakenne oli vahvasti sidoksissa alkuperäisen WordPress-sivuston hierarkiaan. Tämä tarkoittaa, että merkittävät muutokset lähdesivuston rakenteessa heijastuisivat suoraan Markdown-kokonaisuuden ylläpitoon.
 
-Muunnosprosessin tulokset osoittavat, että erityisesti tekstipainotteinen sisältö, kuten otsikot, kappaleet ja listat, säilyvät hyvin siirryttäessä HTML-muodosta Markdowniin. Tämä tekee Markdownista soveltuvan vaihtoehdon dokumentaatiolle, jossa rakenteellinen selkeys ja ylläpidettävyys ovat tärkeitä vaatimuksia. Lisäksi versionhallinnan integrointi parantaa dokumentaation hallittavuutta ja tukee nykyaikaisia kehitysprosesseja.
+Yhteenvetona voidaan todeta, että Markdown parantaa ylläpidettävyyttä erityisesti rakenteellisen selkeyden ja versionhallinnan näkökulmasta, mutta sen hyödyt ovat sidoksissa lähderakenteen laatuun ja pysyvyyteen.
 
-Prosessin aikana tunnistettiin kuitenkin myös useita kehityskohteita. Yksi keskeinen haaste liittyy HTML-rakenteen vaihteluun, mikä vaikeuttaa täysin yleispätevän parsintalogiikan toteuttamista. Eri sivujen erilaiset rakenteet edellyttävät joustavuutta ja mahdollisesti tapauskohtaisia käsittelysääntöjä.
+## 6.3 Luettavuus
 
-Lisäksi muunnosprosessia voitaisiin kehittää tukemaan paremmin monimutkaisempia sisältöelementtejä, kuten kuvia, upotuksia ja interaktiivisia komponentteja. Tällä hetkellä nämä elementit joko yksinkertaistuvat tai jäävät pois, mikä voi heikentää dokumentaation informaatiosisältöä tietyissä tapauksissa.
+### 6.3.1 Raakatekstin luettavuus
 
-Kokonaisuutena voidaan todeta, että Markdown-muunnosprosessi toimii tehokkaana ratkaisuna dokumentaation modernisointiin, mutta sen laadun ja käytettävyyden parantaminen edellyttää jatkokehitystä erityisesti automaation, validoinnin ja rakenteellisen joustavuuden osalta.
+Raakatekstinä tarkasteltuna Markdown osoittautui selkeämmäksi ja helpommin hahmotettavaksi kuin HTML. Otsikot, kappalerakenteet, listat ja korostukset olivat luettavissa suoraan tekstieditorissa ilman erillistä renderöintiä. Tämä tukee Markdownin käyttöä erityisesti teknisissä ympäristöissä, joissa sisältöä tarkastellaan ja muokataan usein pelkkänä tekstinä.
 
-## 7.2 Markdownin soveltuvuus opinnäytetyön tuottamiseen
+Markdownin syntaksin yksinkertaisuus paransi tekstin luettavuutta ja vähensi kognitiivista kuormitusta verrattuna HTML-tagien runsaaseen käyttöön. Sisällön rakenne oli helposti tunnistettavissa, mikä helpotti sekä kirjoittamista että sisällön arviointia.
 
-Tämän tutkimuksen perusteella Markdown soveltuu opinnäytetyön tuottamiseen erityisesti sisällön kirjoittamisen ja rakenteen hallinnan näkökulmasta. Sen yksinkertainen syntaksi ohjaa kirjoittamaan selkeästi jäsenneltyä tekstiä, jossa otsikkotasot, kappaleet ja listat muodostavat loogisen kokonaisuuden.
+### 6.3.2 Julkaistun sivuston luettavuus
 
-Tutkimuksessa havaittiin kuitenkin, että Markdown ei yksin riitä opinnäytetyön lopulliseen tuottamiseen. Suurimmat haasteet liittyvät muunnosvaiheeseen ja erityisesti Word-muotoilun vaatimuksiin. Vaikka Markdownista voidaan tuottaa DOCX-dokumentti automaattisesti, kaikki opinnäytetyöpohjan vaatimukset eivät siirry oikein. Esimerkiksi ylätunnisteiden rakenteet ja otsikoiden numerointi aiheuttavat ongelmia, jotka vaativat manuaalista korjausta.
+Julkaistussa muodossa luettavuus parani edelleen Docusauruksen tarjoamien rakenteellisten ominaisuuksien ansiosta. Staattinen sivustogeneraattori muodosti automaattisesti navigaation, sivupalkin ja yhtenäisen ulkoasun tiedostorakenteen perusteella. Tämä teki laajasta dokumentaatiokokonaisuudesta helposti selattavan ja käyttäjäystävällisen.
 
-Myös viitteiden hallinnassa ilmenee rajoitteita. Vaikka viitteet voidaan tuottaa Markdown-ympäristössä ja sisällyttää dokumenttiin muunnosvaiheessa, ne muuttuvat staattisiksi, eikä niitä voida enää hallita dynaamisesti Wordissa. Tämä rajoittaa erityisesti viimeistelyvaiheen joustavuutta.
+Julkaistun dokumentaation rakenne tuki lukijan orientaatiota ja sisällön löytämistä, mikä on oleellinen luettavuuden osa-alue erityisesti teknisessä dokumentaatiossa.
 
-Näiden havaintojen perusteella Markdown soveltuu parhaiten opinnäytetyön kirjoitusvaiheeseen, mutta ei täysin korvaa Wordia lopullisena työkaluna. Käytännössä toimivin ratkaisu on hybridimalli, jossa Markdownia käytetään sisällön tuottamiseen ja Wordia dokumentin viimeistelyyn.
+### 6.3.3 Luettavuuden heikkeneminen
 
-Kokonaisuutena voidaan todeta, että Markdown on varteenotettava vaihtoehto opinnäytetyön kirjoittamiseen, mutta sen käyttö edellyttää ymmärrystä muunnosprosessin rajoitteista ja valmiutta tehdä lopulliset muokkaukset Word-ympäristössä.
+Luettavuus heikkeni niissä kohdissa, joissa alkuperäisen HTML-sisällön visuaaliset ja rakenteelliset elementit eivät siirtyneet Markdown-muotoon. Monipalstaiset asettelut, visuaaliset korostuslaatikot ja muut käyttöliittymälähtöiset ratkaisut yksinkertaistuivat tekstipohjaiseen esitysmuotoon. Tämän seurauksena osa sisällön visuaalisesta selkeydestä ja painotuksista menetettiin.
 
-# 8 Further research?
+Tämä korostaa Markdownin rajoituksia tilanteissa, joissa luettavuus perustuu voimakkaasti visuaalisiin elementteihin eikä pelkästään rakenteeseen ja kielelliseen selkeyteen.
+
+Yhteenvetona voidaan todeta, että Markdown parantaa luettavuutta erityisesti raakatekstinä ja rakenteellisena sisältönä, mutta sen ilmaisukyky on rajallinen monimutkaisissa visuaalisissa esitysmuodoissa.
+
+## 6.4 Siirrettävyys
+
+### 6.4.1 Formaattien välinen muunnos
+
+Siirrettävyyden näkökulmasta Markdown osoittautui vahvaksi lähdeformaatiksi. Sama sisältö voitiin hyödyntää useissa eri yhteyksissä muuntamalla se Markdownista HTML-muotoon Docusauruksen avulla sekä Word-muotoon Pandocin avulla. Erityisesti HTML-julkaisussa dokumentin rakenne säilyi hyvin ja vastasi pitkälti alkuperäistä Markdown-sisältöä.
+
+### 6.4.2 Alustariippumattomuus
+
+Markdown-muotoinen dokumentaatio ei ollut sidottu tiettyyn ohjelmistoon tai käyttöympäristöön. Tiedostot olivat hyödynnettävissä suoraan versionhallintaympäristössä, erilaisissa tekstieditoreissa sekä useilla dokumentaatioalustoilla. Tämä lisäsi dokumentaation joustavuutta ja uudelleenkäytettävyyttä.
+
+### 6.4.3 Rajoitteet
+
+Metatutkimuksen yhteydessä havaittiin kuitenkin selkeitä rajoitteita erityisesti Word-muunnoksessa. Vaikka Pandoc säilytti dokumentin rakenteen pääosin oikein, kaikkia opinnäytetyöpohjan edellyttämiä muotoiluja ei voitu automatisoida. Lisäksi Markdown-murteiden väliset erot vaikuttivat siihen, miten tietyt rakenteet toimivat eri ympäristöissä.
+
+Yhteenvetona voidaan todeta, että Markdown toimii hyvin siirrettävänä lähdeformaatina, mutta täydellinen visuaalisen muotoilun säilyminen ei ole mahdollista kaikissa kohdeympäristöissä.
+
+## 6.5 Automaation taso
+
+### 6.5.1 Automatisoidut vaiheet
+
+Toteutettu dokumentaatiotyönkulku sisälsi useita pitkälle automatisoituja vaiheita. Sisällön kerääminen toteutettiin WordPressin REST API -rajapinnan avulla, HTML-sisältö muunnettiin Markdown-muotoon Turndown-kirjastolla ja lopullinen sivusto rakennettiin Docusauruksella. Julkaisu suoritettiin automaattisesti GitHub Actions -työnkulun avulla.
+
+### 6.5.2 Manuaaliset vaiheet
+
+Täydellisestä automaatiosta huolimatta osa työvaiheista edellytti edelleen manuaalista puuttumista. Näitä olivat erityisesti sisäisten linkkien korjaaminen muunnoksen jälkeen sekä lopullisen Word-dokumentin viimeistely opinnäytetyövaatimuksia vastaavaksi.
+
+### 6.5.3 Automaation hyödyt
+
+Automaation hyötynä oli dokumentaation ajantasaisuus. Kun työnkulku oli toistettava ja automatisoitu, dokumentaatio voitiin päivittää nopeasti ilman laajaa manuaalista työskentelyä. Tämä paransi myös prosessin skaalautuvuutta, sillä samaa työnkulkua voitiin soveltaa suuriin sisältömääriin.
+
+### 6.5.4 Automaation rajoitteet
+
+Automaation rajoitteet liittyivät erityisesti virheiden kertautumiseen sekä ulkoisiin riippuvuuksiin. Mikäli virhe syntyi tiedonkeruu- tai muunnosvaiheessa, se saattoi levitä koko dokumentaatiokokonaisuuteen. Lisäksi työnkulku oli sidoksissa useisiin ulkoisiin järjestelmiin ja rajapintoihin, mikä lisää haavoittuvuutta muutostilanteissa.
+
+## 6.6 Yhteenveto analyysista
+
+Analyysin perusteella Markdown-pohjainen dokumentaatiotyönkulku osoittautui kokonaisuutena toimivaksi ja nykyaikaiseksi ratkaisuksi teknisen dokumentaation tuottamiseen. Sen keskeiset vahvuudet liittyivät rakenteelliseen ylläpidettävyyteen, versionhallinnan hyödyntämiseen, hyvään luettavuuteen raakatekstinä sekä korkeaan automaation tasoon erityisesti verkkopohjaisessa julkaisemisessa.
+
+Heikkoudet liittyivät ennen kaikkea visuaalisen ilmaisun rajoituksiin, linkkirakenteiden haavoittuvuuteen sekä Word-muunnoksen epätäydelliseen automatisointiin. Näistä huolimatta Markdown soveltuu erinomaisesti ympäristöihin, joissa dokumentaatio on osa jatkuvaa kehitysprosessia, tuotetaan versionhallinnan piirissä ja julkaistaan ensisijaisesti verkossa. Sen käyttö ei kuitenkaan ole optimaalista tilanteissa, joissa vaaditaan tarkkaa ja muuttumatonta visuaalista muotoilua.
+
+# 7 Discussion
+
+Tässä luvussa tarkastellaan tutkimuksen tuloksia suhteessa asetettuihin tutkimuskysymyksiin. Lisäksi luvussa arvioidaan käytetyn tutkimusmenetelmän vahvuuksia sekä tunnistettuja rajoitteita teknisen dokumentaation kontekstissa.
+
+## 7.1 Markdownin soveltuvuus tekniseen dokumentaatioon
+
+Tutkimustulosten perusteella Markdown osoittautuu soveltuvaksi formaatiksi tekniseen dokumentaatioon, erityisesti sellaisissa ympäristöissä, joissa painotetaan versionhallintaa, tiimien välistä yhteistyötä sekä jatkuvaa kehitystä. Markdown-kielen etu on sen tarjoama kevyt ja tehokas dokumentointitapa, joka integroituu osaksi nykyisiä ohjelmistokehityksen työkaluja ja työnkulkuja. On kuitenkin huomattava, ettei Markdown ole optimaalinen ratkaisu kaikissa skenaarioissa. Erityisesti visuaalisesti monimutkaisten dokumenttien hallinta tai tarkasti määriteltyjen julkaisuformaattien noudattaminen saattaa edellyttää erillisiä lisätyökaluja tai merkittävää manuaalista jälkikäsittelyä.
+
+## 7.2 Markdownin edut ja rajoitukset
+
+Markdownin hyödyt kulminoituvat sen helppoon luettavuuteen ja kirjoitettavuuteen, mitkä madaltavat kynnystä dokumentaation tuottamiseen. Lisäksi formaatin tekstipohjaisuus takaa hyvän yhteensopivuuden versionhallintajärjestelmien kanssa, korkean siirrettävyyden eri julkaisuformaattien välillä sekä laajat mahdollisuudet dokumentaatioprosessien automatisointiin. Toisaalta formaatin rajoitteet liittyvät erityisesti sen rajalliseen visuaaliseen ilmaisukykyyn ja eri Markdown-murteiden (flavors) välisiin yhteensopivuusongelmiin. Tutkimuksessa havaittiin myös, että muunnosvaiheessa saattaa syntyä teknisiä virheitä, jotka edellyttävät dokumentaation manuaalista viimeistelyä laadun varmistamiseksi.
+
+## 7.3 Markdown ja dokumentaation ylläpito versionhallinnassa
+
+Tulokset osoittavat, että Markdown on erityisen tehokas väline versionhallintaympäristöissä. Sen tekstipohjainen muoto mahdollistaa muutosten tarkan seurannan ja selkeän vertailun eri versioiden välillä, mikä edistää yhteistyötä ja vähentää dokumentaation ristiriitoja. Niin kutsuttu Docs-as-code -lähestymistapa tukeekin dokumentaation integroitumista luonnolliseksi osaksi ohjelmistokehitystä ja mahdollistaa jatkuvan julkaisuprosessin. Tästä huolimatta lähestymistavan käyttöönotto vaatii organisaatiolta usein uudenlaista teknistä osaamista sekä vakiintuneiden toimintatapojen tietoista muuttamista.
+
+## 7.4 Menetelmän arviointi
+
+Tutkimuksessa sovellettu menetelmä osoittautui kokonaisuutena toimivaksi ja toistettavaksi ratkaisuksi. Erityisesti WordPress REST API:n hyödyntäminen paransi tiedonkeruun luotettavuutta ja rakenteellisuutta verrattuna perinteisiin web scraping -menetelmiin. Samalla automatisoitu työnkulku tehosti dokumentaation käsittelyprosessia merkittävästi. Menetelmän keskeisimpänä rajoitteena voidaan pitää sen vahvaa riippuvuutta kohdesivuston teknisestä rakenteesta ja hyödynnetyistä teknologioista. Lisäksi on huomioitava, ettei HTML-muotoisen aineiston muuntaminen Markdown-muotoon ollut teknisesti täydellistä, mikä asetti haasteita lopputuloksen laadulliselle tasolle.
+
+# 8 Conclusions
+
+Tämän opinnäytetyön tavoitteena oli arvioida Markdownin soveltuvuutta teknisen dokumentaation tuottamiseen ja ylläpitoon. Tutkimuksen perusteella voidaan todeta, että Markdown on tehokas ja joustava ratkaisu erityisesti modernissa ohjelmistokehitysympäristössä.
+
+Markdown tukee hyvin versionhallintaa, yhteistyötä ja automaatiota, mikä tekee siitä houkuttelevan vaihtoehdon perinteisille dokumentointimenetelmille. Sen vahvuudet korostuvat erityisesti tilanteissa, joissa dokumentaatiota päivitetään jatkuvasti ja useiden käyttäjien toimesta.
+
+Työ osoitti kuitenkin myös, että Markdown ei täysin korvaa kaikkia muita dokumentaatiomuotoja. Erityisesti tarkkaa muotoilua vaativissa käyttötapauksissa tarvitaan lisätyökaluja tai manuaalista viimeistelyä.
+
+Jatkokehityksen näkökulmasta olisi hyödyllistä tutkia Markdownin käyttöä laajemmin eri organisaatioissa sekä vertailla sitä muihin dokumentaatiotyökaluihin empiirisesti. Lisäksi automaation ja muunnostyökalujen kehittäminen voisi vähentää manuaalisen työn tarvetta entisestään.
+
+# 9 Further research?
+
+Tämän opinnäytetyön tarkoituksena oli selvittää Markdownin soveltuvuutta teknisen dokumentaation tuottamiseen ja ylläpitoon sekä tutkia sen käyttöä sekä käytännön dokumentaatiossa että opinnäytetyön kirjoittamisessa. Työ toteutettiin tapaustutkimuksena, jossa HAMKin julkiset verkkosivut muunnettiin Markdown-muotoon automatisoidulla prosessilla.
+
+Tämän työn kautta opin paljon enemmän kuin pelkästään Markdownin syntaksia. Opin, miten tärkeää on suunnitella dokumentaatioprosesseja koko elinkaaren ajattelulla tiedonkeruusta ylläpitoon ja julkaisemiseen asti.
+
+Opin myös konkreettisesti, miten "Docs as Code" -ajattelu toimii käytännössä ja miten voimakas työkaluyhdistelmä TypeScript, Git, Docusaurus ja GitHub Actions voi olla. Samalla havaitsin, miten paljon manuaalista työtä ja säätämistä liittyy vielä näennäisen automaattisiin prosesseihin. Metatutkimus opetti nöyryyttä muotoilun ja akateemisten vaatimusten kanssa, sillä tekninen ratkaisu ei aina suoraan sovi valmiiseen muottiin.
+
+Markdown-pohjainen dokumentaatio näyttää vahvalta vaihtoehdolta perinteisille menetelmille, ja sen käyttö tulee todennäköisesti yleistymään entisestään organisaatioissa. Tulevaisuudessa nähdään todennäköisesti entistä parempia integraatioita eri järjestelmien välillä sekä kehittyneempiä automaatiota ja tekoälyavusteista dokumentaation generointia.
+
+Työ osoitti kuitenkin myös, että Markdown ei täysin korvaa kaikkia muita dokumentaatiomuotoja. Erityisesti tarkkaa muotoilua vaativissa käyttötapauksissa tarvitaan lisätyökaluja tai manuaalista viimeistelyä.
+
+HAMKilla ja muilla ammattikorkeakouluilla olisi mahdollisuus ottaa merkittävä askel eteenpäin siirtymällä kohti moderneja dokumentaatiokäytäntöjä. Tämän työn tulokset tarjoavat jonkinlaisen pohjan pilotoinnille ja laajemmalle käyttöönotolle.
+
+Jatkokehityksen näkökulmasta olisi hyödyllistä tutkia Markdownin käyttöä laajemmin eri organisaatioissa sekä vertailla sitä muihin dokumentaatiotyökaluihin empiirisesti. Lisäksi automaation ja muunnostyökalujen kehittäminen voisi vähentää manuaalisen työn tarvetta entisestään.
