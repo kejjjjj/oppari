@@ -319,12 +319,13 @@ Tunnistustyö tehtiin manuaalisesti useita eri menetelmiä yhdistäen. Avattiin 
 
 Analyysin tuloksena havaittiin useita selviä viitteitä WordPress-järjestelmään. Lähdekoodista löytyi muun muassa `wp-content`- ja `wp-includes`-hakemistoihin viittaavia polkuja sekä WordPress-versiota suoraan ilmaiseva metatag:
 
+*Ohjelmakoodi 1.* Havainnollistaa WordPress-julkaisujärjestelmään viittaavista rakenteista HTML-lähdekoodissa.
 
 ```html
 <meta name="generator" content="WordPress 6.9.4" />
 <link rel='stylesheet' id='wp-components-css' href='https://www.hamk.fi/wp-includes/css/dist/components/style.min.css?ver=6.9.4' />
 ```
-*Ohjelmakoodi 1.* Havainnollistaa WordPress-julkaisujärjestelmään viittaavista rakenteista HTML-lähdekoodissa.
+
 
 Myös sivuston tyylitiedostot ja skriptit latautuivat tyypillisistä WordPress-polkuista. Network-välilehden avulla voitiin lisäksi vahvistaa, että sivusto hakee sisältöä ja resursseja WordPressin omista hakemistoista. Näiden havaintojen perusteella voitiin luotettavasti päätellä, että kohdesivusto on toteutettu WordPress 6.9.4 -julkaisujärjestelmällä.
 
@@ -346,6 +347,8 @@ Tiedonkeruu toteutettiin TypeScript-kielellä Node.js-ympäristössä. Kehitin s
 
 Jokaisen haetun sivun jälkeen tarkistettiin, oliko sivu jo käsitelty, jotta vältettiin duplikaatit. Pyyntöjen väliin lisättiin pieni viive, jotta palvelimen kuormitus pysyi kohtuullisena. Kerätty data tallennettiin väliaikaiseen tietorakenteeseen, jossa avaimena käytettiin sivun URL-polun perusteella muodostettua yksilöivää tunnistetta.
 
+*Ohjelmakoodi 2.* Tiedonkeruuprosessin peruslogiikka pseudokoodina.
+
 ```
 hae sivu (page = 1)
 toista niin kauan kuin sivuja on jäljellä:
@@ -355,7 +358,6 @@ toista niin kauan kuin sivuja on jäljellä:
 palauta kaikki sivut
 ```
 
-*Ohjelmakoodi 2.* Tiedonkeruuprosessin peruslogiikka pseudokoodina.
 
 Tämän vaiheen lopputuloksena saatiin kattava JSON-aineisto kaikista haetuista sivuista, sisältäen sekä metatiedot että varsinaisen HTML-sisällön kentässä `content.rendered`. Keräysprosessi oli täysin automaattinen ja toistettavissa, mikä oli tavoite koko työnkululle.
 
@@ -429,7 +431,7 @@ Käytännön kokeilussa havaittiin, että rakenne (otsikot, kappaleet, listat) s
 
 Markdown-muotoisen opinnäytetyön muuntaminen Word-dokumentiksi toteutettiin Pandoc-työkalulla. Prosessi oli teknisesti yksinkertainen: koko työ kirjoitettiin yhteen tai useampaan Markdown-tiedostoon, minkä jälkeen muunnos suoritettiin komentoriviltä yhdellä tai useammalla komennolla.
 
-*Ohjelmakoodi 1.* Havainnollistaa Pandocin peruskomentoa Markdownin muuntamiseksi Word-muotoon.
+*Ohjelmakoodi 3.* Havainnollistaa Pandocin peruskomentoa Markdownin muuntamiseksi Word-muotoon.
 
 ```
 pandoc oppari.md -o oppari.docx
@@ -437,7 +439,7 @@ pandoc oppari.md -o oppari.docx
 
 Tämä komento tuotti toimivan Word-dokumentin, jossa otsikkotasot, kappaleet ja listat siirtyivät pääosin oikein. Jotta tulos vastaisi paremmin HAMKin opinnäytetyöpohjan vaatimuksia, komentoa laajennettiin seuraavasti:
 
-*Ohjelmakoodi 2.* Havainnollistaa Pandoc-muunnosta sisällysluettelolla ja mallipohjalla.
+*Ohjelmakoodi 4.* Havainnollistaa Pandoc-muunnosta sisällysluettelolla ja mallipohjalla.
 
 ```
 pandoc oppari.md -o oppari.docx
@@ -449,7 +451,7 @@ Käytännön kokeilujen perusteella Pandoc hoiti rakenteellisen muunnoksen varsi
 
 Viittausten ja lähteiden hallinta oli olennainen osa metatutkimusta. Lähteiden keräämiseen, organisointiin ja hallintaan käytettiin Zotero-viitteidenhallintatyökalua. Zoterosta lähteet vietiin BibTeX-muotoon (`.bib`-tiedosto), jota Pandoc pystyy hyödyntämään muunnosvaiheessa.
 
-*Ohjelmakoodi 18.* Havainnollistaa Markdown-muotoista viittausta viiteavaimen avulla.
+*Ohjelmakoodi 5.* Havainnollistaa Markdown-muotoista viittausta viiteavaimen avulla.
 
 ```
 Tämä on esimerkkiviite @{zotero-item-22}.
@@ -457,7 +459,7 @@ Tämä on esimerkkiviite @{zotero-item-22}.
 
 Muunnosvaiheessa Pandoc käsittelee nämä viitteet automaattisesti. Tämä edellyttää, että muunnoskomennossa määritellään sekä viitetiedosto että viittausten käsittelyyn tarvittavat asetukset.
 
-*Ohjelmakoodi 19.* Havainnollistaa Pandoc-muunnosta viitteiden kanssa.
+*Ohjelmakoodi 6.* Havainnollistaa Pandoc-muunnosta viitteiden kanssa.
 
 ```
 pandoc oppari.md -o oppari.docx --toc --citeproc --bibliography=references.bib --csl=apa.csl
@@ -465,11 +467,11 @@ pandoc oppari.md -o oppari.docx --toc --citeproc --bibliography=references.bib -
 
 Pandoc muodosti automaattisesti sekä tekstiviitteet että lähdeluettelon dokumentin loppuun. Menetelmä toimi teknisesti hyvin ja mahdollisti viitteiden hallinnan kokonaan Markdown-ympäristössä. Käytännössä havaittiin kuitenkin, että muunnoksen jälkeen viitteet muuttuivat staattisiksi, eikä Wordin Zotero-lisäosaa voinut enää käyttää niiden muokkaamiseen. Tämän vuoksi kaikki viittaukset tuli viimeistellä jo Markdown-vaiheessa ennen lopullista muunnosta.
 
-### 5.2.3 Muotoilun sovittaminen opinnäytetyöpohjaan
+### 5.10.3 Muotoilun sovittaminen opinnäytetyöpohjaan
 
 Vaikka Pandoc hoiti rakenteellisen muunnoksen (otsikot, kappaleet, listat) pääosin onnistuneesti, opinnäytetyön lopullinen ulkoasu vaatii tarkkaa sovittamista HAMKin viralliseen Word-mallipohjaan. Tässä vaiheessa hyödynnettiin Pandocin `--reference-doc`-parametria, jonka avulla muunnoksessa käytettiin valmista HAMKin opinnäytetyöpohjaa tyylimallina.
 
-*Ohjelmakoodi 5.* Pandoc-muunnos HAMKin mallipohjaa käyttäen
+*Ohjelmakoodi 7.* Pandoc-muunnos HAMKin mallipohjaa käyttäen
 ```
 pandoc oppari.md -o oppari.docx --toc --reference-doc=hamk_pohja.docx
 ```
