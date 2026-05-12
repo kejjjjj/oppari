@@ -10,9 +10,24 @@
 [9]: https://github.com/kejjjjj/oppari/blob/main/image.png?raw=true
 
 # Abstrakti
-tekstiä tänne
+
+Opinnäytetyön tavoitteena oli selvittää, miten Markdown soveltuu teknisen dokumentaation kirjoittamiseen ohjelmistoprojekteissa sekä millaisia etuja ja rajoituksia sillä on verrattuna perinteisiin dokumentointimenetelmiin. Työssä tarkasteltiin myös, millä tavoin Markdown tukee dokumentaation ylläpitoa versionhallintajärjestelmissä ja automatisoiduissa julkaisuprosesseissa.
+
+Työn teoreettisessa osuudessa käsiteltiin dokumentaation merkitystä työelämässä, teknisen dokumentaation periaatteita sekä yleisimpiä dokumentointimenetelmiä. Lisäksi tarkasteltiin Markdownin syntaksia, laajennuksia ja rajoituksia sekä Docs-as-Code-ajattelumallia. Opinnäytetyö toteutettiin laadullisena tapaustutkimuksena, jossa hyödynnettiin kokeellista lähestymistapaa.
+
+Tutkimuksen käytännön osuudessa Hämeen ammattikorkeakoulun julkista, WordPress-pohjaista verkkodokumentaatiota kerättiin ohjelmallisesti WordPressin REST API -rajapinnan kautta ja muunnettiin Markdown-muotoon automatisoidulla työnkululla. Dokumentaatio tallennettiin versionhallintaan Gitillä, julkaistiin staattisena verkkosivustona Docusauruksen avulla ja automatisoitiin GitHub Actions -työnkuluilla. Lisäksi Markdown-muotoista sisältöä muunnettiin Pandocin avulla opinnäytetyön Word-muotoon metatutkimuksellisena osiona.
+
+Tulosten perusteella Markdown osoittautui toimivaksi ja ylläpidettäväksi ratkaisuksi teknisen dokumentaation tuottamiseen erityisesti ympäristöissä, joissa dokumentaatio on osa ohjelmistokehitysprosessia. Markdown paransi dokumentaation rakenne- ja versionhallintaa sekä mahdollisti korkean automaation tason. Keskeisimpinä rajoitteina tunnistettiin Markdownin rajallinen visuaalinen ilmaisukyky sekä Word-muunnoksen puutteellinen muotoilun automatisointi.
+
 # Abstract
-text here
+
+The purpose of this thesis was to examine how Markdown can be utilized in writing technical documentation in software projects and to identify its advantages and limitations compared to traditional documentation methods. The thesis also investigated how Markdown supports documentation maintenance in version control systems and automated publishing workflows.
+
+The theoretical section discusses the role of documentation in working life, principles of technical documentation, and commonly used documentation methods. In addition, the fundamentals, extensions, and limitations of Markdown as well as the Docs-as-Code approach are introduced. The study was conducted as a qualitative case study with an experimental research approach.
+
+In the practical part of the thesis, public WordPress-based documentation from Häme University of Applied Sciences was programmatically collected using the WordPress REST API and converted into Markdown format through an automated workflow. The documentation was managed using Git version control, published as a static website with Docusaurus, and automated using GitHub Actions. As a meta-study, Markdown-based content was also converted into a formal thesis document in Microsoft Word format using Pandoc.
+
+The results indicate that Markdown is a suitable and maintainable solution for technical documentation, particularly in software development environments where documentation is produced collaboratively and continuously. Markdown improves structural clarity, supports version control effectively, and enables a high level of automation. The main limitations identified were its restricted visual expressiveness and the challenges related to fully automating document formatting when converting Markdown into Word format.
 
 # Sanasto
 **Markdown**	Kevyt merkintäkieli, jonka avulla voidaan tuottaa rakenteellista ja helposti        luettavaa tekstiä yksinkertaisella syntaksilla.
@@ -72,7 +87,7 @@ Työssä haetaan vastauksia muun muassa seuraaviin kysymyksiin:
 2. Mitkä ovat Markdownin edut ja rajoitukset verrattuna muihin dokumentointimenetelmiin?
 3. Millä tavoin Markdown helpottaa dokumentaation ylläpitoa versionhallintajärjestelmissä?
 
-# 2 Introduction to the knowledge base
+# 2 Työn teoreettinen tausta
 ### 2.1 Dokumentaation merkitys työelämässä
 Dokumentaatio on osa organisaation tiedonhallintaa, sillä se auttaa säilyttämään ja jakamaan tietoa tilanteissa, joissa alkuperäiset tekijät eivät enää ole mukana tai tieto ei ole helposti saatavilla. Ilman dokumentaatiota organisaatiot joutuvat usein toimimaan puutteellisen tiedon varassa, mikä voi hidastaa työskentelyä ja vaikeuttaa uusien projektien käynnistämistä. Hyvin toteutettu dokumentaatio tarjoaa sen sijaan selkeän lähtökohdan päätöksenteolle ja työn jatkamiselle, mikä tekee siitä enemmän kuin pelkän muodollisuuden. @zotero-item-12
 
@@ -110,7 +125,7 @@ HTML-pohjainen dokumentointi perustuu verkkoteknologioiden hyödyntämiseen, jos
 
 HTML:n rinnalla voidaan käyttää tyylitiedostoja (CSS) ja skriptejä (Javascript), joiden avulla dokumentaation ulkoasua ja toiminnallisuutta voidaan muokata monipuolisemmin. Näiden avulla saadaan esimerkiksi responsiivista suunnittelua ja interaktiivisia elementtejä, jotka parantavat käyttäjäkokemusta erityisesti verkossa julkaistussa dokumentaatiossa. @zotero-item-20
 
-# 3 Knowledge base advanced
+# 3 Markdown ja dokumentaatiokäytännöt ohjelmistokehityksessä
 
 ## 3.1 Markdownin perusteet
 
@@ -233,7 +248,7 @@ Onnistunut käyttöönotto edellyttää myös yhteisten käytäntöjen ja ohjeis
 
 Käyttöönottoon liittyy myös haasteita, kuten muutosvastarinta ja uuden työskentelytavan opettelu. Erityisesti organisaatioissa, joissa on totuttu perinteisiin dokumentointimenetelmiin, siirtyminen tekstipohjaiseen ratkaisuun voi vaatia aikaa ja tukea. Näitä haasteita voidaan kuitenkin vähentää tarjoamalla selkeitä ohjeita, esimerkkejä ja käytännön hyötyjä, jotka konkretisoivat Markdownin edut. @zotero-item-50
 
-# 4 Research method
+# 4 Tutkimusmenetelmät
 
 ## 4.1 Tutkimusstrategia: tapaustutkimus
 
@@ -310,7 +325,7 @@ Markitdown-työkalun olemassaolo osoittaa, että Markdowniin perustuvat dokument
 Tämä rajoite tarkoittaa, että tutkimuksessa esitetty Markdown-Word-muunnos ei edusta ainoaa mahdollista teknistä ratkaisua, vaan pikemminkin yhtä tarkoituksenmukaista toteutusta tutkimushetkellä käytettävissä olleilla työkaluilla. Tuloksia tulee siten tarkastella ajallisessa kontekstissaan, ja on mahdollista, että tulevaisuudessa kehittyneemmät muunnostyökalut voivat vähentää tai poistaa osan tässä työssä tunnistetuista haasteista.
 
 
-# 5 Research
+# 5 Markdown-pohjaisen dokumentaatiotyönkulun toteutus
 ## 5.1 Kohdesivuston teknologian tunnistaminen
 
 Ensimmäisenä konkreettisena toimenpiteenä tutkimuksessa selvitettiin kohdesivuston teknistä toteutusta. Tavoitteena oli ymmärtää, millä alustalla HAMK:n julkinen sivusto https://www.hamk.fi on rakennettu, jotta tiedonkeruu voitaisiin toteuttaa mahdollisimman tehokkaasti ja luotettavasti.
@@ -480,7 +495,7 @@ Käytännön kokeilussa havaittiin useita haasteita. Ensinnäkin Pandoc ei säil
 
 Muita ongelmia olivat mm. rivivälien, marginaalien ja fonttien tarkka sovittaminen sekä taulukoiden ja kuvien sijoittelu. Vaikka suuri osa sisällöstä siirtyi oikein, lopullinen Word-dokumentti vaati aina manuaalista viimeistelyä.
 
-# 6 Results
+# 6 Tulokset
 
 Tässä luvussa analysoidaan opinnäytetyössä toteutetun Markdown-pohjaisen dokumentaatiotyönkulun tuloksia. Analyysi kytkeytyy suoraan tutkimusmetodologiaan ja luvussa 4.4 määriteltyihin arviointikriteereihin. Tarkastelu perustuu käytännön toteutukseen, syntyneeseen dokumentaatiokokonaisuuteen sekä metatutkimuksena toteutettuun Markdown-Word-muunnokseen.
 
@@ -576,7 +591,7 @@ Analyysin perusteella Markdown-pohjainen dokumentaatiotyönkulku osoittautui kok
 
 Heikkoudet liittyivät ennen kaikkea visuaalisen ilmaisun rajoituksiin, linkkirakenteiden haavoittuvuuteen sekä Word-muunnoksen epätäydelliseen automatisointiin. Näistä huolimatta Markdown soveltuu erinomaisesti ympäristöihin, joissa dokumentaatio on osa jatkuvaa kehitysprosessia, tuotetaan versionhallinnan piirissä ja julkaistaan ensisijaisesti verkossa. Sen käyttö ei kuitenkaan ole optimaalista tilanteissa, joissa vaaditaan tarkkaa ja muuttumatonta visuaalista muotoilua.
 
-# 7 Conclusions
+# 7 Johtopäätökset
 
 Tässä alaluvussa vastataan opinnäytetyössä asetettuihin tutkimuskysymyksiin tutkimuksen tulosten ja analyysin perusteella.
 
@@ -600,7 +615,7 @@ Lisäksi Docs-as-Code-lähestymistavan mukainen Markdown-pohjainen dokumentaatio
 
 Tutkimuksessa sovellettu menetelmä osoittautui kokonaisuutena toimivaksi ja toistettavaksi ratkaisuksi. Erityisesti WordPress REST API:n hyödyntäminen paransi tiedonkeruun luotettavuutta ja rakenteellisuutta verrattuna perinteisiin web scraping -menetelmiin. Samalla automatisoitu työnkulku tehosti dokumentaation käsittelyprosessia merkittävästi. Menetelmän rajoitteena voidaan pitää sen vahvaa riippuvuutta kohdesivuston teknisestä rakenteesta ja hyödynnetyistä teknologioista. Lisäksi on huomioitava, ettei HTML-muotoisen aineiston muuntaminen Markdown-muotoon ollut teknisesti täydellistä, mikä asetti haasteita lopputuloksen laadulliselle tasolle.
 
-# 8 Further research?
+# 8 Jatkotutkimuksen mahdollisuudet
 
 Tämän opinnäytetyön tarkoituksena oli selvittää Markdownin soveltuvuutta teknisen dokumentaation tuottamiseen ja ylläpitoon sekä tutkia sen käyttöä sekä käytännön dokumentaatiossa että opinnäytetyön kirjoittamisessa. Työ toteutettiin tapaustutkimuksena, jossa HAMKin julkiset verkkosivut muunnettiin Markdown-muotoon automatisoidulla prosessilla.
 
